@@ -16,8 +16,29 @@
                     <view key="view" contentMode="scaleToFill" id="IMb-Wp-61C">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About VC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rir-wz-1tW">
+                                <rect key="frame" x="170.5" y="437.5" width="73" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sqh-Vf-NZL">
+                                <rect key="frame" x="183" y="468.5" width="48" height="30"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="didTapOnLogoutButton:" destination="xqa-23-gzr" eventType="touchUpInside" id="2M0-es-3oq"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="nPa-8i-U1v"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rir-wz-1tW" firstAttribute="centerX" secondItem="IMb-Wp-61C" secondAttribute="centerX" id="9iR-3l-8cG"/>
+                            <constraint firstItem="rir-wz-1tW" firstAttribute="centerY" secondItem="IMb-Wp-61C" secondAttribute="centerY" id="F7O-5V-XP3"/>
+                            <constraint firstItem="Sqh-Vf-NZL" firstAttribute="top" secondItem="rir-wz-1tW" secondAttribute="bottom" constant="10" id="t2e-LA-3VR"/>
+                            <constraint firstItem="Sqh-Vf-NZL" firstAttribute="centerX" secondItem="IMb-Wp-61C" secondAttribute="centerX" id="tb3-Ry-WaR"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="About" image="info" id="Wkh-4N-FtM"/>
                 </viewController>

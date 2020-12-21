@@ -14,6 +14,9 @@
 		3248196F2591038A00A66263 /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3248196E2591038A00A66263 /* AboutVC.swift */; };
 		324819722591042600A66263 /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324819712591042600A66263 /* RegistrationVC.swift */; };
 		324819752591042F00A66263 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324819742591042F00A66263 /* LoginVC.swift */; };
+		32481979259107F800A66263 /* AppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32481978259107F800A66263 /* AppNavigator.swift */; };
+		326C92762591114700E6A21D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326C92752591114700E6A21D /* User.swift */; };
+		326C92792591115C00E6A21D /* LocalUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326C92782591115C00E6A21D /* LocalUser.swift */; };
 		32845D7A258EF88300894338 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32845D79258EF88300894338 /* AppDelegate.swift */; };
 		32845D7C258EF88300894338 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32845D7B258EF88300894338 /* SceneDelegate.swift */; };
 		32845D7E258EF88300894338 /* RestaurantsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32845D7D258EF88300894338 /* RestaurantsVC.swift */; };
@@ -31,6 +34,9 @@
 		3248196E2591038A00A66263 /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
 		324819712591042600A66263 /* RegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
 		324819742591042F00A66263 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		32481978259107F800A66263 /* AppNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigator.swift; sourceTree = "<group>"; };
+		326C92752591114700E6A21D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		326C92782591115C00E6A21D /* LocalUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalUser.swift; sourceTree = "<group>"; };
 		32845D76258EF88300894338 /* Food Advisor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Food Advisor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32845D79258EF88300894338 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32845D7B258EF88300894338 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,8 +65,8 @@
 		3248194D2590FA2B00A66263 /* Views + Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				3248195F2590FC5C00A66263 /* Restaurants */,
 				324819592590FAA500A66263 /* Auth */,
+				3248195F2590FC5C00A66263 /* Restaurants */,
 				324819652590FEF600A66263 /* Forum */,
 				324819692590FF0E00A66263 /* About */,
 			);
@@ -70,6 +76,8 @@
 		3248194F2590FA3500A66263 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				326C92752591114700E6A21D /* User.swift */,
+				326C92782591115C00E6A21D /* LocalUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -88,6 +96,7 @@
 				32845D7B258EF88300894338 /* SceneDelegate.swift */,
 				32845D82258EF88400894338 /* Assets.xcassets */,
 				32845D84258EF88400894338 /* LaunchScreen.storyboard */,
+				32481978259107F800A66263 /* AppNavigator.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -294,9 +303,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				32845D7E258EF88300894338 /* RestaurantsVC.swift in Sources */,
+				32481979259107F800A66263 /* AppNavigator.swift in Sources */,
 				324819722591042600A66263 /* RegistrationVC.swift in Sources */,
 				324819752591042F00A66263 /* LoginVC.swift in Sources */,
 				3248196F2591038A00A66263 /* AboutVC.swift in Sources */,
+				326C92762591114700E6A21D /* User.swift in Sources */,
+				326C92792591115C00E6A21D /* LocalUser.swift in Sources */,
 				32845D7A258EF88300894338 /* AppDelegate.swift in Sources */,
 				3248196C2591025A00A66263 /* ForumVC.swift in Sources */,
 				32845D7C258EF88300894338 /* SceneDelegate.swift in Sources */,

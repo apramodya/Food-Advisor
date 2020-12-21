@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cae-xr-NOY">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -16,13 +16,25 @@
                     <view key="view" contentMode="scaleToFill" id="orq-bv-E1T">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register VC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rws-vL-ENX">
+                                <rect key="frame" x="162" y="437.5" width="90" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="nZm-6P-6Qh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Rws-vL-ENX" firstAttribute="centerX" secondItem="orq-bv-E1T" secondAttribute="centerX" id="RdY-Ui-hy5"/>
+                            <constraint firstItem="Rws-vL-ENX" firstAttribute="centerY" secondItem="orq-bv-E1T" secondAttribute="centerY" id="jyX-79-IWJ"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="30C-eI-HLb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-306" y="-10"/>
+            <point key="canvasLocation" x="2128.985507246377" y="-10.044642857142856"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="boi-ji-Aql">
@@ -31,13 +43,52 @@
                     <view key="view" contentMode="scaleToFill" id="EfZ-SZ-cBi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login VC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HUc-cu-N35">
+                                <rect key="frame" x="173" y="437.5" width="68.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhB-by-Zos">
+                                <rect key="frame" x="188" y="478.5" width="38" height="30"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="didTapOnLoginButton:" destination="flT-dZ-18J" eventType="touchUpInside" id="K5z-HO-TqT"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ZRP-VB-7kj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fhB-by-Zos" firstAttribute="top" secondItem="HUc-cu-N35" secondAttribute="bottom" constant="20" id="1K2-xx-Y33"/>
+                            <constraint firstItem="fhB-by-Zos" firstAttribute="centerX" secondItem="EfZ-SZ-cBi" secondAttribute="centerX" id="Hd7-6L-G0i"/>
+                            <constraint firstItem="HUc-cu-N35" firstAttribute="centerX" secondItem="EfZ-SZ-cBi" secondAttribute="centerX" id="euM-nW-TeN"/>
+                            <constraint firstItem="HUc-cu-N35" firstAttribute="centerY" secondItem="EfZ-SZ-cBi" secondAttribute="centerY" id="uK4-ah-vIN"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="7U2-5y-0c3"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NpM-1h-1jc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="442" y="-10"/>
+            <point key="canvasLocation" x="1350.7246376811595" y="-10.044642857142856"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Pth-69-ZR7">
+            <objects>
+                <navigationController storyboardIdentifier="Auth" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="cae-xr-NOY" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="62S-km-lKt">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="flT-dZ-18J" kind="relationship" relationship="rootViewController" id="gFn-jO-W7h"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vFl-LB-JjI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="440.57971014492756" y="-10.044642857142856"/>
         </scene>
     </scenes>
     <resources>

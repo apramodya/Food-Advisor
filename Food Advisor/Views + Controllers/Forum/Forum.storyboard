@@ -16,8 +16,20 @@
                     <view key="view" contentMode="scaleToFill" id="p9O-v4-Hh8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forum VC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rv0-C9-jdJ">
+                                <rect key="frame" x="169" y="437.5" width="76" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="he9-Hc-1LD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rv0-C9-jdJ" firstAttribute="centerX" secondItem="p9O-v4-Hh8" secondAttribute="centerX" id="jeS-YX-BYc"/>
+                            <constraint firstItem="rv0-C9-jdJ" firstAttribute="centerY" secondItem="p9O-v4-Hh8" secondAttribute="centerY" id="pkU-zS-Xic"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Forum" image="forum" id="wIS-ae-v4q">
                         <color key="badgeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
