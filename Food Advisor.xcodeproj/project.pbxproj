@@ -3,27 +3,45 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		324819572590FA9C00A66263 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 324819562590FA9C00A66263 /* Auth.storyboard */; };
+		324819632590FEF100A66263 /* Forum.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 324819622590FEF100A66263 /* Forum.storyboard */; };
+		324819672590FF0900A66263 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 324819662590FF0900A66263 /* About.storyboard */; };
+		3248196C2591025A00A66263 /* ForumVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3248196B2591025A00A66263 /* ForumVC.swift */; };
+		3248196F2591038A00A66263 /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3248196E2591038A00A66263 /* AboutVC.swift */; };
+		324819722591042600A66263 /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324819712591042600A66263 /* RegistrationVC.swift */; };
+		324819752591042F00A66263 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324819742591042F00A66263 /* LoginVC.swift */; };
 		32845D7A258EF88300894338 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32845D79258EF88300894338 /* AppDelegate.swift */; };
 		32845D7C258EF88300894338 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32845D7B258EF88300894338 /* SceneDelegate.swift */; };
-		32845D7E258EF88300894338 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32845D7D258EF88300894338 /* ViewController.swift */; };
+		32845D7E258EF88300894338 /* RestaurantsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32845D7D258EF88300894338 /* RestaurantsVC.swift */; };
 		32845D81258EF88300894338 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32845D7F258EF88300894338 /* Main.storyboard */; };
 		32845D83258EF88400894338 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32845D82258EF88400894338 /* Assets.xcassets */; };
 		32845D86258EF88400894338 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32845D84258EF88400894338 /* LaunchScreen.storyboard */; };
+		B0D0AF158E1B3DA9B4B77CEF /* Pods_Food_Advisor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA3D97A41CADE64B6EB73E4 /* Pods_Food_Advisor.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		324819562590FA9C00A66263 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
+		324819622590FEF100A66263 /* Forum.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Forum.storyboard; sourceTree = "<group>"; };
+		324819662590FF0900A66263 /* About.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
+		3248196B2591025A00A66263 /* ForumVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumVC.swift; sourceTree = "<group>"; };
+		3248196E2591038A00A66263 /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
+		324819712591042600A66263 /* RegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
+		324819742591042F00A66263 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		32845D76258EF88300894338 /* Food Advisor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Food Advisor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32845D79258EF88300894338 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32845D7B258EF88300894338 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		32845D7D258EF88300894338 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		32845D7D258EF88300894338 /* RestaurantsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsVC.swift; sourceTree = "<group>"; };
 		32845D80258EF88300894338 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		32845D82258EF88400894338 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32845D85258EF88400894338 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32845D87258EF88400894338 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		468C1FBC10DE051C04E3519D /* Pods-Food Advisor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Food Advisor.release.xcconfig"; path = "Target Support Files/Pods-Food Advisor/Pods-Food Advisor.release.xcconfig"; sourceTree = "<group>"; };
+		5D21CBFE3741A1C4CBE6FBE1 /* Pods-Food Advisor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Food Advisor.debug.xcconfig"; path = "Target Support Files/Pods-Food Advisor/Pods-Food Advisor.debug.xcconfig"; sourceTree = "<group>"; };
+		6FA3D97A41CADE64B6EB73E4 /* Pods_Food_Advisor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Food_Advisor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +49,100 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0D0AF158E1B3DA9B4B77CEF /* Pods_Food_Advisor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3248194C2590FA2000A66263 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3248194D2590FA2B00A66263 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3248195F2590FC5C00A66263 /* Restaurants */,
+				324819592590FAA500A66263 /* Auth */,
+				324819652590FEF600A66263 /* Forum */,
+				324819692590FF0E00A66263 /* About */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3248194F2590FA3500A66263 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		324819502590FA3C00A66263 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		324819532590FA5E00A66263 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				32845D79258EF88300894338 /* AppDelegate.swift */,
+				32845D7B258EF88300894338 /* SceneDelegate.swift */,
+				32845D82258EF88400894338 /* Assets.xcassets */,
+				32845D84258EF88400894338 /* LaunchScreen.storyboard */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		324819592590FAA500A66263 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				324819562590FA9C00A66263 /* Auth.storyboard */,
+				324819712591042600A66263 /* RegistrationVC.swift */,
+				324819742591042F00A66263 /* LoginVC.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		3248195F2590FC5C00A66263 /* Restaurants */ = {
+			isa = PBXGroup;
+			children = (
+				32845D7F258EF88300894338 /* Main.storyboard */,
+				32845D7D258EF88300894338 /* RestaurantsVC.swift */,
+			);
+			path = Restaurants;
+			sourceTree = "<group>";
+		};
+		324819652590FEF600A66263 /* Forum */ = {
+			isa = PBXGroup;
+			children = (
+				324819622590FEF100A66263 /* Forum.storyboard */,
+				3248196B2591025A00A66263 /* ForumVC.swift */,
+			);
+			path = Forum;
+			sourceTree = "<group>";
+		};
+		324819692590FF0E00A66263 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				324819662590FF0900A66263 /* About.storyboard */,
+				3248196E2591038A00A66263 /* AboutVC.swift */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
 		32845D6D258EF88200894338 = {
 			isa = PBXGroup;
 			children = (
 				32845D78258EF88300894338 /* Food Advisor */,
 				32845D77258EF88300894338 /* Products */,
+				A8F527BA29F5338FDD6CD5FB /* Pods */,
+				868FD5A7EF763276D20D31BD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +157,31 @@
 		32845D78258EF88300894338 /* Food Advisor */ = {
 			isa = PBXGroup;
 			children = (
-				32845D79258EF88300894338 /* AppDelegate.swift */,
-				32845D7B258EF88300894338 /* SceneDelegate.swift */,
-				32845D7D258EF88300894338 /* ViewController.swift */,
-				32845D7F258EF88300894338 /* Main.storyboard */,
-				32845D82258EF88400894338 /* Assets.xcassets */,
-				32845D84258EF88400894338 /* LaunchScreen.storyboard */,
+				3248194F2590FA3500A66263 /* Models */,
+				3248194D2590FA2B00A66263 /* Views */,
+				3248194C2590FA2000A66263 /* Controllers */,
+				324819502590FA3C00A66263 /* Services */,
+				324819532590FA5E00A66263 /* App */,
 				32845D87258EF88400894338 /* Info.plist */,
 			);
 			path = "Food Advisor";
+			sourceTree = "<group>";
+		};
+		868FD5A7EF763276D20D31BD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6FA3D97A41CADE64B6EB73E4 /* Pods_Food_Advisor.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A8F527BA29F5338FDD6CD5FB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5D21CBFE3741A1C4CBE6FBE1 /* Pods-Food Advisor.debug.xcconfig */,
+				468C1FBC10DE051C04E3519D /* Pods-Food Advisor.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +191,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 32845D8A258EF88400894338 /* Build configuration list for PBXNativeTarget "Food Advisor" */;
 			buildPhases = (
+				A6B4F65F46ACDE2574F0BFE4 /* [CP] Check Pods Manifest.lock */,
 				32845D72258EF88300894338 /* Sources */,
 				32845D73258EF88300894338 /* Frameworks */,
 				32845D74258EF88300894338 /* Resources */,
+				65F3D2C0C96E232612129406 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -124,6 +243,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				324819572590FA9C00A66263 /* Auth.storyboard in Resources */,
+				324819632590FEF100A66263 /* Forum.storyboard in Resources */,
+				324819672590FF0900A66263 /* About.storyboard in Resources */,
 				32845D86258EF88400894338 /* LaunchScreen.storyboard in Resources */,
 				32845D83258EF88400894338 /* Assets.xcassets in Resources */,
 				32845D81258EF88300894338 /* Main.storyboard in Resources */,
@@ -132,13 +254,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		65F3D2C0C96E232612129406 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Food Advisor/Pods-Food Advisor-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Food Advisor/Pods-Food Advisor-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Food Advisor/Pods-Food Advisor-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A6B4F65F46ACDE2574F0BFE4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Food Advisor-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		32845D72258EF88300894338 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32845D7E258EF88300894338 /* ViewController.swift in Sources */,
+				32845D7E258EF88300894338 /* RestaurantsVC.swift in Sources */,
+				324819722591042600A66263 /* RegistrationVC.swift in Sources */,
+				324819752591042F00A66263 /* LoginVC.swift in Sources */,
+				3248196F2591038A00A66263 /* AboutVC.swift in Sources */,
 				32845D7A258EF88300894338 /* AppDelegate.swift in Sources */,
+				3248196C2591025A00A66263 /* ForumVC.swift in Sources */,
 				32845D7C258EF88300894338 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,12 +451,14 @@
 		};
 		32845D8B258EF88400894338 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D21CBFE3741A1C4CBE6FBE1 /* Pods-Food Advisor.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Food Advisor/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -303,12 +473,14 @@
 		};
 		32845D8C258EF88400894338 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 468C1FBC10DE051C04E3519D /* Pods-Food Advisor.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Food Advisor/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

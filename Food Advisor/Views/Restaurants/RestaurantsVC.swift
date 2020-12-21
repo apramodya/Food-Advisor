@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class RestaurantsVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
