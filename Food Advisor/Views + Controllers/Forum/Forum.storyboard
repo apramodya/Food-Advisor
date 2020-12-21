@@ -9,41 +9,45 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--About-->
-        <scene sceneID="QlV-y5-dei">
+        <!--Forum-->
+        <scene sceneID="Oud-O6-C6T">
             <objects>
-                <viewController storyboardIdentifier="AboutVC" id="xqa-23-gzr" customClass="AboutVC" customModule="Food_Advisor" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="IMb-Wp-61C">
+                <viewController storyboardIdentifier="ForumVC" id="XMe-cv-WeZ" customClass="ForumVC" customModule="Food_Advisor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="p9O-v4-Hh8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="nPa-8i-U1v"/>
+                        <viewLayoutGuide key="safeArea" id="he9-Hc-1LD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="About" id="Wkh-4N-FtM"/>
+                    <tabBarItem key="tabBarItem" title="Forum" image="forum" id="wIS-ae-v4q">
+                        <color key="badgeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MT3-nb-fvj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mcG-fL-DxR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="944.92753623188412" y="88.392857142857139"/>
+            <point key="canvasLocation" x="68.115942028985515" y="-111.16071428571428"/>
         </scene>
         <!--Tab Bar Controller-->
-        <scene sceneID="wx2-mL-Ufm">
+        <scene sceneID="XHO-RC-bJm">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="yjG-Sj-Y3E" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="vzu-6h-7k1" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="b1D-Vv-9bT">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4Ww-Ng-rtj">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="xqa-23-gzr" kind="relationship" relationship="viewControllers" id="Jw6-9x-ZSm"/>
+                        <segue destination="XMe-cv-WeZ" kind="relationship" relationship="viewControllers" id="fVN-SF-im2"/>
                     </connections>
                 </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="udj-qb-1b2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="shg-Hb-Bis" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="34.782608695652179" y="88.392857142857139"/>
+            <point key="canvasLocation" x="-842.02898550724649" y="-111.16071428571428"/>
         </scene>
     </scenes>
     <resources>
+        <image name="forum" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

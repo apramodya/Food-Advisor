@@ -56,14 +56,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3248194C2590FA2000A66263 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		3248194D2590FA2B00A66263 /* Views */ = {
+		3248194D2590FA2B00A66263 /* Views + Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				3248195F2590FC5C00A66263 /* Restaurants */,
@@ -71,7 +64,7 @@
 				324819652590FEF600A66263 /* Forum */,
 				324819692590FF0E00A66263 /* About */,
 			);
-			path = Views;
+			path = "Views + Controllers";
 			sourceTree = "<group>";
 		};
 		3248194F2590FA3500A66263 /* Models */ = {
@@ -158,8 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				3248194F2590FA3500A66263 /* Models */,
-				3248194D2590FA2B00A66263 /* Views */,
-				3248194C2590FA2000A66263 /* Controllers */,
+				3248194D2590FA2B00A66263 /* Views + Controllers */,
 				324819502590FA3C00A66263 /* Services */,
 				324819532590FA5E00A66263 /* App */,
 				32845D87258EF88400894338 /* Info.plist */,
