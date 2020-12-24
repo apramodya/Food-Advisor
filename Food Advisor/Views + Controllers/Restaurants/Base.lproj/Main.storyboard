@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,21 +18,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant VC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olF-Eo-lvL">
-                                <rect key="frame" x="152.5" y="437.5" width="109.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello Pramodya!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MUS-JB-pb8">
+                                <rect key="frame" x="20" y="69" width="196.5" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mxK-7S-HQs">
+                                <rect key="frame" x="0.0" y="124" width="414" height="699"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xTK-fl-EdP">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Sp2-ew-qyb">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="zJ8-Wd-jYh">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="olF-Eo-lvL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EFF-Xg-bhM"/>
-                            <constraint firstItem="olF-Eo-lvL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bH8-Lm-co1"/>
+                            <constraint firstItem="mxK-7S-HQs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1Gd-XX-p7U"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="MUS-JB-pb8" secondAttribute="trailing" constant="20" id="G7K-iN-Ea2"/>
+                            <constraint firstItem="MUS-JB-pb8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="KUz-co-FQU"/>
+                            <constraint firstItem="mxK-7S-HQs" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="10" id="hMx-s3-ga6"/>
+                            <constraint firstItem="mxK-7S-HQs" firstAttribute="top" secondItem="MUS-JB-pb8" secondAttribute="bottom" constant="25" id="mbH-NJ-YH6"/>
+                            <constraint firstItem="mxK-7S-HQs" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="nZe-5u-hVF"/>
+                            <constraint firstItem="MUS-JB-pb8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="uvB-ee-qL5"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Restaurants" image="restaurant" id="fWD-lf-efU"/>
+                    <connections>
+                        <outlet property="collectionView" destination="mxK-7S-HQs" id="MmM-d4-8Yd"/>
+                        <outlet property="greetingLabel" destination="MUS-JB-pb8" id="7g8-K5-SqI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

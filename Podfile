@@ -8,6 +8,8 @@ target 'Food Advisor' do
   # Pods for Food Advisor
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
+  pod 'FirebaseFirestoreSwift'
   pod 'GoogleSignIn'
   pod 'TPKeyboardAvoiding', '~> 1.3'
   pod 'NVActivityIndicatorView'

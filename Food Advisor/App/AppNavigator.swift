@@ -18,10 +18,10 @@ class AppNavigator {
     static let shared = AppNavigator()
     
     public func manageUserDirection(window: UIWindow? = nil) {
-        guard LocalUser.shared.getToken() != nil else {
-            directToPath(window, in: .Auth, for: .Auth)
-            return
-        }
+//        guard LocalUser.shared.getToken() != nil else {
+//            directToPath(window, in: .Auth, for: .Auth)
+//            return
+//        }
         
         directToPath(window, in: .Main, for: .Main)
     }
