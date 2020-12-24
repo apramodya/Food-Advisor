@@ -10,13 +10,21 @@ workflows:
                 XCODE_SCHEME: "Food Advisor"
             xcode: latest
             cocoapods: default
+        triggering:
+          events:
+            - push
+          branch_patterns:
+            - pattern: '*main*'
+              include: true
+              source: true
+          cancel_previous_builds: false
         scripts:
             - name: Install cocoapods
               script: pod install
             - name: Build .app
               script: xcodebuild build -workspace "$XCODE_WORKSPACE" -scheme "$XCODE_SCHEME" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
             - name: Make an archive
-              script: xcodebuild archive -workspace "$XCODE_WORKSPACE" -scheme "XCODE_SCHEME" -archivePath unsigned.xcarchive -configuration Release CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+              script: xcodebuild archive -workspace "$XCODE_WORKSPACE" -scheme "$XCODE_SCHEME" -archivePath unsigned.xcarchive -configuration Release CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
         artifacts:
             - $HOME/Library/Developer/Xcode/Archives/**/*.xcarchive
             - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
