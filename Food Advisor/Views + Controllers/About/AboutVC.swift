@@ -18,6 +18,7 @@ class AboutVC: UIViewController {
     @IBAction func didTapOnLogoutButton(_ sender: Any) {
         LocalUser.shared.removeAllData()
         
+        print(LocalUser.shared.getToken())
         AppNavigator.shared.manageUserDirection()
     }
 }

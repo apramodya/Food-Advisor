@@ -11,10 +11,6 @@ class LocalUser {
     static let shared = LocalUser()
     
     var user: User?
-    var token: String? {
-        get { return getToken()}
-        set { setToken(token: newValue!) }
-    }
 }
 
 extension LocalUser {
@@ -22,11 +18,11 @@ extension LocalUser {
         UserDefaults.standard.removeObject(forKey: "token")
     }
     
-    private func setToken(token: String) {
+    func setToken(token: String) {
         UserDefaults.standard.set(token, forKey: "token")
     }
     
-    private func getToken() -> String? {
+    func getToken() -> String? {
         return UserDefaults.standard.string(forKey: "token")
     }
 }
