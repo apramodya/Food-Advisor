@@ -6,6 +6,7 @@ target 'Food Advisor' do
   use_frameworks!
 
   # Pods for Food Advisor
+  pod 'Firebase/Analytics'
   pod 'TPKeyboardAvoiding', '~> 1.3'
   pod 'NVActivityIndicatorView'
 end

@@ -15,6 +15,7 @@
 		324819722591042600A66263 /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324819712591042600A66263 /* RegistrationVC.swift */; };
 		324819752591042F00A66263 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324819742591042F00A66263 /* LoginVC.swift */; };
 		32481979259107F800A66263 /* AppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32481978259107F800A66263 /* AppNavigator.swift */; };
+		324C71D12594F57700F7AC87 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 324C71D02594F57700F7AC87 /* GoogleService-Info.plist */; };
 		326C92762591114700E6A21D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326C92752591114700E6A21D /* User.swift */; };
 		326C92792591115C00E6A21D /* LocalUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326C92782591115C00E6A21D /* LocalUser.swift */; };
 		32845D7A258EF88300894338 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32845D79258EF88300894338 /* AppDelegate.swift */; };
@@ -35,6 +36,7 @@
 		324819712591042600A66263 /* RegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
 		324819742591042F00A66263 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		32481978259107F800A66263 /* AppNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigator.swift; sourceTree = "<group>"; };
+		324C71D02594F57700F7AC87 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		326C92752591114700E6A21D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		326C92782591115C00E6A21D /* LocalUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalUser.swift; sourceTree = "<group>"; };
 		32845D76258EF88300894338 /* Food Advisor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Food Advisor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,6 +166,7 @@
 				324819502590FA3C00A66263 /* Services */,
 				324819532590FA5E00A66263 /* App */,
 				32845D87258EF88400894338 /* Info.plist */,
+				324C71D02594F57700F7AC87 /* GoogleService-Info.plist */,
 			);
 			path = "Food Advisor";
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				32845D86258EF88400894338 /* LaunchScreen.storyboard in Resources */,
 				32845D83258EF88400894338 /* Assets.xcassets in Resources */,
 				32845D81258EF88300894338 /* Main.storyboard in Resources */,
+				324C71D12594F57700F7AC87 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
