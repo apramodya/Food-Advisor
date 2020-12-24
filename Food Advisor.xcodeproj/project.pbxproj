@@ -200,6 +200,7 @@
 				32845D73258EF88300894338 /* Frameworks */,
 				32845D74258EF88300894338 /* Resources */,
 				65F3D2C0C96E232612129406 /* [CP] Embed Pods Frameworks */,
+				1D9DE7D51DAEBFE0F3C0F344 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -260,6 +261,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1D9DE7D51DAEBFE0F3C0F344 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Food Advisor/Pods-Food Advisor-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Food Advisor/Pods-Food Advisor-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Food Advisor/Pods-Food Advisor-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		65F3D2C0C96E232612129406 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

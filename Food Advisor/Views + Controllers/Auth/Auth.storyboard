@@ -53,23 +53,39 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhB-by-Zos">
                                 <rect key="frame" x="188" y="478.5" width="38" height="30"/>
                                 <state key="normal" title="Login"/>
-                                <connections>
-                                    <action selector="didTapOnLoginButton:" destination="flT-dZ-18J" eventType="touchUpInside" id="K5z-HO-TqT"/>
-                                </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eKy-t9-uFh" customClass="GIDSignInButton">
+                                <rect key="frame" x="20" y="750" width="374" height="62"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="eKy-t9-uFh" secondAttribute="height" multiplier="187:31" id="tbr-ih-i12"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="7tY-hE-zdu" appends="YES" id="acE-6E-8sD"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZRP-VB-7kj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="fhB-by-Zos" firstAttribute="top" secondItem="HUc-cu-N35" secondAttribute="bottom" constant="20" id="1K2-xx-Y33"/>
+                            <constraint firstItem="ZRP-VB-7kj" firstAttribute="trailing" secondItem="eKy-t9-uFh" secondAttribute="trailing" constant="20" id="Ch2-hs-a2e"/>
                             <constraint firstItem="fhB-by-Zos" firstAttribute="centerX" secondItem="EfZ-SZ-cBi" secondAttribute="centerX" id="Hd7-6L-G0i"/>
+                            <constraint firstItem="eKy-t9-uFh" firstAttribute="leading" secondItem="ZRP-VB-7kj" secondAttribute="leading" constant="20" id="R39-4C-WH9"/>
                             <constraint firstItem="HUc-cu-N35" firstAttribute="centerX" secondItem="EfZ-SZ-cBi" secondAttribute="centerX" id="euM-nW-TeN"/>
+                            <constraint firstItem="ZRP-VB-7kj" firstAttribute="bottom" secondItem="eKy-t9-uFh" secondAttribute="bottom" constant="50" id="t2f-uq-j6r"/>
                             <constraint firstItem="HUc-cu-N35" firstAttribute="centerY" secondItem="EfZ-SZ-cBi" secondAttribute="centerY" id="uK4-ah-vIN"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7U2-5y-0c3"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NpM-1h-1jc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="7tY-hE-zdu">
+                    <connections>
+                        <action selector="didTapOnSignInWithGoogleButton:" destination="flT-dZ-18J" id="Fwg-s2-v3g"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1350.7246376811595" y="-10.044642857142856"/>
         </scene>
@@ -94,6 +110,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -6,22 +6,18 @@
 //
 
 import UIKit
+import GoogleSignIn
 
 class LoginVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        GIDSignIn.sharedInstance()?.restorePreviousSignIn()
     }
     
-    @IBAction func didTapOnLoginButton(_ sender: Any) {
-        let token = "123-123"
-        
-        LocalUser.shared.setToken(token: token)
-        
-        print(LocalUser.shared.getToken())
-        AppNavigator.shared.manageUserDirection()
+    @IBAction func didTapOnSignInWithGoogleButton(_ sender: Any) {
+        GIDSignIn.sharedInstance()?.signIn()
     }
-    
 }

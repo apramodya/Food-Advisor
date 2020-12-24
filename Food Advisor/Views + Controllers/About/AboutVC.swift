@@ -6,19 +6,18 @@
 //
 
 import UIKit
+import GoogleSignIn
 
 class AboutVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
   
     @IBAction func didTapOnLogoutButton(_ sender: Any) {
+        GIDSignIn.sharedInstance().signOut()
         LocalUser.shared.removeAllData()
-        
-        print(LocalUser.shared.getToken())
         AppNavigator.shared.manageUserDirection()
     }
 }
