@@ -7,6 +7,7 @@ target 'Food Advisor' do
 
   # Pods for Food Advisor
   pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
   pod 'GoogleSignIn'
   pod 'TPKeyboardAvoiding', '~> 1.3'
   pod 'NVActivityIndicatorView'

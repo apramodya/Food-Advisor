@@ -51,15 +51,31 @@ extension AppDelegate: GIDSignInDelegate {
             return
         }
         
-        let idToken = user.authentication.idToken
-        let fullName = user.profile.name
-        let email = user.profile.email
+        guard let authentication = user.authentication else { return }
         
-        print([fullName, email, idToken], separator: " ")
+        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
+                                                       accessToken: authentication.accessToken)
         
-        if let token = idToken {
-            LocalUser.shared.setToken(token: token)
-            AppNavigator.shared.manageUserDirection()
+        Auth.auth().signIn(with: credential) { (authResult, error) in
+            if let error = error {
+                if (error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
+                    print("The user has not signed in before or they have since signed out.")
+                } else {
+                    print("\(error.localizedDescription)")
+                }
+                return
+            }
+            
+            let idToken = authentication.accessToken
+            let fullName = user.profile.name
+            let email = user.profile.email
+            
+            print([fullName, email, idToken], separator: " ")
+            
+            if let token = idToken {
+                LocalUser.shared.setToken(token: token)
+                AppNavigator.shared.manageUserDirection()
+            }
         }
     }
 }
