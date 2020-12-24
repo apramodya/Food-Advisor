@@ -18,8 +18,9 @@ class LoginVC: UIViewController {
     @IBAction func didTapOnLoginButton(_ sender: Any) {
         let token = "123-123"
         
-        LocalUser.shared.token = token
+        LocalUser.shared.setToken(token: token)
         
+        print(LocalUser.shared.getToken())
         AppNavigator.shared.manageUserDirection()
     }
     
