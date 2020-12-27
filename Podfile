@@ -6,6 +6,7 @@ target 'Food Advisor' do
   use_frameworks!
 
   # Pods for Food Advisor
+  pod 'Cosmos', '~> 23.0'
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'

@@ -7,25 +7,34 @@
 
 import UIKit
 import SDWebImage
+import Cosmos
 
 class RestaurantCollectionViewCell: UICollectionViewCell {
-
+    
     static let id = "RestaurantCollectionViewCell"
     static let nib = UINib(nibName: id, bundle: nil)
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var starView: CosmosView!
     @IBOutlet weak var thumbnailImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
     }
-
+    
     func setupCell(with restaurant: Restaurant) {
         titleLabel.text = restaurant.name
         locationLabel.text = restaurant.location
+        
+        if let reviews = restaurant.reviews {
+            let total = reviews.reduce(0) { $0 + $1.rating}
+            let avgRating = Double(total) / Double(reviews.count)
+            starView.settings.fillMode = .half
+            starView.rating = avgRating
+        }
         
         if let image = restaurant.thumbnail {
             thumbnailImage.sd_imageIndicator = SDWebImageActivityIndicator.gray
@@ -35,5 +44,5 @@ class RestaurantCollectionViewCell: UICollectionViewCell {
         thumbnailImage.layer.cornerRadius = 5
         containerView.layer.cornerRadius = 8
     }
-
+    
 }
