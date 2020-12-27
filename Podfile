@@ -13,6 +13,7 @@ target 'Food Advisor' do
   pod 'FirebaseFirestoreSwift'
   pod 'GoogleSignIn'
   pod 'SDWebImage', '~> 5.0'
+  pod "SwiftSpinner"
   pod 'TPKeyboardAvoiding', '~> 1.3'
   pod 'NVActivityIndicatorView'
 end

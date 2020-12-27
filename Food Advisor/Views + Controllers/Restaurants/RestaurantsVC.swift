@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseFirestore
 import FirebaseFirestoreSwift
+import SwiftSpinner
 
 class RestaurantsVC: UIViewController {
     
@@ -35,7 +36,9 @@ class RestaurantsVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        fetchRestaurants()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            self.fetchRestaurants()
+        }
     }
 }
 
@@ -139,7 +142,10 @@ extension RestaurantsVC: UICollectionViewDelegate {
 // MARK: Network requests
 extension RestaurantsVC {
     private func fetchRestaurants() {
+        SwiftSpinner.show("Hang tight!\n We are fetching restaurants")
         RestaurantService.shared.fetchRestaurants { (success, message, restaurants) in
+            SwiftSpinner.hide()
+            
             if success {
                 if let restaurants = restaurants {
                     self.normalRestaurants = restaurants.filter{ $0.isSponsored == false }
