@@ -106,6 +106,10 @@ extension RestaurantVC {
            let url = URL(string: "tel://\(phone)"),
            UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url, options: [:])
+        } else {
+            AlertVC.presentAlert(for: self, title: "Sorry", message: "We can't find telephone number this time.", left: "OK") {
+                self.dismiss(animated: true, completion: nil)
+            }
         }
     }
     
@@ -116,24 +120,40 @@ extension RestaurantVC {
                let url = URL(string: website),
                UIApplication.shared.canOpenURL(url) {
                 UIApplication.shared.open(url, options: [:])
+            } else {
+                AlertVC.presentAlert(for: self, title: "Sorry", message: "We can't open Facebook page this time.", left: "OK") {
+                    self.dismiss(animated: true, completion: nil)
+                }
             }
         case .Web:
             if let website = restaurant?.website,
                let url = URL(string: website),
                UIApplication.shared.canOpenURL(url) {
                 UIApplication.shared.open(url, options: [:])
+            } else {
+                AlertVC.presentAlert(for: self, title: "Sorry", message: "We can't open website this time.", left: "OK") {
+                    self.dismiss(animated: true, completion: nil)
+                }
             }
         case .Instagram:
             if let website = restaurant?.instagram,
                let url = URL(string: website),
                UIApplication.shared.canOpenURL(url) {
                 UIApplication.shared.open(url, options: [:])
+            } else {
+                AlertVC.presentAlert(for: self, title: "Sorry", message: "We can't open Instagram page this time.", left: "OK") {
+                    self.dismiss(animated: true, completion: nil)
+                }
             }
         case .Maps:
             if let website = restaurant?.maps,
                let url = URL(string: website),
                UIApplication.shared.canOpenURL(url) {
                 UIApplication.shared.open(url, options: [:])
+            } else {
+                AlertVC.presentAlert(for: self, title: "Sorry", message: "We can't open map directions this time.", left: "OK") {
+                    self.dismiss(animated: true, completion: nil)
+                }
             }
         }
     }
