@@ -74,8 +74,13 @@ extension AppDelegate: GIDSignInDelegate {
             
             if let token = idToken {
                 LocalUser.shared.setToken(token: token)
-                AppNavigator.shared.manageUserDirection()
             }
+            
+            if let name = user.profile.givenName {
+                LocalUser.shared.setFirstName(name: name)
+            }
+            
+            AppNavigator.shared.manageUserDirection()
         }
     }
 }

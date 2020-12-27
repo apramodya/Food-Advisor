@@ -21,14 +21,22 @@ class RestaurantsVC: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     // MARK: Variables
+    static let id = "RestaurantsVC"
     var normalRestaurants = [Restaurant]()
     var sponsoredRestaurants = [Restaurant]()
     private var dataSource: DataSource! = nil
     
     // MARK: Life cycle
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.navigationBar.isHidden = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        showGreeting()
         configureCollectionView()
         configureDataSource()
     }
@@ -42,6 +50,7 @@ class RestaurantsVC: UIViewController {
     }
 }
 
+// MARK: UICollectionViewDelegate
 extension RestaurantsVC: UICollectionViewDelegate {
     private enum Section: String, CaseIterable {
         case Sponsored
@@ -137,6 +146,11 @@ extension RestaurantsVC: UICollectionViewDelegate {
         
         return snapshot
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(identifier: RestaurantVC.id) as! RestaurantVC
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 // MARK: Network requests
@@ -158,6 +172,17 @@ extension RestaurantsVC {
             } else {
                 print(message)
             }
+        }
+    }
+}
+
+// MARK: Private methods
+extension RestaurantsVC {
+    private func showGreeting() {
+        if let name = LocalUser.shared.getFirstName() {
+            greetingLabel.text = "Hello \(name)!"
+        } else {
+            greetingLabel.text = "Hello!"
         }
     }
 }

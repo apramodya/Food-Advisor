@@ -25,4 +25,12 @@ extension LocalUser {
     func getToken() -> String? {
         return UserDefaults.standard.string(forKey: "token")
     }
+    
+    func setFirstName(name: String) {
+        UserDefaults.standard.set(name, forKey: "name")
+    }
+    
+    func getFirstName() -> String? {
+        return UserDefaults.standard.string(forKey: "name")
+    }
 }
