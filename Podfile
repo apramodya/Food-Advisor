@@ -11,6 +11,7 @@ target 'Food Advisor' do
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
   pod 'GoogleSignIn'
+  pod 'SDWebImage', '~> 5.0'
   pod 'TPKeyboardAvoiding', '~> 1.3'
   pod 'NVActivityIndicatorView'
 end

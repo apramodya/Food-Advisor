@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class RestaurantCollectionViewCell: UICollectionViewCell {
 
@@ -26,6 +27,12 @@ class RestaurantCollectionViewCell: UICollectionViewCell {
         titleLabel.text = restaurant.name
         locationLabel.text = restaurant.location
         
+        if let image = restaurant.thumbnail {
+            thumbnailImage.sd_imageIndicator = SDWebImageActivityIndicator.gray
+            thumbnailImage.sd_setImage(with: URL(string: image))
+        }
+        
+        thumbnailImage.layer.cornerRadius = 5
         containerView.layer.cornerRadius = 8
     }
 
