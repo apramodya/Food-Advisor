@@ -73,7 +73,7 @@ extension RestaurantsVC: UICollectionViewDelegate {
         let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
         layoutItem.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 5, bottom: 10, trailing: 5)
         
-        let layoutGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.6), heightDimension: .estimated(250))
+        let layoutGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.9), heightDimension: .estimated(250))
         let layoutGroup = NSCollectionLayoutGroup.horizontal(layoutSize: layoutGroupSize, subitems: [layoutItem])
         
         let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
@@ -87,7 +87,7 @@ extension RestaurantsVC: UICollectionViewDelegate {
         let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
         layoutItem.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 5, bottom: 10, trailing: 5)
         
-        let layoutGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.7), heightDimension: .estimated(200))
+        let layoutGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.8), heightDimension: .estimated(300))
         let layoutGroup = NSCollectionLayoutGroup.horizontal(layoutSize: layoutGroupSize, subitems: [layoutItem])
         
         let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
@@ -108,7 +108,7 @@ extension RestaurantsVC: UICollectionViewDelegate {
                                         cell.setupCell(with: self.sponsoredRestaurants[indexPath.row])
                                         
                                         return cell
-                                    case.Other:
+                                    case .Other:
                                         guard let cell = cv
                                                 .dequeueReusableCell(withReuseIdentifier: RestaurantCollectionViewCell.id,
                                                                      for: indexPath) as? RestaurantCollectionViewCell
@@ -120,7 +120,7 @@ extension RestaurantsVC: UICollectionViewDelegate {
                                 })
         
         let snapshot = snapshotForCurrentState()
-        dataSource.apply(snapshot, animatingDifferences: true)
+        dataSource.apply(snapshot, animatingDifferences: false)
     }
     
     private func snapshotForCurrentState() -> SnapShot {
@@ -142,7 +142,7 @@ extension RestaurantsVC {
         RestaurantService.shared.fetchRestaurants { (success, message, restaurants) in
             if success {
                 if let restaurants = restaurants {
-                    self.normalRestaurants = restaurants
+                    self.normalRestaurants = restaurants.filter{ $0.isSponsored == false }
                     self.sponsoredRestaurants = restaurants.filter{ $0.isSponsored == true }
                     
                     DispatchQueue.main.async {

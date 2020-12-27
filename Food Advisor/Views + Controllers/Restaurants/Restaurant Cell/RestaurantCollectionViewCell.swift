@@ -24,7 +24,7 @@ class RestaurantCollectionViewCell: UICollectionViewCell {
 
     func setupCell(with restaurant: Restaurant) {
         titleLabel.text = restaurant.name
-        
+        locationLabel.text = restaurant.location
         
         containerView.layer.cornerRadius = 8
     }

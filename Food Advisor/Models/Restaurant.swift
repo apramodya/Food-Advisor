@@ -11,12 +11,13 @@ struct Restaurant: Identifiable, Codable, Hashable {
     var id = UUID()
     var name: String
     var plusCode: String?
-    var reviews: [Review]
+    var reviews: [Review]?
     var isSponsored: Bool
+    var location: String
     var thumbnail: String?
     
     enum CodingKeys: String, CodingKey {
-        case name, plusCode, reviews, isSponsored, thumbnail
+        case name, plusCode, reviews, isSponsored, thumbnail, location
     }
     
     func hash(into hasher: inout Hasher) {
