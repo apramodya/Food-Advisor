@@ -21,12 +21,14 @@ class AlertVC: UIViewController {
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var rightButton: UIButton!
     
+    // MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         alertView.layer.cornerRadius = 7
     }
     
+    // MARK: IBActions
     @IBAction func didTapOnLeftButton(_ sender: UIButton) {
         onLeftButtonClick?()
     }
@@ -34,7 +36,10 @@ class AlertVC: UIViewController {
     @IBAction func didTapOnRightButton(_ sender: Any) {
         onRightButtonClick?()
     }
-    
+}
+
+// MARK: Methods
+extension AlertVC {
     private func config(title: String, message: String, left leftButtonTitle: String, right rightButtonTitle: String? = nil) {
         if let rightButtonTitle = rightButtonTitle {
             rightButton.setTitle(rightButtonTitle, for: .normal)

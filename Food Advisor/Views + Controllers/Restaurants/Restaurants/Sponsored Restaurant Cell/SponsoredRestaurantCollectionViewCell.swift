@@ -10,21 +10,26 @@ import Cosmos
 import SDWebImage
 
 class SponsoredRestaurantCollectionViewCell: UICollectionViewCell {
-
+    
+    // MARK: Variables
     static let id = "SponsoredRestaurantCollectionViewCell"
     static let nib = UINib(nibName: id, bundle: nil)
     
+    // MARK: IBOutlets
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var starView: CosmosView!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var thumbnailImage: UIImageView!
     
+    // MARK: Life cycle
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
+}
 
+// MARK: Methods
+extension SponsoredRestaurantCollectionViewCell {
     func setupCell(with restaurant: Restaurant) {
         titleLabel.text = restaurant.name
         locationLabel.text = restaurant.location
@@ -43,7 +48,5 @@ class SponsoredRestaurantCollectionViewCell: UICollectionViewCell {
         
         thumbnailImage.layer.cornerRadius = 5
         containerView.layer.cornerRadius = 8
-
     }
-    
 }

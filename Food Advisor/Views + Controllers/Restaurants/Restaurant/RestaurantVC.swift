@@ -28,6 +28,7 @@ class RestaurantVC: UIViewController {
     static let id = "RestaurantVC"
     var restaurantId: String?
     var restaurant: Restaurant?
+    var meals = [Meal]()
     
     // MARK: Life cycle
     override func viewDidLoad() {
@@ -35,9 +36,12 @@ class RestaurantVC: UIViewController {
         
         navigationController?.navigationBar.isHidden = false
         tabBarController?.tabBar.isHidden = true
+        setupCollectionView()
         fetchRestaurant()
+        fetchMeals()
     }
     
+    // MARK: IBActions
     @IBAction func didTapOnWebsiteButton(_ sender: Any) {
         openWebsite(for: .Web)
     }
@@ -78,6 +82,47 @@ extension RestaurantVC {
                 print(message)
             }
         }
+    }
+    
+    private func fetchMeals() {
+        guard let id = restaurantId else { return }
+        
+        SwiftSpinner.show("Hang tight!\n We are fetching meals details")
+        RestaurantService.shared.fetchMealsForRestaurant(for: id) { (success, message, meals) in
+            SwiftSpinner.hide()
+            
+            if success, let meals = meals {
+                self.meals = meals
+                self.collectionView.reloadData()
+            } else {
+                print(message)
+            }
+        }
+    }
+}
+
+// MARK:
+extension RestaurantVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        meals.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MealCell.id, for: indexPath) as! MealCell
+        let meal = meals[indexPath.row]
+        cell.setupCell(with: meal)
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        CGSize(width: 150, height: 150)
+    }
+    
+    private func setupCollectionView() {
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(MealCell.nib, forCellWithReuseIdentifier: MealCell.id)
     }
 }
 
