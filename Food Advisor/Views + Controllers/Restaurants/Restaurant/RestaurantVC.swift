@@ -101,7 +101,7 @@ extension RestaurantVC {
     }
 }
 
-// MARK:
+// MARK: UICollectionView
 extension RestaurantVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         meals.count
@@ -117,6 +117,15 @@ extension RestaurantVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: 150, height: 150)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let meal = meals[indexPath.row]
+        
+        let vc = storyboard?.instantiateViewController(identifier: MealVC.id) as! MealVC
+        vc.meal = meal
+        
+        present(vc, animated: true, completion: nil)
     }
     
     private func setupCollectionView() {

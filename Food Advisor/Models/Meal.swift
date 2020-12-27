@@ -13,4 +13,5 @@ struct Meal: Identifiable, Codable {
     var name: String
     var thumbnail: String?
     var description: String?
+    var price: Double?
 }
