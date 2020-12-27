@@ -7,12 +7,31 @@
 
 import Foundation
 
-struct Restaurant: Identifiable, Codable {
-    var id: String?
+struct Restaurant: Identifiable, Codable, Hashable {
+    var id = UUID()
     var name: String
     var plusCode: String?
-    var reviews: [Review]?
+    var reviews: [Review]
     var isSponsored: Bool
+    var thumbnail: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case name, plusCode, reviews, isSponsored, thumbnail
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(name)
+    }
+}
+
+extension Restaurant: Equatable {
+    static func == (lhs: Restaurant, rhs: Restaurant) -> Bool {
+        if lhs.id == rhs.id {
+            return true
+        } else {
+            return false
+        }
+    }
 }
 
 struct Review: Codable {

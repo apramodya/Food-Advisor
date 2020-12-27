@@ -32,6 +32,7 @@ extension RestaurantService {
                     do {
                         return try document.data(as: Restaurant.self)
                     } catch {
+                        debugPrint(error)
                         completion(false, error.localizedDescription, nil)
                         return nil
                     }
