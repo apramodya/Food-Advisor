@@ -16,9 +16,15 @@ struct Restaurant: Identifiable, Codable, Hashable {
     var isSponsored: Bool
     var location: String
     var thumbnail: String?
+    var description: String?
+    var facebook: String?
+    var website: String?
+    var instagram: String?
+    var phone: String?
+    var maps: String?
     
     enum CodingKeys: String, CodingKey {
-        case id, name, plusCode, reviews, isSponsored, thumbnail, location
+        case id, name, plusCode, reviews, isSponsored, thumbnail, location, description, facebook, website, instagram, phone, maps
     }
     
     func hash(into hasher: inout Hasher) {
