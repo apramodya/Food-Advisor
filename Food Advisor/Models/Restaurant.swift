@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import FirebaseFirestoreSwift
 
 struct Restaurant: Identifiable, Codable, Hashable {
-    var id = UUID()
+    @DocumentID var id: String?
     var name: String
     var plusCode: String?
     var reviews: [Review]?
@@ -17,7 +18,7 @@ struct Restaurant: Identifiable, Codable, Hashable {
     var thumbnail: String?
     
     enum CodingKeys: String, CodingKey {
-        case name, plusCode, reviews, isSponsored, thumbnail, location
+        case id, name, plusCode, reviews, isSponsored, thumbnail, location
     }
     
     func hash(into hasher: inout Hasher) {

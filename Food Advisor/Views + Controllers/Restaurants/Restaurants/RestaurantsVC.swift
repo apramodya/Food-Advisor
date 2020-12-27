@@ -148,7 +148,12 @@ extension RestaurantsVC: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let section = Section.allCases[indexPath.section]
+        let restaurant = section == .Sponsored ?
+            sponsoredRestaurants[indexPath.row] :
+            normalRestaurants[indexPath.row]
         let vc = storyboard?.instantiateViewController(identifier: RestaurantVC.id) as! RestaurantVC
+        vc.restaurantId = restaurant.id
         navigationController?.pushViewController(vc, animated: true)
     }
 }
