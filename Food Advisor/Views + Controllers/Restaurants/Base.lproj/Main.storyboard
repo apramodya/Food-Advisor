@@ -389,17 +389,26 @@
                                     <constraint firstItem="f74-Gr-oQ9" firstAttribute="top" secondItem="Ix6-Vt-bk3" secondAttribute="top" constant="8" id="YFp-aN-98J"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJa-yr-Y0o">
+                                <rect key="frame" x="10" y="358" width="394" height="23.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aFP-3O-cn6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="qJa-yr-Y0o" firstAttribute="top" secondItem="mJ8-d6-AYZ" secondAttribute="bottom" constant="20" id="DT5-RB-Ym0"/>
                             <constraint firstItem="mJ8-d6-AYZ" firstAttribute="leading" secondItem="aFP-3O-cn6" secondAttribute="leading" constant="10" id="DWQ-vq-Wmn"/>
+                            <constraint firstItem="qJa-yr-Y0o" firstAttribute="leading" secondItem="aFP-3O-cn6" secondAttribute="leading" constant="10" id="E5Y-h4-xEN"/>
+                            <constraint firstItem="aFP-3O-cn6" firstAttribute="trailing" secondItem="qJa-yr-Y0o" secondAttribute="trailing" constant="10" id="OfI-Id-uRF"/>
                             <constraint firstItem="aFP-3O-cn6" firstAttribute="trailing" secondItem="kQu-Xe-0uw" secondAttribute="trailing" id="Qm4-se-9ho"/>
                             <constraint firstItem="kQu-Xe-0uw" firstAttribute="top" secondItem="aFP-3O-cn6" secondAttribute="top" id="Slu-z5-hop"/>
+                            <constraint firstItem="aFP-3O-cn6" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="qJa-yr-Y0o" secondAttribute="bottom" constant="20" id="UjP-Zj-EOK"/>
                             <constraint firstItem="Ix6-Vt-bk3" firstAttribute="trailing" secondItem="kQu-Xe-0uw" secondAttribute="trailing" id="Xa2-PF-dRE"/>
                             <constraint firstItem="mJ8-d6-AYZ" firstAttribute="top" secondItem="gdx-aE-luI" secondAttribute="bottom" constant="10" id="YVc-NR-BrR"/>
                             <constraint firstItem="aFP-3O-cn6" firstAttribute="trailing" secondItem="mJ8-d6-AYZ" secondAttribute="trailing" constant="10" id="mKz-Pt-pGt"/>
-                            <constraint firstItem="aFP-3O-cn6" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="mJ8-d6-AYZ" secondAttribute="bottom" constant="20" id="nvP-Q5-jQ6"/>
                             <constraint firstItem="gdx-aE-luI" firstAttribute="leading" secondItem="aFP-3O-cn6" secondAttribute="leading" constant="10" id="oyk-Sg-fo9"/>
                             <constraint firstItem="kQu-Xe-0uw" firstAttribute="leading" secondItem="aFP-3O-cn6" secondAttribute="leading" id="p8O-tD-8uk"/>
                             <constraint firstItem="Ix6-Vt-bk3" firstAttribute="bottom" secondItem="kQu-Xe-0uw" secondAttribute="bottom" id="xGh-HQ-Jqn"/>
@@ -409,6 +418,7 @@
                     </view>
                     <connections>
                         <outlet property="descriptionLabel" destination="mJ8-d6-AYZ" id="Jgs-xL-QOG"/>
+                        <outlet property="itemsListLabel" destination="qJa-yr-Y0o" id="z42-Vf-pfc"/>
                         <outlet property="priceLabel" destination="f74-Gr-oQ9" id="eeb-3R-l6v"/>
                         <outlet property="priceView" destination="Ix6-Vt-bk3" id="y21-In-IJi"/>
                         <outlet property="thumbnailImage" destination="kQu-Xe-0uw" id="dAV-TL-4mZ"/>
