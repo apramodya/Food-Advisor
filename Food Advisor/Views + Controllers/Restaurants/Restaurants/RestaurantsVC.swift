@@ -22,6 +22,7 @@ class RestaurantsVC: UIViewController {
     
     // MARK: Variables
     static let id = "RestaurantsVC"
+    static let sectionHeaderElementKind = "HeaderCollectionReusableView"
     var normalRestaurants = [Restaurant]()
     var sponsoredRestaurants = [Restaurant]()
     private var dataSource: DataSource! = nil
@@ -63,6 +64,9 @@ extension RestaurantsVC: UICollectionViewDelegate {
                                 forCellWithReuseIdentifier: RestaurantCollectionViewCell.id)
         collectionView.register(SponsoredRestaurantCollectionViewCell.nib,
                                 forCellWithReuseIdentifier: SponsoredRestaurantCollectionViewCell.id)
+        collectionView.register(UINib(nibName: HeaderCollectionReusableView.id, bundle: nil),
+                                forSupplementaryViewOfKind: HeaderCollectionReusableView.id,
+                                withReuseIdentifier: HeaderCollectionReusableView.id)
         collectionView.collectionViewLayout = generateLayout()
     }
     
@@ -88,8 +92,16 @@ extension RestaurantsVC: UICollectionViewDelegate {
         let layoutGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.9), heightDimension: .estimated(250))
         let layoutGroup = NSCollectionLayoutGroup.horizontal(layoutSize: layoutGroupSize, subitems: [layoutItem])
         
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                                heightDimension: .estimated(35))
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: headerSize,
+            elementKind: RestaurantsVC.sectionHeaderElementKind, alignment: .top)
+        
         let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
+        layoutSection.boundarySupplementaryItems = [sectionHeader]
         layoutSection.orthogonalScrollingBehavior = .groupPaging
+        
         return layoutSection
     }
     
@@ -102,8 +114,16 @@ extension RestaurantsVC: UICollectionViewDelegate {
         let layoutGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.8), heightDimension: .estimated(150))
         let layoutGroup = NSCollectionLayoutGroup.horizontal(layoutSize: layoutGroupSize, subitems: [layoutItem])
         
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                                heightDimension: .estimated(35))
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: headerSize,
+            elementKind: RestaurantsVC.sectionHeaderElementKind, alignment: .top)
+        
         let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
+        layoutSection.boundarySupplementaryItems = [sectionHeader]
         layoutSection.orthogonalScrollingBehavior = .groupPaging
+        
         return layoutSection
     }
     
@@ -130,6 +150,27 @@ extension RestaurantsVC: UICollectionViewDelegate {
                                         return cell
                                     }
                                 })
+        
+        dataSource.supplementaryViewProvider = { (
+            collectionView: UICollectionView,
+            kind: String,
+            indexPath: IndexPath) -> UICollectionReusableView? in
+            
+            guard let supplementaryView = collectionView.dequeueReusableSupplementaryView(
+                    ofKind: kind,
+                    withReuseIdentifier: HeaderCollectionReusableView.id,
+                    for: indexPath) as? HeaderCollectionReusableView else { fatalError("Cannot create header view") }
+            
+            let section = Section.allCases[indexPath.section]
+            switch section {
+            case .Other:
+                supplementaryView.setupCell(title: "Try these!")
+            case .Sponsored:
+                supplementaryView.setupCell(title: "Sponsored")
+            }
+            
+            return supplementaryView
+        }
         
         let snapshot = snapshotForCurrentState()
         dataSource.apply(snapshot, animatingDifferences: false)

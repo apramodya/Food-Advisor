@@ -23,6 +23,7 @@ class RestaurantVC: UIViewController {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var starView: CosmosView!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var bookButton: UIButton!
     
     // MARK: Variables
     static let id = "RestaurantVC"
@@ -34,8 +35,7 @@ class RestaurantVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.navigationBar.isHidden = false
-        tabBarController?.tabBar.isHidden = true
+        configureView()
         setupCollectionView()
         fetchRestaurant()
         fetchMeals()
@@ -60,6 +60,9 @@ class RestaurantVC: UIViewController {
     
     @IBAction func didTapOnMakeCallButton(_ sender: Any) {
         makeCall()
+    }
+    
+    @IBAction func didTapOnBookButton(_ sender: Any) {
     }
 }
 
@@ -132,6 +135,12 @@ extension RestaurantVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(MealCell.nib, forCellWithReuseIdentifier: MealCell.id)
+    }
+    
+    private func configureView() {
+        navigationController?.navigationBar.isHidden = false
+        tabBarController?.tabBar.isHidden = true
+        bookButton.layer.cornerRadius = 8
     }
 }
 
