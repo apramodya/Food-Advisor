@@ -224,6 +224,7 @@ extension RestaurantVC {
     
     private func gotoMakeABooking() {
         let vc = storyboard?.instantiateViewController(identifier: BookingVC.id) as! BookingVC
+        vc.restaurantId = restaurantId
         navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -69,8 +69,9 @@ extension AppDelegate: GIDSignInDelegate {
             let idToken = authentication.accessToken
             let fullName = user.profile.name
             let email = user.profile.email
+            let userId = Auth.auth().currentUser?.uid
             
-            print([fullName, email, idToken], separator: " ")
+            print([fullName, email, idToken, userId], separator: " ")
             
             if let token = idToken {
                 LocalUser.shared.setToken(token: token)
@@ -78,6 +79,10 @@ extension AppDelegate: GIDSignInDelegate {
             
             if let name = user.profile.givenName {
                 LocalUser.shared.setFirstName(name: name)
+            }
+            
+            if let userId = userId {
+                LocalUser.shared.setUserID(id: userId)
             }
             
             AppNavigator.shared.manageUserDirection()

@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import SwiftSpinner
+import FirebaseFirestore
 
 class BookingVC: UIViewController {
     
@@ -20,6 +22,9 @@ class BookingVC: UIViewController {
     // MARK: Variables
     static let id = "BookingVC"
     let datepicker = UIDatePicker()
+    var restaurantId: String?
+    var selectedDate: Date?
+    var selectedTime: Date?
     
     // MARK: Life cycle
     override func viewDidLoad() {
@@ -35,7 +40,43 @@ class BookingVC: UIViewController {
 }
 
 // MARK: Network requests
+extension BookingVC {
+    private func createBooking() {
+        SwiftSpinner.show("Hang tight!\n We are submitting your booking details.")
+        
+        guard let time = selectedTime,
+              let date = selectedDate,
+              let dateTime = combine(date: date, time: time),
+              let userID = LocalUser.shared.getUserID(),
+              let restaurantId = restaurantId else {
+            SwiftSpinner.hide()
+            return
+        }
+        
+        let bookingDateTime = Timestamp(date: dateTime)
+        let corkage = isHavingLiquorSwitch.isOn
+        let duration = Int(durationTextField.text ?? "1") ?? 1
+        let headCount = Int(headCountTextField.text ?? "1") ?? 1
+        
+        RestaurantBookingService.shared.createBooking(bookingDateTime: bookingDateTime, corkage: corkage, duration: duration, headCount: headCount, restautantID: restaurantId, userID: userID) { (success, message) in
+            SwiftSpinner.hide()
+            
+            if success {
+                AlertVC.presentAlert(for: self, title: "Success", message: message, left: "OK") {
+                    self.dismiss(animated: true) {
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                }
+            } else {
+                AlertVC.presentAlert(for: self, title: "Error", message: message, left: "OK") {
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }
+        }
+    }
+}
 
+// MARK: UITextFieldDelegate
 extension BookingVC: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == bookingDateTextField {
@@ -66,7 +107,7 @@ extension BookingVC {
         } else if headCountTextField.text!.isEmpty {
             return (false, "Number of people is empty")
         }
-        
+        	
         return (true, nil)
     }
     
@@ -79,7 +120,26 @@ extension BookingVC {
                     self.dismiss(animated: true, completion: nil)
                 }
             }
+        } else {
+            createBooking()
         }
+    }
+    
+    private func combine(date: Date, time: Date) -> Date? {
+        let calendar = Calendar.current
+        let dateComponents = calendar.dateComponents([.day, .month, .year], from: date)
+        let timeComponents = calendar.dateComponents([.hour, .minute, .second], from: time)
+        
+        var newComponents = DateComponents()
+        newComponents.timeZone = .current
+        newComponents.day = dateComponents.day
+        newComponents.month = dateComponents.month
+        newComponents.year = dateComponents.year
+        newComponents.hour = timeComponents.hour
+        newComponents.minute = timeComponents.minute
+        newComponents.second = timeComponents.second
+        
+        return calendar.date(from: newComponents)
     }
     
     private func createDatePicker() {
@@ -101,6 +161,7 @@ extension BookingVC {
         dateformator.timeStyle = .none
         
         bookingDateTextField.text = dateformator.string(from: datepicker.date)
+        selectedDate = datepicker.date
         view.endEditing(true)
     }
     
@@ -123,6 +184,7 @@ extension BookingVC {
         dateformator.timeStyle = .short
         
         bookingTimeTextField.text = dateformator.string(from: datepicker.date)
+        selectedTime = datepicker.date
         view.endEditing(true)
     }
 }

@@ -38,6 +38,8 @@
 		32A9FF0525A4A29A00DD8CEB /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A9FF0325A4A29A00DD8CEB /* HeaderCollectionReusableView.swift */; };
 		32A9FF0625A4A29A00DD8CEB /* HeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32A9FF0425A4A29A00DD8CEB /* HeaderCollectionReusableView.xib */; };
 		32BDCAE025A4A72E00BE15A4 /* BookingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BDCADF25A4A72E00BE15A4 /* BookingVC.swift */; };
+		32BDCAE525A4D71E00BE15A4 /* RestaurantBookingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BDCAE425A4D71E00BE15A4 /* RestaurantBookingService.swift */; };
+		32BDCAE825A4D78D00BE15A4 /* Booking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BDCAE725A4D78D00BE15A4 /* Booking.swift */; };
 		32F4FC3F2598F1E000F938EA /* Alert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32F4FC3E2598F1E000F938EA /* Alert.storyboard */; };
 		32F4FC442598F33A00F938EA /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F4FC432598F33A00F938EA /* AlertViewController.swift */; };
 		B0D0AF158E1B3DA9B4B77CEF /* Pods_Food_Advisor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA3D97A41CADE64B6EB73E4 /* Pods_Food_Advisor.framework */; };
@@ -77,6 +79,8 @@
 		32A9FF0325A4A29A00DD8CEB /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		32A9FF0425A4A29A00DD8CEB /* HeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCollectionReusableView.xib; sourceTree = "<group>"; };
 		32BDCADF25A4A72E00BE15A4 /* BookingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingVC.swift; sourceTree = "<group>"; };
+		32BDCAE425A4D71E00BE15A4 /* RestaurantBookingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantBookingService.swift; sourceTree = "<group>"; };
+		32BDCAE725A4D78D00BE15A4 /* Booking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Booking.swift; sourceTree = "<group>"; };
 		32F4FC3E2598F1E000F938EA /* Alert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alert.storyboard; sourceTree = "<group>"; };
 		32F4FC432598F33A00F938EA /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		468C1FBC10DE051C04E3519D /* Pods-Food Advisor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Food Advisor.release.xcconfig"; path = "Target Support Files/Pods-Food Advisor/Pods-Food Advisor.release.xcconfig"; sourceTree = "<group>"; };
@@ -115,6 +119,7 @@
 				326C92782591115C00E6A21D /* LocalUser.swift */,
 				324C722125951E4C00F7AC87 /* Restaurant.swift */,
 				3253B1D72598FF16000B76A0 /* Meal.swift */,
+				32BDCAE725A4D78D00BE15A4 /* Booking.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -123,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				324C723F2595252B00F7AC87 /* RestaurantService.swift */,
+				32BDCAE425A4D71E00BE15A4 /* RestaurantBookingService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -451,6 +457,7 @@
 			files = (
 				32BDCAE025A4A72E00BE15A4 /* BookingVC.swift in Sources */,
 				324C722225951E4C00F7AC87 /* Restaurant.swift in Sources */,
+				32BDCAE525A4D71E00BE15A4 /* RestaurantBookingService.swift in Sources */,
 				32845D7E258EF88300894338 /* RestaurantsVC.swift in Sources */,
 				3253B1DB259906FC000B76A0 /* MealVC.swift in Sources */,
 				32481979259107F800A66263 /* AppNavigator.swift in Sources */,
@@ -470,6 +477,7 @@
 				32502C3525988957005B47DA /* RestaurantVC.swift in Sources */,
 				32845D7C258EF88300894338 /* SceneDelegate.swift in Sources */,
 				324C724C25952B7500F7AC87 /* RestaurantCollectionViewCell.swift in Sources */,
+				32BDCAE825A4D78D00BE15A4 /* Booking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

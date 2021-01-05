@@ -33,4 +33,12 @@ extension LocalUser {
     func getFirstName() -> String? {
         return UserDefaults.standard.string(forKey: "name")
     }
+    
+    func setUserID(id: String) {
+        UserDefaults.standard.set(id, forKey: "userID")
+    }
+    
+    func getUserID() -> String? {
+        return UserDefaults.standard.string(forKey: "userID")
+    }
 }
