@@ -37,6 +37,7 @@
 		32845D86258EF88400894338 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32845D84258EF88400894338 /* LaunchScreen.storyboard */; };
 		32A9FF0525A4A29A00DD8CEB /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A9FF0325A4A29A00DD8CEB /* HeaderCollectionReusableView.swift */; };
 		32A9FF0625A4A29A00DD8CEB /* HeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32A9FF0425A4A29A00DD8CEB /* HeaderCollectionReusableView.xib */; };
+		32BDCAE025A4A72E00BE15A4 /* BookingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BDCADF25A4A72E00BE15A4 /* BookingVC.swift */; };
 		32F4FC3F2598F1E000F938EA /* Alert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32F4FC3E2598F1E000F938EA /* Alert.storyboard */; };
 		32F4FC442598F33A00F938EA /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F4FC432598F33A00F938EA /* AlertViewController.swift */; };
 		B0D0AF158E1B3DA9B4B77CEF /* Pods_Food_Advisor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA3D97A41CADE64B6EB73E4 /* Pods_Food_Advisor.framework */; };
@@ -75,6 +76,7 @@
 		32845D87258EF88400894338 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32A9FF0325A4A29A00DD8CEB /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		32A9FF0425A4A29A00DD8CEB /* HeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCollectionReusableView.xib; sourceTree = "<group>"; };
+		32BDCADF25A4A72E00BE15A4 /* BookingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingVC.swift; sourceTree = "<group>"; };
 		32F4FC3E2598F1E000F938EA /* Alert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alert.storyboard; sourceTree = "<group>"; };
 		32F4FC432598F33A00F938EA /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		468C1FBC10DE051C04E3519D /* Pods-Food Advisor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Food Advisor.release.xcconfig"; path = "Target Support Files/Pods-Food Advisor/Pods-Food Advisor.release.xcconfig"; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				32502C3725988961005B47DA /* Restaurants */,
 				32502C392598896B005B47DA /* Restaurant */,
 				32554ECC25A4A6570019FFEC /* Melas */,
+				32BDCAE225A4A73200BE15A4 /* Booking */,
 			);
 			path = Restaurants;
 			sourceTree = "<group>";
@@ -269,6 +272,14 @@
 				32A9FF0425A4A29A00DD8CEB /* HeaderCollectionReusableView.xib */,
 			);
 			path = "Header Cell";
+			sourceTree = "<group>";
+		};
+		32BDCAE225A4A73200BE15A4 /* Booking */ = {
+			isa = PBXGroup;
+			children = (
+				32BDCADF25A4A72E00BE15A4 /* BookingVC.swift */,
+			);
+			path = Booking;
 			sourceTree = "<group>";
 		};
 		32F4FC412598F2E100F938EA /* Alert */ = {
@@ -438,6 +449,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32BDCAE025A4A72E00BE15A4 /* BookingVC.swift in Sources */,
 				324C722225951E4C00F7AC87 /* Restaurant.swift in Sources */,
 				32845D7E258EF88300894338 /* RestaurantsVC.swift in Sources */,
 				3253B1DB259906FC000B76A0 /* MealVC.swift in Sources */,

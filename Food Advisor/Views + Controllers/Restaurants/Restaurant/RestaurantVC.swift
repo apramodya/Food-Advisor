@@ -63,6 +63,7 @@ class RestaurantVC: UIViewController {
     }
     
     @IBAction func didTapOnBookButton(_ sender: Any) {
+        gotoMakeABooking()
     }
 }
 
@@ -219,5 +220,10 @@ extension RestaurantVC {
                 }
             }
         }
+    }
+    
+    private func gotoMakeABooking() {
+        let vc = storyboard?.instantiateViewController(identifier: BookingVC.id) as! BookingVC
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

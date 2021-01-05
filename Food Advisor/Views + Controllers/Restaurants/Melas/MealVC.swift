@@ -32,8 +32,9 @@ class MealVC: UIViewController {
     }
 }
 
+// MARK: Private methods
 extension MealVC {
-    func setupMealUI(for meal: Meal) {
+    private func setupMealUI(for meal: Meal) {
         titleLabel.text = meal.name
         descriptionLabel.text = meal.description
         
