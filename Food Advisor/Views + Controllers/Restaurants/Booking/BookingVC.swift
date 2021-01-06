@@ -12,6 +12,7 @@ import FirebaseFirestore
 class BookingVC: UIViewController {
     
     // MARK: IBOutlets
+    @IBOutlet weak var placeLabel: UILabel!
     @IBOutlet weak var bookingDateTextField: UITextField!
     @IBOutlet weak var bookingTimeTextField: UITextField!
     @IBOutlet weak var durationTextField: UITextField!
@@ -21,6 +22,11 @@ class BookingVC: UIViewController {
     
     // MARK: Variables
     static let id = "BookingVC"
+    var booking: Booking? {
+        didSet {
+            restaurantId = booking?.restautantID
+        }
+    }
     let datepicker = UIDatePicker()
     var restaurantId: String?
     var selectedDate: Date?
@@ -74,6 +80,55 @@ extension BookingVC {
             }
         }
     }
+    
+    private func updateBooking() {
+        SwiftSpinner.show("Hang tight!\n We are updating your booking details.")
+        
+        guard let time = selectedTime,
+              let date = selectedDate,
+              let dateTime = combine(date: date, time: time),
+              let documentID = booking?.id,
+              let userID = LocalUser.shared.getUserID(),
+              let restaurantId = restaurantId else {
+            SwiftSpinner.hide()
+            return
+        }
+        
+        let bookingDateTime = Timestamp(date: dateTime)
+        let corkage = isHavingLiquorSwitch.isOn
+        let duration = Int(durationTextField.text ?? "1") ?? 1
+        let headCount = Int(headCountTextField.text ?? "1") ?? 1
+        
+        RestaurantBookingService.shared.updateBooking(docID: documentID, bookingDateTime: bookingDateTime, corkage: corkage, duration: duration, headCount: headCount, restautantID: restaurantId, userID: userID) { (success, message) in
+            SwiftSpinner.hide()
+            
+            if success {
+                AlertVC.presentAlert(for: self, title: "Success", message: message, left: "OK") {
+                    self.dismiss(animated: true) {
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                }
+            } else {
+                AlertVC.presentAlert(for: self, title: "Error", message: message, left: "OK") {
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }
+        }
+    }
+    
+    private func fetchRestaurant() {
+        guard let id = restaurantId else { return }
+        
+        RestaurantService.shared.fetchRestaurant(for: id) { (success, message, restaurant) in
+            if success {
+                if let restaurant = restaurant {
+                    self.placeLabel.text = "Booking details of your booking at \(restaurant.name)"
+                }
+            } else {
+                print(message)
+            }
+        }
+    }
 }
 
 // MARK: UITextFieldDelegate
@@ -95,6 +150,30 @@ extension BookingVC {
         submitButton.layer.cornerRadius = 8
         bookingDateTextField.delegate = self
         bookingTimeTextField.delegate = self
+        
+        if let booking = booking {
+            title = "Update booking"
+            placeLabel.isHidden = false
+            
+            fetchRestaurant()
+            
+            durationTextField.text = "\(booking.duration ?? 0)"
+            headCountTextField.text = "\(booking.headCount ?? 0)"
+            isHavingLiquorSwitch.isOn = booking.corkage ?? false
+            
+            let dateformator = DateFormatter()
+            dateformator.dateStyle = .medium
+            dateformator.timeStyle = .none
+            bookingDateTextField.text = dateformator.string(from: booking.dateTime)
+            selectedDate = booking.dateTime
+            
+            dateformator.dateStyle = .none
+            dateformator.timeStyle = .medium
+            bookingTimeTextField.text = dateformator.string(from: booking.dateTime)
+            selectedTime = booking.dateTime
+            
+            submitButton.setTitle("Update", for: .normal)
+        }
     }
     
     private func validateFields() -> (Bool, String?) {
@@ -121,7 +200,11 @@ extension BookingVC {
                 }
             }
         } else {
-            createBooking()
+            if let _ = booking {
+                updateBooking()
+            } else {
+                createBooking()
+            }
         }
     }
     

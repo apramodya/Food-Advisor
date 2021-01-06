@@ -28,13 +28,13 @@ class MyBookingsVC: UIViewController {
         super.viewWillAppear(animated)
         
         configureView()
+        fetchBookings()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupTableView()
-        fetchBookings()
     }
 }
 
@@ -52,21 +52,22 @@ extension MyBookingsVC {
         guard let userID = LocalUser.shared.getUserID() else { return }
         
         SwiftSpinner.show("Hang tight!\n We are fetching your bookings")
-        RestaurantBookingService.shared.fetchBookings(userID: userID) { (success, message, bookings) in
-            SwiftSpinner.hide()
-            
-            if success, let bookings = bookings {
-                let _upcomingBookings = bookings.filter({$0.dateTime >= Date()})
-                let _pastBookings = bookings.filter({$0.dateTime < Date()})
+        RestaurantBookingService.shared
+            .fetchBookings(userID: userID) { (success, message, bookings) in
+                SwiftSpinner.hide()
                 
-                self.pastBookings = _pastBookings
-                self.upcomingBookings = _upcomingBookings
-                
-                self.tableView.reloadData()
-            } else {
-                print(message)
+                if success, let bookings = bookings {
+                    let _upcomingBookings = bookings.filter({$0.dateTime >= Date()})
+                    let _pastBookings = bookings.filter({$0.dateTime < Date()})
+                    
+                    self.pastBookings = _pastBookings
+                    self.upcomingBookings = _upcomingBookings
+                    
+                    self.tableView.reloadData()
+                } else {
+                    print(message)
+                }
             }
-        }
     }
 }
 
@@ -93,27 +94,47 @@ extension MyBookingsVC: UITableViewDelegate, UITableViewDataSource {
         case .Upcoming:
             if upcomingBookings.count > 0 {
                 let booking = upcomingBookings[indexPath.row]
-                let cell = tableView.dequeueReusableCell(withIdentifier: BookingCell.id, for: indexPath) as! BookingCell
+                let cell = tableView
+                    .dequeueReusableCell(withIdentifier: BookingCell.id, for: indexPath) as! BookingCell
                 cell.setupCell(with: booking)
+                
+                cell.didTapOnEdit = { [weak self] in
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let vc = storyboard.instantiateViewController(withIdentifier: BookingVC.id) as! BookingVC
+                    vc.booking = booking
+                    self?.navigationController?.pushViewController(vc, animated: true)
+                }
+                
+                cell.didTapOnView = {
+                    
+                }
                 
                 return cell
             } else {
-                let cell = tableView.dequeueReusableCell(withIdentifier: NothinToShowCell.id) as! NothinToShowCell
+                let cell = tableView
+                    .dequeueReusableCell(withIdentifier: NothinToShowCell.id) as! NothinToShowCell
                 return cell
             }
         case .Past:
             if pastBookings.count > 0 {
                 let booking = pastBookings[indexPath.row]
-                let cell = tableView.dequeueReusableCell(withIdentifier: BookingCell.id, for: indexPath) as! BookingCell
-                cell.setupCell(with: booking)
+                let cell = tableView
+                    .dequeueReusableCell(withIdentifier: BookingCell.id, for: indexPath) as! BookingCell
+                cell.setupCell(with: booking, isEditable: false)
+                
+                cell.didTapOnView = {
+                    
+                }
                 
                 return cell
             } else {
-                let cell = tableView.dequeueReusableCell(withIdentifier: NothinToShowCell.id) as! NothinToShowCell
+                let cell = tableView
+                    .dequeueReusableCell(withIdentifier: NothinToShowCell.id) as! NothinToShowCell
                 return cell
             }
         case .Lottie:
-            let cell = tableView.dequeueReusableCell(withIdentifier: LottieCell.id) as! LottieCell
+            let cell = tableView
+                .dequeueReusableCell(withIdentifier: LottieCell.id) as! LottieCell
             cell.setupCell()
             return cell
         }

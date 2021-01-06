@@ -462,6 +462,17 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x1w-Fg-GFQ">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                                         <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="TVQ-Di-QHg">
+                                                <rect key="frame" x="20" y="30" width="374" height="0.0"/>
+                                                <subviews>
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxs-mJ-KsU">
+                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="24"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="38M-8g-Ni3">
                                                 <rect key="frame" x="20" y="50" width="374" height="70"/>
                                                 <subviews>
@@ -577,8 +588,9 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="jmV-5d-tKC" secondAttribute="trailing" constant="20" id="0hh-zF-tbh"/>
+                                            <constraint firstItem="TVQ-Di-QHg" firstAttribute="top" secondItem="x1w-Fg-GFQ" secondAttribute="top" constant="30" id="2RF-vl-dSi"/>
+                                            <constraint firstAttribute="trailing" secondItem="TVQ-Di-QHg" secondAttribute="trailing" constant="20" id="4yc-18-xFc"/>
                                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Wma-YM-OLP" secondAttribute="bottom" constant="20" id="96B-3d-8d4"/>
-                                            <constraint firstItem="38M-8g-Ni3" firstAttribute="top" secondItem="x1w-Fg-GFQ" secondAttribute="top" constant="50" id="Apm-gH-Mxt"/>
                                             <constraint firstItem="jmV-5d-tKC" firstAttribute="top" secondItem="3a4-qr-cEC" secondAttribute="bottom" constant="30" id="B05-yM-i7H"/>
                                             <constraint firstItem="38M-8g-Ni3" firstAttribute="leading" secondItem="x1w-Fg-GFQ" secondAttribute="leading" constant="20" id="BHd-vk-AHY"/>
                                             <constraint firstItem="3a4-qr-cEC" firstAttribute="leading" secondItem="x1w-Fg-GFQ" secondAttribute="leading" constant="20" id="BOb-x4-6Eg"/>
@@ -588,6 +600,8 @@
                                             <constraint firstAttribute="trailing" secondItem="38M-8g-Ni3" secondAttribute="trailing" constant="20" id="UJo-gS-FAE"/>
                                             <constraint firstItem="Wma-YM-OLP" firstAttribute="top" secondItem="jmV-5d-tKC" secondAttribute="bottom" constant="50" id="b5O-X6-6C0"/>
                                             <constraint firstAttribute="trailing" secondItem="PnE-fj-qM4" secondAttribute="trailing" constant="20" id="bV2-xW-0l5"/>
+                                            <constraint firstItem="TVQ-Di-QHg" firstAttribute="leading" secondItem="x1w-Fg-GFQ" secondAttribute="leading" constant="20" id="eYx-7I-ma9"/>
+                                            <constraint firstItem="38M-8g-Ni3" firstAttribute="top" secondItem="TVQ-Di-QHg" secondAttribute="bottom" constant="20" id="hEd-kY-ddw"/>
                                             <constraint firstItem="Wma-YM-OLP" firstAttribute="centerX" secondItem="x1w-Fg-GFQ" secondAttribute="centerX" id="j2d-wX-hZe"/>
                                             <constraint firstItem="jmV-5d-tKC" firstAttribute="leading" secondItem="x1w-Fg-GFQ" secondAttribute="leading" constant="20" id="k9E-Xv-93s"/>
                                             <constraint firstAttribute="trailing" secondItem="23J-a2-9Cu" secondAttribute="trailing" constant="20" id="lZt-kJ-H0H"/>
@@ -622,6 +636,7 @@
                         <outlet property="durationTextField" destination="srI-yB-JU7" id="EvA-Oq-9Ji"/>
                         <outlet property="headCountTextField" destination="EcZ-eY-qPR" id="VaN-ds-40i"/>
                         <outlet property="isHavingLiquorSwitch" destination="6j4-ph-ga8" id="9T2-6k-era"/>
+                        <outlet property="placeLabel" destination="wxs-mJ-KsU" id="0ig-YI-WRb"/>
                         <outlet property="submitButton" destination="Wma-YM-OLP" id="dez-ke-i4I"/>
                     </connections>
                 </viewController>

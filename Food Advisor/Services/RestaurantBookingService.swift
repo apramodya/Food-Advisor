@@ -43,6 +43,36 @@ extension RestaurantBookingService {
     }
 }
 
+// MARK: Update a booking
+extension RestaurantBookingService {
+    func updateBooking(docID: String,
+                       bookingDateTime: Timestamp,
+                       corkage: Bool,
+                       duration: Int,
+                       headCount: Int,
+                       restautantID: String,
+                       userID: String,
+                       completion: @escaping (_ status: Bool, _ message: String) -> ()) {
+        let document = Firestore.firestore().collection("bookings").document(docID)
+        
+        document.setData(
+            [
+                "bookingDateTime": bookingDateTime,
+                "corkage": corkage,
+                "duration": duration,
+                "headCount": headCount,
+                "restautantID": restautantID,
+                "userID": userID,]) { (error) in
+            if let error = error {
+                debugPrint(error)
+                completion(false, error.localizedDescription)
+            }
+            
+            completion(true, "Booking updated successfully.")
+        }
+    }
+}
+
 // MARK: Fetch bookings
 extension RestaurantBookingService {
     func fetchBookings(userID: String, completion: @escaping (_ status: Bool, _ message: String, _ booking: [Booking]?) -> ()) {

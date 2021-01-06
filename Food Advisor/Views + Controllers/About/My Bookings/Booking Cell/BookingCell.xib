@@ -60,11 +60,33 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LEw-Fl-jts">
+                                <rect key="frame" x="236.5" y="19" width="53.5" height="22"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rCD-yZ-G4G">
+                                        <rect key="frame" x="0.0" y="0.0" width="26" height="22"/>
+                                        <state key="normal" image="eye" catalog="system"/>
+                                        <connections>
+                                            <action selector="didTapOnViewButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="aMf-M6-o19"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s65-dd-wzu">
+                                        <rect key="frame" x="36" y="0.0" width="17.5" height="22"/>
+                                        <state key="normal" image="pencil" catalog="system"/>
+                                        <connections>
+                                            <action selector="didTapOnEditButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="A0s-aF-yae"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="LEw-Fl-jts" secondAttribute="trailing" constant="20" id="4xk-Pp-X7i"/>
+                            <constraint firstItem="LEw-Fl-jts" firstAttribute="centerY" secondItem="UYu-LM-07Z" secondAttribute="centerY" id="FCX-x7-uzz"/>
                             <constraint firstItem="bpm-Sf-ymh" firstAttribute="leading" secondItem="UYu-LM-07Z" secondAttribute="leading" constant="10" id="cxL-Jv-HjS"/>
                             <constraint firstItem="bpm-Sf-ymh" firstAttribute="centerY" secondItem="UYu-LM-07Z" secondAttribute="centerY" id="hx8-Ik-eOf"/>
+                            <constraint firstItem="LEw-Fl-jts" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bpm-Sf-ymh" secondAttribute="trailing" constant="20" id="qI3-r4-bxE"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -80,12 +102,16 @@
             <connections>
                 <outlet property="containerView" destination="UYu-LM-07Z" id="05U-nL-Hey"/>
                 <outlet property="dateLabel" destination="E5j-zt-1yB" id="3yL-ru-yFV"/>
+                <outlet property="editButton" destination="s65-dd-wzu" id="Un1-Hw-9XK"/>
                 <outlet property="timeLabel" destination="j2E-Wd-urT" id="e9s-tx-cod"/>
+                <outlet property="viewButton" destination="rCD-yZ-G4G" id="z81-10-fbb"/>
             </connections>
             <point key="canvasLocation" x="34.782608695652179" y="107.8125"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="eye" catalog="system" width="128" height="81"/>
+        <image name="pencil" catalog="system" width="128" height="113"/>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
