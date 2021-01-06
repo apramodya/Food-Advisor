@@ -105,8 +105,11 @@ extension MyBookingsVC: UITableViewDelegate, UITableViewDataSource {
                     self?.navigationController?.pushViewController(vc, animated: true)
                 }
                 
-                cell.didTapOnView = {
-                    
+                cell.didTapOnView = { [weak self] in
+                    let storyboard = UIStoryboard(name: "About", bundle: nil)
+                    let vc = storyboard.instantiateViewController(withIdentifier: ViewBookingVC.id) as! ViewBookingVC
+                    vc.booking = booking
+                    self?.present(vc, animated: true, completion: nil)
                 }
                 
                 return cell
@@ -122,8 +125,11 @@ extension MyBookingsVC: UITableViewDelegate, UITableViewDataSource {
                     .dequeueReusableCell(withIdentifier: BookingCell.id, for: indexPath) as! BookingCell
                 cell.setupCell(with: booking, isEditable: false)
                 
-                cell.didTapOnView = {
-                    
+                cell.didTapOnView = { [weak self] in
+                    let storyboard = UIStoryboard(name: "About", bundle: nil)
+                    let vc = storyboard.instantiateViewController(withIdentifier: ViewBookingVC.id) as! ViewBookingVC
+                    vc.booking = booking
+                    self?.present(vc, animated: true, completion: nil)
                 }
                 
                 return cell

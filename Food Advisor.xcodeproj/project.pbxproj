@@ -38,6 +38,7 @@
 		327BA2A825A5F97400D3FD87 /* LottieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327BA2A625A5F97400D3FD87 /* LottieCell.swift */; };
 		327BA2A925A5F97400D3FD87 /* LottieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 327BA2A725A5F97400D3FD87 /* LottieCell.xib */; };
 		327BA2AE25A5FA1900D3FD87 /* calendar.json in Resources */ = {isa = PBXBuildFile; fileRef = 327BA2AD25A5FA1900D3FD87 /* calendar.json */; };
+		327BA2B125A6324F00D3FD87 /* ViewBookingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327BA2B025A6324F00D3FD87 /* ViewBookingVC.swift */; };
 		32845D7A258EF88300894338 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32845D79258EF88300894338 /* AppDelegate.swift */; };
 		32845D7C258EF88300894338 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32845D7B258EF88300894338 /* SceneDelegate.swift */; };
 		32845D7E258EF88300894338 /* RestaurantsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32845D7D258EF88300894338 /* RestaurantsVC.swift */; };
@@ -86,6 +87,7 @@
 		327BA2A625A5F97400D3FD87 /* LottieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieCell.swift; sourceTree = "<group>"; };
 		327BA2A725A5F97400D3FD87 /* LottieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LottieCell.xib; sourceTree = "<group>"; };
 		327BA2AD25A5FA1900D3FD87 /* calendar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = calendar.json; sourceTree = "<group>"; };
+		327BA2B025A6324F00D3FD87 /* ViewBookingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBookingVC.swift; sourceTree = "<group>"; };
 		32845D76258EF88300894338 /* Food Advisor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Food Advisor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32845D79258EF88300894338 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32845D7B258EF88300894338 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				324819662590FF0900A66263 /* About.storyboard */,
 				326501C225A5E6E700C083CA /* About */,
 				326501C025A5E6DA00C083CA /* My Bookings */,
+				327BA2B325A6325200D3FD87 /* View Booking */,
 			);
 			path = About;
 			sourceTree = "<group>";
@@ -305,6 +308,14 @@
 				327BA2A725A5F97400D3FD87 /* LottieCell.xib */,
 			);
 			path = "Lottie Cell";
+			sourceTree = "<group>";
+		};
+		327BA2B325A6325200D3FD87 /* View Booking */ = {
+			isa = PBXGroup;
+			children = (
+				327BA2B025A6324F00D3FD87 /* ViewBookingVC.swift */,
+			);
+			path = "View Booking";
 			sourceTree = "<group>";
 		};
 		32845D6D258EF88200894338 = {
@@ -530,6 +541,7 @@
 				326501BE25A5DAE200C083CA /* MyBookingsVC.swift in Sources */,
 				32BDCAE025A4A72E00BE15A4 /* BookingVC.swift in Sources */,
 				324C722225951E4C00F7AC87 /* Restaurant.swift in Sources */,
+				327BA2B125A6324F00D3FD87 /* ViewBookingVC.swift in Sources */,
 				32BDCAE525A4D71E00BE15A4 /* RestaurantBookingService.swift in Sources */,
 				32845D7E258EF88300894338 /* RestaurantsVC.swift in Sources */,
 				3253B1DB259906FC000B76A0 /* MealVC.swift in Sources */,
