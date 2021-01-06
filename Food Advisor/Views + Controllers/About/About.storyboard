@@ -29,10 +29,16 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="142-BR-0y5">
                                         <rect key="frame" x="0.0" y="44" width="95" height="30"/>
                                         <state key="normal" title="Privacy Policy"/>
+                                        <connections>
+                                            <action selector="didTapOnPrivacyPolicyButton:" destination="xqa-23-gzr" eventType="touchUpInside" id="6w9-S0-Ugn"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ExO-km-09A">
                                         <rect key="frame" x="0.0" y="94" width="150" height="30"/>
                                         <state key="normal" title="Terms and Conditions"/>
+                                        <connections>
+                                            <action selector="didTapOnTermsAndConditionsButton:" destination="xqa-23-gzr" eventType="touchUpInside" id="ie0-Kg-uOi"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gxE-gi-Sob">
                                         <rect key="frame" x="0.0" y="144" width="374" height="1"/>
@@ -48,8 +54,11 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="blU-hX-QCA">
-                                        <rect key="frame" x="0.0" y="209" width="98" height="30"/>
-                                        <state key="normal" title="Your bookings"/>
+                                        <rect key="frame" x="0.0" y="209" width="88" height="30"/>
+                                        <state key="normal" title="My bookings"/>
+                                        <connections>
+                                            <action selector="didTapOnMyBookingsButton:" destination="xqa-23-gzr" eventType="touchUpInside" id="Vwy-o4-Mb2"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Px-Zv-Qk5">
                                         <rect key="frame" x="0.0" y="259" width="374" height="1"/>
@@ -63,6 +72,9 @@
                                         <state key="normal" title="Delete Account">
                                             <color key="titleColor" systemColor="systemRedColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="didTapOnDeleteAccountButton:" destination="xqa-23-gzr" eventType="touchUpInside" id="xg2-bf-OhD"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sqh-Vf-NZL">
                                         <rect key="frame" x="0.0" y="330" width="48" height="30"/>
@@ -94,6 +106,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MT3-nb-fvj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="944.92753623188412" y="88.392857142857139"/>
+        </scene>
+        <!--My bookings-->
+        <scene sceneID="HxS-Lx-0zX">
+            <objects>
+                <viewController storyboardIdentifier="MyBookingsVC" title="My bookings" id="AVm-wT-zbK" customClass="MyBookingsVC" customModule="Food_Advisor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vx7-AL-EdF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bta-B3-PgD">
+                                <rect key="frame" x="20" y="74" width="374" height="822"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="AyI-RM-wXj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Bta-B3-PgD" firstAttribute="leading" secondItem="AyI-RM-wXj" secondAttribute="leading" constant="20" id="455-fC-PKG"/>
+                            <constraint firstAttribute="bottom" secondItem="Bta-B3-PgD" secondAttribute="bottom" id="7zJ-fm-fEk"/>
+                            <constraint firstItem="Bta-B3-PgD" firstAttribute="top" secondItem="AyI-RM-wXj" secondAttribute="top" constant="30" id="fW1-n8-Bcb"/>
+                            <constraint firstItem="AyI-RM-wXj" firstAttribute="trailing" secondItem="Bta-B3-PgD" secondAttribute="trailing" constant="20" id="kM4-yt-TCo"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="Bta-B3-PgD" id="DRM-ws-Lbz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iWy-yB-n2y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1725" y="88"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="wx2-mL-Ufm">
