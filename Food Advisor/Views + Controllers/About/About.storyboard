@@ -17,27 +17,76 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About VC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rir-wz-1tW">
-                                <rect key="frame" x="170.5" y="437.5" width="73" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sqh-Vf-NZL">
-                                <rect key="frame" x="183" y="468.5" width="48" height="30"/>
-                                <state key="normal" title="Logout"/>
-                                <connections>
-                                    <action selector="didTapOnLogoutButton:" destination="xqa-23-gzr" eventType="touchUpInside" id="2M0-es-3oq"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="5De-N2-XFw">
+                                <rect key="frame" x="20" y="64" width="374" height="360"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rir-wz-1tW">
+                                        <rect key="frame" x="0.0" y="0.0" width="56" height="24"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="142-BR-0y5">
+                                        <rect key="frame" x="0.0" y="44" width="95" height="30"/>
+                                        <state key="normal" title="Privacy Policy"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ExO-km-09A">
+                                        <rect key="frame" x="0.0" y="94" width="150" height="30"/>
+                                        <state key="normal" title="Terms and Conditions"/>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gxE-gi-Sob">
+                                        <rect key="frame" x="0.0" y="144" width="374" height="1"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="8je-wu-6sp"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2n-9v-JM1">
+                                        <rect key="frame" x="0.0" y="165" width="59" height="24"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="blU-hX-QCA">
+                                        <rect key="frame" x="0.0" y="209" width="98" height="30"/>
+                                        <state key="normal" title="Your bookings"/>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Px-Zv-Qk5">
+                                        <rect key="frame" x="0.0" y="259" width="374" height="1"/>
+                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="T27-zx-zzc"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jHw-m8-Zoc">
+                                        <rect key="frame" x="0.0" y="280" width="105" height="30"/>
+                                        <state key="normal" title="Delete Account">
+                                            <color key="titleColor" systemColor="systemRedColor"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sqh-Vf-NZL">
+                                        <rect key="frame" x="0.0" y="330" width="48" height="30"/>
+                                        <state key="normal" title="Logout"/>
+                                        <connections>
+                                            <action selector="didTapOnLogoutButton:" destination="xqa-23-gzr" eventType="touchUpInside" id="2M0-es-3oq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="gxE-gi-Sob" firstAttribute="leading" secondItem="5De-N2-XFw" secondAttribute="leading" id="eYs-Kj-JKG"/>
+                                    <constraint firstItem="7Px-Zv-Qk5" firstAttribute="leading" secondItem="5De-N2-XFw" secondAttribute="leading" id="gcL-Fq-sty"/>
+                                    <constraint firstAttribute="trailing" secondItem="gxE-gi-Sob" secondAttribute="trailing" id="kyo-Vd-1bW"/>
+                                    <constraint firstAttribute="trailing" secondItem="7Px-Zv-Qk5" secondAttribute="trailing" id="sCB-op-scP"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nPa-8i-U1v"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="rir-wz-1tW" firstAttribute="centerX" secondItem="IMb-Wp-61C" secondAttribute="centerX" id="9iR-3l-8cG"/>
-                            <constraint firstItem="rir-wz-1tW" firstAttribute="centerY" secondItem="IMb-Wp-61C" secondAttribute="centerY" id="F7O-5V-XP3"/>
-                            <constraint firstItem="Sqh-Vf-NZL" firstAttribute="top" secondItem="rir-wz-1tW" secondAttribute="bottom" constant="10" id="t2e-LA-3VR"/>
-                            <constraint firstItem="Sqh-Vf-NZL" firstAttribute="centerX" secondItem="IMb-Wp-61C" secondAttribute="centerX" id="tb3-Ry-WaR"/>
+                            <constraint firstItem="5De-N2-XFw" firstAttribute="leading" secondItem="nPa-8i-U1v" secondAttribute="leading" constant="20" id="3s6-mQ-wrr"/>
+                            <constraint firstItem="nPa-8i-U1v" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="5De-N2-XFw" secondAttribute="bottom" constant="20" id="JjG-rW-nEc"/>
+                            <constraint firstItem="5De-N2-XFw" firstAttribute="top" secondItem="nPa-8i-U1v" secondAttribute="top" constant="20" id="vwQ-zo-1C5"/>
+                            <constraint firstItem="nPa-8i-U1v" firstAttribute="trailing" secondItem="5De-N2-XFw" secondAttribute="trailing" constant="20" id="xzR-NS-yIv"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="About" image="info" id="Wkh-4N-FtM"/>
@@ -69,6 +118,9 @@
         <image name="info" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
