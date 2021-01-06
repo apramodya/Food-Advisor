@@ -44,16 +44,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login VC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HUc-cu-N35">
-                                <rect key="frame" x="173" y="437.5" width="68.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhB-by-Zos">
-                                <rect key="frame" x="188" y="478.5" width="38" height="30"/>
-                                <state key="normal" title="Login"/>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eKy-t9-uFh" customClass="GIDSignInButton">
                                 <rect key="frame" x="20" y="750" width="374" height="62"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
@@ -65,20 +55,52 @@
                                     <outletCollection property="gestureRecognizers" destination="7tY-hE-zdu" appends="YES" id="acE-6E-8sD"/>
                                 </connections>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wR9-Bp-uBY">
+                                <rect key="frame" x="50" y="198" width="314" height="400.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BGC-07-xyl" customClass="AnimationView" customModule="Lottie">
+                                        <rect key="frame" x="32" y="0.0" width="250" height="250"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="250" id="BXA-FJ-pNc"/>
+                                            <constraint firstAttribute="height" constant="250" id="FZU-3a-6SK"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="logo_lottie"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food Advisor" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XC7-pz-aSH">
+                                        <rect key="frame" x="45.5" y="270" width="223" height="64"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="40"/>
+                                        <color key="textColor" red="0.094117647058823528" green="0.46666666666666667" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For a perfect Food Date" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DuQ-eI-Qoz">
+                                        <rect key="frame" x="27.5" y="354" width="259" height="46.5"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="29"/>
+                                        <color key="textColor" red="0.26451171410947194" green="0.59655238560267854" blue="0.96296100227200254" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZRP-VB-7kj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="fhB-by-Zos" firstAttribute="top" secondItem="HUc-cu-N35" secondAttribute="bottom" constant="20" id="1K2-xx-Y33"/>
                             <constraint firstItem="ZRP-VB-7kj" firstAttribute="trailing" secondItem="eKy-t9-uFh" secondAttribute="trailing" constant="20" id="Ch2-hs-a2e"/>
-                            <constraint firstItem="fhB-by-Zos" firstAttribute="centerX" secondItem="EfZ-SZ-cBi" secondAttribute="centerX" id="Hd7-6L-G0i"/>
                             <constraint firstItem="eKy-t9-uFh" firstAttribute="leading" secondItem="ZRP-VB-7kj" secondAttribute="leading" constant="20" id="R39-4C-WH9"/>
-                            <constraint firstItem="HUc-cu-N35" firstAttribute="centerX" secondItem="EfZ-SZ-cBi" secondAttribute="centerX" id="euM-nW-TeN"/>
+                            <constraint firstItem="wR9-Bp-uBY" firstAttribute="centerY" secondItem="EfZ-SZ-cBi" secondAttribute="centerY" constant="-50" id="T7p-CB-zbG"/>
+                            <constraint firstItem="wR9-Bp-uBY" firstAttribute="centerX" secondItem="EfZ-SZ-cBi" secondAttribute="centerX" id="XpG-v6-DHU"/>
+                            <constraint firstItem="wR9-Bp-uBY" firstAttribute="leading" secondItem="ZRP-VB-7kj" secondAttribute="leading" constant="50" id="YwY-iW-90e"/>
+                            <constraint firstItem="ZRP-VB-7kj" firstAttribute="trailing" secondItem="wR9-Bp-uBY" secondAttribute="trailing" constant="50" id="hpN-Gw-IpR"/>
                             <constraint firstItem="ZRP-VB-7kj" firstAttribute="bottom" secondItem="eKy-t9-uFh" secondAttribute="bottom" constant="50" id="t2f-uq-j6r"/>
-                            <constraint firstItem="HUc-cu-N35" firstAttribute="centerY" secondItem="EfZ-SZ-cBi" secondAttribute="centerY" id="uK4-ah-vIN"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7U2-5y-0c3"/>
+                    <connections>
+                        <outlet property="logoView" destination="BGC-07-xyl" id="mtz-iQ-rWz"/>
+                        <outlet property="signInView" destination="eKy-t9-uFh" id="mMs-eq-E3v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NpM-1h-1jc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="7tY-hE-zdu">
