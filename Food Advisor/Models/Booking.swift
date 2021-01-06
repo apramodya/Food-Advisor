@@ -39,4 +39,8 @@ extension Booking {
         
         return date
     }
+    
+    var dateTime: Date {
+        return bookingDateTime?.dateValue() ?? Date()
+    }
 }

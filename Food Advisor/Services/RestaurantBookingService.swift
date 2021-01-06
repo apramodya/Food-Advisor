@@ -46,7 +46,9 @@ extension RestaurantBookingService {
 // MARK: Fetch bookings
 extension RestaurantBookingService {
     func fetchBookings(userID: String, completion: @escaping (_ status: Bool, _ message: String, _ booking: [Booking]?) -> ()) {
-        let collection = Firestore.firestore().collection("bookings").whereField("userID", isEqualTo: userID)
+        let collection = Firestore.firestore().collection("bookings")
+            .whereField("userID", isEqualTo: userID)
+            .order(by: "bookingDateTime", descending: true)
         
         collection.getDocuments { (querySnapshot, error) in
             if let error = error {

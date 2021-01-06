@@ -15,7 +15,13 @@ class MyBookingsVC: UIViewController {
     
     // MARK: Variables
     static let id = "MyBookingsVC"
-    var bookings = [Booking]()
+    let sections = [
+        Section(type: .Upcoming),
+        Section(type: .Lottie),
+        Section(type: .Past),
+    ]
+    var upcomingBookings = [Booking]()
+    var pastBookings = [Booking]()
     
     // MARK: Life cycle
     override func viewWillAppear(_ animated: Bool) {
@@ -50,7 +56,12 @@ extension MyBookingsVC {
             SwiftSpinner.hide()
             
             if success, let bookings = bookings {
-                self.bookings = bookings
+                let _upcomingBookings = bookings.filter({$0.dateTime >= Date()})
+                let _pastBookings = bookings.filter({$0.dateTime < Date()})
+                
+                self.pastBookings = _pastBookings
+                self.upcomingBookings = _upcomingBookings
+                
                 self.tableView.reloadData()
             } else {
                 print(message)
@@ -61,26 +72,86 @@ extension MyBookingsVC {
 
 // MARK: UITableView
 extension MyBookingsVC: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        sections.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        bookings.count
+        let section = sections[section].type
+        
+        switch section {
+        case .Upcoming: return upcomingBookings.count > 0 ? upcomingBookings.count : 1
+        case .Past: return pastBookings.count > 0 ? pastBookings.count : 1
+        case .Lottie: return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let booking = bookings[indexPath.row]
+        let section = sections[indexPath.section].type
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: BookingCell.id, for: indexPath) as! BookingCell
-        cell.setupCell(with: booking)
+        switch section {
+        case .Upcoming:
+            if upcomingBookings.count > 0 {
+                let booking = upcomingBookings[indexPath.row]
+                let cell = tableView.dequeueReusableCell(withIdentifier: BookingCell.id, for: indexPath) as! BookingCell
+                cell.setupCell(with: booking)
+                
+                return cell
+            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: NothinToShowCell.id) as! NothinToShowCell
+                return cell
+            }
+        case .Past:
+            if pastBookings.count > 0 {
+                let booking = pastBookings[indexPath.row]
+                let cell = tableView.dequeueReusableCell(withIdentifier: BookingCell.id, for: indexPath) as! BookingCell
+                cell.setupCell(with: booking)
+                
+                return cell
+            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: NothinToShowCell.id) as! NothinToShowCell
+                return cell
+            }
+        case .Lottie:
+            let cell = tableView.dequeueReusableCell(withIdentifier: LottieCell.id) as! LottieCell
+            cell.setupCell()
+            return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let section = sections[section].type
         
-        return cell
+        switch section {
+        case .Upcoming: return "Upcoming bookings"
+        case .Past: return "Past bookings"
+        case .Lottie: return nil
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        80
+        let section = sections[indexPath.section].type
+        
+        switch section {
+        case .Past, .Upcoming: return 80
+        case .Lottie: return 200
+        }
     }
     
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(BookingCell.nib, forCellReuseIdentifier: BookingCell.id)
+        tableView.register(NothinToShowCell.nib, forCellReuseIdentifier: NothinToShowCell.id)
+        tableView.register(LottieCell.nib, forCellReuseIdentifier: LottieCell.id)
+        tableView.sectionHeaderHeight = 30
+    }
+    
+    enum SectionType: CaseIterable {
+        case Upcoming, Past, Lottie
+    }
+    
+    struct Section {
+        var type: SectionType
     }
 }
