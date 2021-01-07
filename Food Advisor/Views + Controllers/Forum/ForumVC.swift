@@ -6,24 +6,44 @@
 //
 
 import UIKit
+import Lottie
 
 class ForumVC: UIViewController {
 
+    // MARK: IBOutlets
+    @IBOutlet weak var reviewsView: UIView!
+    @IBOutlet weak var forumView: UIView!
+    @IBOutlet weak var animationView: AnimationView!
+    
+    // MARK: Variables
+    static let id = "RestaurantVC"
+    
+    // MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        animate()
+        setupUI()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: IBActions
+    @IBAction func didTapOnReviews(_ sender: Any) {
     }
-    */
+    
+    @IBAction func didTapOnForum(_ sender: Any) {
+    }
+}
 
+// MARK: Private methods
+extension ForumVC {
+    private func animate() {
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .loop
+        animationView.play()
+    }
+    
+    private func setupUI() {
+        reviewsView.layer.cornerRadius = 15
+        forumView.layer.cornerRadius = 15
+    }
 }

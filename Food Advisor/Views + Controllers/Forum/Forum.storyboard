@@ -17,25 +17,102 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forum VC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rv0-C9-jdJ">
-                                <rect key="frame" x="169" y="437.5" width="76" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Tc5-qs-Fa4">
+                                <rect key="frame" x="20" y="204" width="374" height="488"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MAl-pB-DGF">
+                                        <rect key="frame" x="20" y="0.0" width="334" height="132"/>
+                                        <subviews>
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reviews and Ratings" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erO-0T-0be">
+                                                <rect key="frame" x="30" y="30" width="274" height="72"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.76470588235294112" green="0.82745098039215681" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstItem="erO-0T-0be" firstAttribute="top" secondItem="MAl-pB-DGF" secondAttribute="top" constant="30" id="5As-4t-JfM"/>
+                                            <constraint firstAttribute="trailing" secondItem="erO-0T-0be" secondAttribute="trailing" constant="30" id="Gel-ut-vKx"/>
+                                            <constraint firstAttribute="bottom" secondItem="erO-0T-0be" secondAttribute="bottom" constant="30" id="icE-Xu-rjm"/>
+                                            <constraint firstItem="erO-0T-0be" firstAttribute="leading" secondItem="MAl-pB-DGF" secondAttribute="leading" constant="30" id="sSe-hS-ir3"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="gbT-mv-fCy" appends="YES" id="dwr-6b-RLw"/>
+                                        </connections>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="coO-UP-bc8" customClass="AnimationView" customModule="Lottie">
+                                        <rect key="frame" x="87" y="162" width="200" height="200"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="2ay-3C-jiq"/>
+                                            <constraint firstAttribute="height" constant="200" id="ydk-eH-M1H"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="forum_lottie"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VX0-LV-x9R">
+                                        <rect key="frame" x="20" y="392" width="334" height="96"/>
+                                        <subviews>
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forum" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nag-gh-bX7">
+                                                <rect key="frame" x="30" y="30" width="274" height="36"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.94509803921568625" green="0.73725490196078436" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="Nag-gh-bX7" secondAttribute="bottom" constant="30" id="6cX-e6-Tfy"/>
+                                            <constraint firstItem="Nag-gh-bX7" firstAttribute="leading" secondItem="VX0-LV-x9R" secondAttribute="leading" constant="30" id="LKg-o0-Jud"/>
+                                            <constraint firstAttribute="trailing" secondItem="Nag-gh-bX7" secondAttribute="trailing" constant="30" id="wC4-3A-diG"/>
+                                            <constraint firstItem="Nag-gh-bX7" firstAttribute="top" secondItem="VX0-LV-x9R" secondAttribute="top" constant="30" id="xbU-xK-ZFl"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="WFB-Cf-y2C" appends="YES" id="nd2-Vo-P8y"/>
+                                        </connections>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="VX0-LV-x9R" secondAttribute="trailing" constant="20" id="8FG-om-ycU"/>
+                                    <constraint firstItem="MAl-pB-DGF" firstAttribute="leading" secondItem="Tc5-qs-Fa4" secondAttribute="leading" constant="20" id="Ktg-nL-MPh"/>
+                                    <constraint firstItem="VX0-LV-x9R" firstAttribute="leading" secondItem="Tc5-qs-Fa4" secondAttribute="leading" constant="20" id="OYp-k2-jHD"/>
+                                    <constraint firstAttribute="trailing" secondItem="MAl-pB-DGF" secondAttribute="trailing" constant="20" id="cWI-RA-dkw"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="he9-Hc-1LD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="rv0-C9-jdJ" firstAttribute="centerX" secondItem="p9O-v4-Hh8" secondAttribute="centerX" id="jeS-YX-BYc"/>
-                            <constraint firstItem="rv0-C9-jdJ" firstAttribute="centerY" secondItem="p9O-v4-Hh8" secondAttribute="centerY" id="pkU-zS-Xic"/>
+                            <constraint firstItem="Tc5-qs-Fa4" firstAttribute="centerX" secondItem="p9O-v4-Hh8" secondAttribute="centerX" id="1kg-th-9ag"/>
+                            <constraint firstItem="Tc5-qs-Fa4" firstAttribute="centerY" secondItem="p9O-v4-Hh8" secondAttribute="centerY" id="hch-8k-IlG"/>
+                            <constraint firstItem="Tc5-qs-Fa4" firstAttribute="leading" secondItem="he9-Hc-1LD" secondAttribute="leading" constant="20" id="lJI-zV-ye2"/>
+                            <constraint firstItem="he9-Hc-1LD" firstAttribute="trailing" secondItem="Tc5-qs-Fa4" secondAttribute="trailing" constant="20" id="zEm-7h-VIA"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Forum" image="forum" id="wIS-ae-v4q">
                         <color key="badgeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="animationView" destination="coO-UP-bc8" id="bbK-VL-Oe3"/>
+                        <outlet property="forumView" destination="VX0-LV-x9R" id="ifw-DB-J3J"/>
+                        <outlet property="reviewsView" destination="MAl-pB-DGF" id="g53-GF-xUo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mcG-fL-DxR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="gbT-mv-fCy">
+                    <connections>
+                        <action selector="didTapOnReviews:" destination="XMe-cv-WeZ" id="tpF-vh-p7J"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="WFB-Cf-y2C">
+                    <connections>
+                        <action selector="didTapOnForum:" destination="XMe-cv-WeZ" id="DMf-Oy-rUe"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="68.115942028985515" y="-111.16071428571428"/>
         </scene>
@@ -58,6 +135,9 @@
             <point key="canvasLocation" x="-842.02898550724649" y="-111.16071428571428"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="coO-UP-bc8"/>
+    </designables>
     <resources>
         <image name="forum" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">

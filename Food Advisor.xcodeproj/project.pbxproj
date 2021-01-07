@@ -47,6 +47,7 @@
 		32845D86258EF88400894338 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32845D84258EF88400894338 /* LaunchScreen.storyboard */; };
 		32A9FF0525A4A29A00DD8CEB /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A9FF0325A4A29A00DD8CEB /* HeaderCollectionReusableView.swift */; };
 		32A9FF0625A4A29A00DD8CEB /* HeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32A9FF0425A4A29A00DD8CEB /* HeaderCollectionReusableView.xib */; };
+		32BB002325A7673500685B73 /* forum_lottie.json in Resources */ = {isa = PBXBuildFile; fileRef = 32BB002225A7673500685B73 /* forum_lottie.json */; };
 		32BDCAE025A4A72E00BE15A4 /* BookingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BDCADF25A4A72E00BE15A4 /* BookingVC.swift */; };
 		32BDCAE525A4D71E00BE15A4 /* RestaurantBookingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BDCAE425A4D71E00BE15A4 /* RestaurantBookingService.swift */; };
 		32BDCAE825A4D78D00BE15A4 /* Booking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BDCAE725A4D78D00BE15A4 /* Booking.swift */; };
@@ -98,6 +99,7 @@
 		32845D87258EF88400894338 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32A9FF0325A4A29A00DD8CEB /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		32A9FF0425A4A29A00DD8CEB /* HeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCollectionReusableView.xib; sourceTree = "<group>"; };
+		32BB002225A7673500685B73 /* forum_lottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = forum_lottie.json; sourceTree = "<group>"; };
 		32BDCADF25A4A72E00BE15A4 /* BookingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingVC.swift; sourceTree = "<group>"; };
 		32BDCAE425A4D71E00BE15A4 /* RestaurantBookingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantBookingService.swift; sourceTree = "<group>"; };
 		32BDCAE725A4D78D00BE15A4 /* Booking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Booking.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			children = (
 				326501B925A5D2D700C083CA /* logo_lottie.json */,
 				327BA2AD25A5FA1900D3FD87 /* calendar.json */,
+				32BB002225A7673500685B73 /* forum_lottie.json */,
 				32845D79258EF88300894338 /* AppDelegate.swift */,
 				32845D7B258EF88300894338 /* SceneDelegate.swift */,
 				32845D82258EF88400894338 /* Assets.xcassets */,
@@ -468,6 +471,7 @@
 				32845D81258EF88300894338 /* Main.storyboard in Resources */,
 				324C71D12594F57700F7AC87 /* GoogleService-Info.plist in Resources */,
 				324C72452595282700F7AC87 /* SponsoredRestaurantCollectionViewCell.xib in Resources */,
+				32BB002325A7673500685B73 /* forum_lottie.json in Resources */,
 				326501BA25A5D2D700C083CA /* logo_lottie.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
