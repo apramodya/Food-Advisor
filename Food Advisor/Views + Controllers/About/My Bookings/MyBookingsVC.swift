@@ -99,16 +99,24 @@ extension MyBookingsVC: UITableViewDelegate, UITableViewDataSource {
                 cell.setupCell(with: booking)
                 
                 cell.didTapOnEdit = { [weak self] in
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let storyboard = UIStoryboard(name: Storyboard.Main.rawValue, bundle: nil)
                     let vc = storyboard.instantiateViewController(withIdentifier: BookingVC.id) as! BookingVC
                     vc.booking = booking
                     self?.navigationController?.pushViewController(vc, animated: true)
                 }
                 
                 cell.didTapOnView = { [weak self] in
-                    let storyboard = UIStoryboard(name: "About", bundle: nil)
+                    let storyboard = UIStoryboard(name: Storyboard.About.rawValue, bundle: nil)
                     let vc = storyboard.instantiateViewController(withIdentifier: ViewBookingVC.id) as! ViewBookingVC
                     vc.booking = booking
+                    
+                    vc.didTapOnViewRestaurant = { [weak self] restaurantId in
+                        let storyboard = UIStoryboard(name: Storyboard.Main.rawValue, bundle: nil)
+                        let vc = storyboard.instantiateViewController(identifier: RestaurantVC.id) as! RestaurantVC
+                        vc.restaurantId = restaurantId
+                        self?.navigationController?.pushViewController(vc, animated: true)
+                    }
+                    
                     self?.present(vc, animated: true, completion: nil)
                 }
                 
