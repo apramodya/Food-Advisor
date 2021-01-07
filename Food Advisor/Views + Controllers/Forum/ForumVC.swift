@@ -16,9 +16,15 @@ class ForumVC: UIViewController {
     @IBOutlet weak var animationView: AnimationView!
     
     // MARK: Variables
-    static let id = "RestaurantVC"
+    static let id = "ForumVC"
     
     // MARK: Life cycle
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.navigationBar.isHidden = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,6 +34,7 @@ class ForumVC: UIViewController {
     
     // MARK: IBActions
     @IBAction func didTapOnReviews(_ sender: Any) {
+        AppNavigator.shared.pushToViewController(in: .Forum, for: ReviewsVC.id, from: self)
     }
     
     @IBAction func didTapOnForum(_ sender: Any) {

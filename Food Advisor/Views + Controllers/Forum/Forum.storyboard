@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -116,6 +117,65 @@
             </objects>
             <point key="canvasLocation" x="68.115942028985515" y="-111.16071428571428"/>
         </scene>
+        <!--Reviews and Ratings-->
+        <scene sceneID="n19-m7-P0r">
+            <objects>
+                <viewController storyboardIdentifier="ReviewsVC" title="Reviews and Ratings" id="yLR-Sa-GZF" customClass="ReviewsVC" customModule="Food_Advisor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Yl-Yh-KEh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" searchBarStyle="prominent" placeholder="Search Restaurants" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gql-Fx-VgT">
+                                <rect key="frame" x="0.0" y="70" width="414" height="56"/>
+                                <color key="barTintColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                            </searchBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yjO-ck-MqM">
+                                <rect key="frame" x="10" y="131" width="394" height="721"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="v4h-xy-nvw">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="OUy-aP-Awu">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="f7G-dQ-70K">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vX3-3J-WBu"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vX3-3J-WBu" firstAttribute="trailing" secondItem="yjO-ck-MqM" secondAttribute="trailing" constant="10" id="1k9-6P-mwY"/>
+                            <constraint firstItem="vX3-3J-WBu" firstAttribute="bottom" secondItem="yjO-ck-MqM" secondAttribute="bottom" constant="10" id="Spk-mr-rs3"/>
+                            <constraint firstItem="Gql-Fx-VgT" firstAttribute="trailing" secondItem="vX3-3J-WBu" secondAttribute="trailing" id="VSj-tA-gg2"/>
+                            <constraint firstItem="Gql-Fx-VgT" firstAttribute="leading" secondItem="vX3-3J-WBu" secondAttribute="leading" id="ZMw-8G-i3i"/>
+                            <constraint firstItem="yjO-ck-MqM" firstAttribute="leading" secondItem="vX3-3J-WBu" secondAttribute="leading" constant="10" id="dJ8-uw-cqV"/>
+                            <constraint firstItem="Gql-Fx-VgT" firstAttribute="top" secondItem="8Yl-Yh-KEh" secondAttribute="top" constant="70" id="i2e-eM-6bT"/>
+                            <constraint firstItem="yjO-ck-MqM" firstAttribute="top" secondItem="Gql-Fx-VgT" secondAttribute="bottom" constant="5" id="o6t-ec-6DE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="yjO-ck-MqM" id="Hcx-3m-PgQ"/>
+                        <outlet property="searchBar" destination="Gql-Fx-VgT" id="nNa-CB-s6r"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mud-7B-nhG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="854" y="-111"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="XHO-RC-bJm">
             <objects>
@@ -142,6 +202,9 @@
         <image name="forum" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiarySystemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
