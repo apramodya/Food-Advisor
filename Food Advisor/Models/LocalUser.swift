@@ -41,4 +41,12 @@ extension LocalUser {
     func getUserID() -> String? {
         return UserDefaults.standard.string(forKey: "userID")
     }
+    
+    func setUserAvatarURL(url: String) {
+        UserDefaults.standard.set(url, forKey: "userAvatarURL")
+    }
+    
+    func getUserAvatarURL() -> String? {
+        return UserDefaults.standard.string(forKey: "userAvatarURL")
+    }
 }

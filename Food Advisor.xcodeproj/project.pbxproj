@@ -36,6 +36,9 @@
 		327646DF25A769EC00114851 /* ReviewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327646DE25A769EC00114851 /* ReviewsVC.swift */; };
 		327646E625A76D0100114851 /* RestaurantSquareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327646E425A76D0100114851 /* RestaurantSquareCell.swift */; };
 		327646E725A76D0100114851 /* RestaurantSquareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 327646E525A76D0100114851 /* RestaurantSquareCell.xib */; };
+		327977B825A86CDE002647DC /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327977B625A86CDE002647DC /* ReviewCell.swift */; };
+		327977B925A86CDE002647DC /* ReviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 327977B725A86CDE002647DC /* ReviewCell.xib */; };
+		327977BF25A86EA7002647DC /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327977BE25A86EA7002647DC /* Review.swift */; };
 		327BA2A025A5F81700D3FD87 /* NothinToShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327BA29E25A5F81700D3FD87 /* NothinToShowCell.swift */; };
 		327BA2A125A5F81700D3FD87 /* NothinToShowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 327BA29F25A5F81700D3FD87 /* NothinToShowCell.xib */; };
 		327BA2A825A5F97400D3FD87 /* LottieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327BA2A625A5F97400D3FD87 /* LottieCell.swift */; };
@@ -48,6 +51,7 @@
 		32845D81258EF88300894338 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32845D7F258EF88300894338 /* Main.storyboard */; };
 		32845D83258EF88400894338 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32845D82258EF88400894338 /* Assets.xcassets */; };
 		32845D86258EF88400894338 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32845D84258EF88400894338 /* LaunchScreen.storyboard */; };
+		3292F19325A8680900A5C89A /* ReviewRestaurantVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3292F19225A8680900A5C89A /* ReviewRestaurantVC.swift */; };
 		32A9FF0525A4A29A00DD8CEB /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A9FF0325A4A29A00DD8CEB /* HeaderCollectionReusableView.swift */; };
 		32A9FF0625A4A29A00DD8CEB /* HeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32A9FF0425A4A29A00DD8CEB /* HeaderCollectionReusableView.xib */; };
 		32BB002325A7673500685B73 /* forum_lottie.json in Resources */ = {isa = PBXBuildFile; fileRef = 32BB002225A7673500685B73 /* forum_lottie.json */; };
@@ -89,6 +93,9 @@
 		327646DE25A769EC00114851 /* ReviewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsVC.swift; sourceTree = "<group>"; };
 		327646E425A76D0100114851 /* RestaurantSquareCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantSquareCell.swift; sourceTree = "<group>"; };
 		327646E525A76D0100114851 /* RestaurantSquareCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantSquareCell.xib; sourceTree = "<group>"; };
+		327977B625A86CDE002647DC /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
+		327977B725A86CDE002647DC /* ReviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewCell.xib; sourceTree = "<group>"; };
+		327977BE25A86EA7002647DC /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		327BA29E25A5F81700D3FD87 /* NothinToShowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NothinToShowCell.swift; sourceTree = "<group>"; };
 		327BA29F25A5F81700D3FD87 /* NothinToShowCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NothinToShowCell.xib; sourceTree = "<group>"; };
 		327BA2A625A5F97400D3FD87 /* LottieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieCell.swift; sourceTree = "<group>"; };
@@ -103,6 +110,7 @@
 		32845D82258EF88400894338 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32845D85258EF88400894338 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32845D87258EF88400894338 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3292F19225A8680900A5C89A /* ReviewRestaurantVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRestaurantVC.swift; sourceTree = "<group>"; };
 		32A9FF0325A4A29A00DD8CEB /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		32A9FF0425A4A29A00DD8CEB /* HeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCollectionReusableView.xib; sourceTree = "<group>"; };
 		32BB002225A7673500685B73 /* forum_lottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = forum_lottie.json; sourceTree = "<group>"; };
@@ -148,6 +156,7 @@
 				324C722125951E4C00F7AC87 /* Restaurant.swift */,
 				3253B1D72598FF16000B76A0 /* Meal.swift */,
 				32BDCAE725A4D78D00BE15A4 /* Booking.swift */,
+				327977BE25A86EA7002647DC /* Review.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -204,6 +213,7 @@
 				324819622590FEF100A66263 /* Forum.storyboard */,
 				3248196B2591025A00A66263 /* ForumVC.swift */,
 				327646E125A769F000114851 /* Reviews */,
+				3292F19525A8680E00A5C89A /* Review Restaurant */,
 			);
 			path = Forum;
 			sourceTree = "<group>";
@@ -320,6 +330,15 @@
 			path = "Restaurant Square Cell";
 			sourceTree = "<group>";
 		};
+		327977BB25A86CE2002647DC /* Review Cell */ = {
+			isa = PBXGroup;
+			children = (
+				327977B625A86CDE002647DC /* ReviewCell.swift */,
+				327977B725A86CDE002647DC /* ReviewCell.xib */,
+			);
+			path = "Review Cell";
+			sourceTree = "<group>";
+		};
 		327BA2A325A5F81C00D3FD87 /* NothinToShow Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -375,6 +394,15 @@
 				324C71D02594F57700F7AC87 /* GoogleService-Info.plist */,
 			);
 			path = "Food Advisor";
+			sourceTree = "<group>";
+		};
+		3292F19525A8680E00A5C89A /* Review Restaurant */ = {
+			isa = PBXGroup;
+			children = (
+				3292F19225A8680900A5C89A /* ReviewRestaurantVC.swift */,
+				327977BB25A86CE2002647DC /* Review Cell */,
+			);
+			path = "Review Restaurant";
 			sourceTree = "<group>";
 		};
 		32A9FF0825A4A29E00DD8CEB /* Header Cell */ = {
@@ -481,6 +509,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				327BA2A925A5F97400D3FD87 /* LottieCell.xib in Resources */,
+				327977B925A86CDE002647DC /* ReviewCell.xib in Resources */,
 				324819572590FA9C00A66263 /* Auth.storyboard in Resources */,
 				327BA2AE25A5FA1900D3FD87 /* calendar.json in Resources */,
 				326501C725A5E70200C083CA /* BookingCell.xib in Resources */,
@@ -585,6 +614,7 @@
 				32A9FF0525A4A29A00DD8CEB /* HeaderCollectionReusableView.swift in Sources */,
 				324C72402595252B00F7AC87 /* RestaurantService.swift in Sources */,
 				324819752591042F00A66263 /* LoginVC.swift in Sources */,
+				327977BF25A86EA7002647DC /* Review.swift in Sources */,
 				3248196F2591038A00A66263 /* AboutVC.swift in Sources */,
 				326C92762591114700E6A21D /* User.swift in Sources */,
 				326501C625A5E70200C083CA /* BookingCell.swift in Sources */,
@@ -597,6 +627,8 @@
 				327BA2A825A5F97400D3FD87 /* LottieCell.swift in Sources */,
 				32845D7C258EF88300894338 /* SceneDelegate.swift in Sources */,
 				324C724C25952B7500F7AC87 /* RestaurantCollectionViewCell.swift in Sources */,
+				327977B825A86CDE002647DC /* ReviewCell.swift in Sources */,
+				3292F19325A8680900A5C89A /* ReviewRestaurantVC.swift in Sources */,
 				32BDCAE825A4D78D00BE15A4 /* Booking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

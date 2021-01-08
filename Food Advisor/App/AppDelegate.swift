@@ -85,6 +85,10 @@ extension AppDelegate: GIDSignInDelegate {
                 LocalUser.shared.setUserID(id: userId)
             }
             
+            if let imageURL = user.profile.imageURL(withDimension: 40) {
+                LocalUser.shared.setUserAvatarURL(url: imageURL.absoluteString)
+            }
+            
             AppNavigator.shared.manageUserDirection()
         }
     }

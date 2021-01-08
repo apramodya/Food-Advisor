@@ -47,6 +47,12 @@ extension ReviewsVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(identifier: ReviewRestaurantVC.id) as! ReviewRestaurantVC
+        vc.restaurantId = restaurants[indexPath.row].id
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = (UIScreen.main.bounds.width - 40) / 2
         

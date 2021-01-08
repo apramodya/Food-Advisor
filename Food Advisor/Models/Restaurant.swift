@@ -41,9 +41,3 @@ extension Restaurant: Equatable {
         }
     }
 }
-
-struct Review: Codable {
-    var comment: String
-    var rating: Int
-    var userId: String
-}
