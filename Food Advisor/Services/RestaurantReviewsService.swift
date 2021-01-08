@@ -57,3 +57,19 @@ extension RestaurantReviewsService {
         }
     }
 }
+
+// MARK: Update rating
+extension RestaurantReviewsService {
+    func updateRating(restaurantId id: String, rating: Double, completion: @escaping (_ status: Bool, _ message: String) -> ()) {
+        let document = Firestore.firestore().collection("restaurants").document(id)
+        
+        document.updateData(["rating": rating]) { (error) in
+            if let error = error {
+                debugPrint(error)
+                completion(false, error.localizedDescription)
+            }
+            
+            completion(true, "Successfully updated")
+        }
+    }
+}

@@ -144,11 +144,35 @@ extension ReviewRestaurantVC {
             SwiftSpinner.hide()
             
             if success {
+                self.calculateAndUpdateRatings()
                 self.fetchReviews()
             } else {
                 AlertVC.presentAlert(for: self, title: "Error", message: message, left: "OK") {
                     self.dismiss(animated: true, completion: nil)
                 }
+            }
+        }
+    }
+    
+    private func calculateAndUpdateRatings() {
+        guard let id = restaurantId else { return }
+        
+        RestaurantReviewsService.shared.fetchReviews(restaurantId: id) { (success, _, reviews) in
+            if success, let reviews = reviews {
+                let totalRatings = Double(reviews.reduce(0, {$0 + $1.rating}))
+                let avgRating = totalRatings / Double(reviews.count)
+                
+                self.updateRating(rating: avgRating)
+            }
+        }
+    }
+    
+    private func updateRating(rating: Double) {
+        guard let id = restaurantId else { return }
+        
+        RestaurantReviewsService.shared.updateRating(restaurantId: id, rating: rating) { (success, message) in
+            if !success {
+                print(message)
             }
         }
     }
