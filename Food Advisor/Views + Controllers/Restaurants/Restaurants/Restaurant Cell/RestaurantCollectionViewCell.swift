@@ -34,11 +34,9 @@ extension RestaurantCollectionViewCell {
         titleLabel.text = restaurant.name
         locationLabel.text = restaurant.location
         
-        if let reviews = restaurant.reviews {
-            let total = reviews.reduce(0) { $0 + $1.rating}
-            let avgRating = Double(total) / Double(reviews.count)
+        if let rating = restaurant.rating {
             starView.settings.fillMode = .half
-            starView.rating = avgRating
+            starView.rating = rating
         }
         
         if let image = restaurant.thumbnail {

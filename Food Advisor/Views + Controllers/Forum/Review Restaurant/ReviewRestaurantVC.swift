@@ -28,6 +28,7 @@ class ReviewRestaurantVC: UIViewController {
         
         setupUI()
         fetchRestaurant()
+        fetchReviews()
     }
     
     override func viewDidLoad() {
@@ -95,14 +96,22 @@ extension ReviewRestaurantVC {
             SwiftSpinner.hide()
             
             if success {
-                if let reviews = restaurant?.reviews {
-                    self.reviews = reviews
-                    self.tableView.reloadData()
-                }
-                
                 if let restaurant = restaurant {
                     self.setupUI(for: restaurant)
                 }
+            } else {
+                print(message)
+            }
+        }
+    }
+    
+    private func fetchReviews() {
+        guard let id = restaurantId else { return }
+        
+        RestaurantReviewsService.shared.fetchReviews(restaurantId: id) { (success, message, reviews) in
+            if success, let reviews = reviews {
+                self.reviews = reviews
+                self.tableView.reloadData()
             } else {
                 print(message)
             }

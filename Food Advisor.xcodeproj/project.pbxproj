@@ -52,6 +52,7 @@
 		32845D83258EF88400894338 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32845D82258EF88400894338 /* Assets.xcassets */; };
 		32845D86258EF88400894338 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32845D84258EF88400894338 /* LaunchScreen.storyboard */; };
 		3292F19325A8680900A5C89A /* ReviewRestaurantVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3292F19225A8680900A5C89A /* ReviewRestaurantVC.swift */; };
+		32A7243A25A8E523001238F5 /* RestaurantReviewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A7243925A8E523001238F5 /* RestaurantReviewsService.swift */; };
 		32A9FF0525A4A29A00DD8CEB /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A9FF0325A4A29A00DD8CEB /* HeaderCollectionReusableView.swift */; };
 		32A9FF0625A4A29A00DD8CEB /* HeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32A9FF0425A4A29A00DD8CEB /* HeaderCollectionReusableView.xib */; };
 		32BB002325A7673500685B73 /* forum_lottie.json in Resources */ = {isa = PBXBuildFile; fileRef = 32BB002225A7673500685B73 /* forum_lottie.json */; };
@@ -111,6 +112,7 @@
 		32845D85258EF88400894338 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32845D87258EF88400894338 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3292F19225A8680900A5C89A /* ReviewRestaurantVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRestaurantVC.swift; sourceTree = "<group>"; };
+		32A7243925A8E523001238F5 /* RestaurantReviewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantReviewsService.swift; sourceTree = "<group>"; };
 		32A9FF0325A4A29A00DD8CEB /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		32A9FF0425A4A29A00DD8CEB /* HeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCollectionReusableView.xib; sourceTree = "<group>"; };
 		32BB002225A7673500685B73 /* forum_lottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = forum_lottie.json; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			children = (
 				324C723F2595252B00F7AC87 /* RestaurantService.swift */,
 				32BDCAE425A4D71E00BE15A4 /* RestaurantBookingService.swift */,
+				32A7243925A8E523001238F5 /* RestaurantReviewsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -609,6 +612,7 @@
 				3253B1D12598FD6B000B76A0 /* MealCell.swift in Sources */,
 				3253B1D82598FF16000B76A0 /* Meal.swift in Sources */,
 				324C72442595282700F7AC87 /* SponsoredRestaurantCollectionViewCell.swift in Sources */,
+				32A7243A25A8E523001238F5 /* RestaurantReviewsService.swift in Sources */,
 				327646DF25A769EC00114851 /* ReviewsVC.swift in Sources */,
 				324819722591042600A66263 /* RegistrationVC.swift in Sources */,
 				32A9FF0525A4A29A00DD8CEB /* HeaderCollectionReusableView.swift in Sources */,

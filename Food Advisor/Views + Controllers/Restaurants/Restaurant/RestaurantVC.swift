@@ -152,11 +152,9 @@ extension RestaurantVC {
         locationLabel.text = restaurant.location
         descriptionLabel.text = restaurant.description
         
-        if let reviews = restaurant.reviews {
-            let total = reviews.reduce(0) { $0 + $1.rating}
-            let avgRating = Double(total) / Double(reviews.count)
+        if let rating = restaurant.rating {
             starView.settings.fillMode = .half
-            starView.rating = avgRating
+            starView.rating = rating
         }
         
         if let image = restaurant.thumbnail {

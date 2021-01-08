@@ -14,6 +14,7 @@ class RestaurantSquareCell: UICollectionViewCell {
     // MARK: Variables
     static let id = "RestaurantSquareCell"
     static let nib = UINib(nibName: id, bundle: nil)
+    var restaurantId: String?
     
     // MARK: IBOutlets
     @IBOutlet weak var containerView: UIView!
@@ -24,25 +25,27 @@ class RestaurantSquareCell: UICollectionViewCell {
     // MARK: Life cycle
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+    }
+    
+    override func prepareForReuse() {
+        starView.rating = 0
     }
 }
 
 // MARK: Methods
 extension RestaurantSquareCell {
     func setupCell(with restaurant: Restaurant) {
+        self.restaurantId = restaurant.id
         titleLabel.text = restaurant.name
         
         if let image = restaurant.thumbnail {
             thumbnailImage.sd_imageIndicator = SDWebImageActivityIndicator.gray
             thumbnailImage.sd_setImage(with: URL(string: image))
         }
-        
-        if let reviews = restaurant.reviews {
-            let total = reviews.reduce(0) { $0 + $1.rating}
-            let avgRating = Double(total) / Double(reviews.count)
+
+        if let rating = restaurant.rating {
             starView.settings.fillMode = .half
-            starView.rating = avgRating
+            starView.rating = rating
         }
         
         thumbnailImage.layer.cornerRadius = 5
