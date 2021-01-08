@@ -115,11 +115,178 @@
             </objects>
             <point key="canvasLocation" x="129" y="89"/>
         </scene>
+        <!--RatingVC-->
+        <scene sceneID="Agb-jJ-7Xd">
+            <objects>
+                <viewController storyboardIdentifier="RatingVC" id="cgn-tp-Quc" customClass="RatingVC" customModule="Food_Advisor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="md8-Vu-gG1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DxJ-Hj-C2v">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wf1-Wo-6X7" customClass="TPKeyboardAvoidingScrollView">
+                                        <rect key="frame" x="57" y="298" width="300" height="300"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate your restaurant" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7W-A6-7ct">
+                                                <rect key="frame" x="20" y="20" width="260" height="21.5"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="titleLabel"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                                <color key="textColor" red="0.23137254900000001" green="0.23137254900000001" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zla-jP-Bna">
+                                                <rect key="frame" x="30" y="71.5" width="240" height="142"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your comment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Jk-lD-4pM">
+                                                        <rect key="frame" x="0.0" y="0.0" width="240" height="20.5"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter review here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zts-jO-Hh6">
+                                                        <rect key="frame" x="0.0" y="30.5" width="240" height="41"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Give your rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJZ-pM-q5p">
+                                                        <rect key="frame" x="0.0" y="81.5" width="240" height="20.5"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c7T-cQ-gg6" customClass="CosmosView" customModule="Cosmos">
+                                                        <rect key="frame" x="0.0" y="112" width="240" height="30"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="cDo-gq-yAm"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
+                                                                <color key="value" systemColor="linkColor"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
+                                                                <color key="value" systemColor="opaqueSeparatorColor"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
+                                                                <color key="value" systemColor="opaqueSeparatorColor"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="filledBorderColor">
+                                                                <color key="value" systemColor="linkColor"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                                                <integer key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                                                <real key="value" value="25"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                                <real key="value" value="0.0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="c7T-cQ-gg6" firstAttribute="leading" secondItem="zla-jP-Bna" secondAttribute="leading" id="bLD-Xh-q3P"/>
+                                                    <constraint firstAttribute="trailing" secondItem="c7T-cQ-gg6" secondAttribute="trailing" id="fFy-yo-LnI"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="IoH-IP-fTg">
+                                                <rect key="frame" x="20" y="243.5" width="260" height="36.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kdp-rD-Uxc">
+                                                        <rect key="frame" x="0.0" y="0.0" width="125" height="36.5"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
+                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="Submit">
+                                                            <color key="titleColor" name="AccentColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="didTapOnSubmitButton:" destination="cgn-tp-Quc" eventType="touchUpInside" id="HHT-58-cli"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PZb-2u-QDm">
+                                                        <rect key="frame" x="135" y="0.0" width="125" height="36.5"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
+                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="Cancel">
+                                                            <color key="titleColor" name="AccentColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="didTapOnCancelButton:" destination="cgn-tp-Quc" eventType="touchUpInside" id="iEq-cy-c70"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="IoH-IP-fTg" secondAttribute="height" multiplier="220:31" id="0E5-Gb-MC6"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="IoH-IP-fTg" secondAttribute="bottom" constant="20" id="2GV-5A-gEm"/>
+                                            <constraint firstAttribute="trailing" secondItem="IoH-IP-fTg" secondAttribute="trailing" constant="20" id="4ao-Vx-RTQ"/>
+                                            <constraint firstItem="y7W-A6-7ct" firstAttribute="top" secondItem="Wf1-Wo-6X7" secondAttribute="top" constant="20" id="5yM-TP-Are"/>
+                                            <constraint firstItem="IoH-IP-fTg" firstAttribute="top" secondItem="zla-jP-Bna" secondAttribute="bottom" constant="30" id="9L2-vm-XGF"/>
+                                            <constraint firstAttribute="trailing" secondItem="y7W-A6-7ct" secondAttribute="trailing" constant="20" id="BRT-xy-pn2"/>
+                                            <constraint firstItem="zla-jP-Bna" firstAttribute="top" secondItem="y7W-A6-7ct" secondAttribute="bottom" constant="30" id="EVp-ht-kcn"/>
+                                            <constraint firstItem="y7W-A6-7ct" firstAttribute="leading" secondItem="Wf1-Wo-6X7" secondAttribute="leading" constant="20" id="Uac-b1-Xba"/>
+                                            <constraint firstItem="zla-jP-Bna" firstAttribute="leading" secondItem="Wf1-Wo-6X7" secondAttribute="leading" constant="30" id="XGG-zN-NEX"/>
+                                            <constraint firstAttribute="width" constant="300" id="kPW-l7-iYY"/>
+                                            <constraint firstItem="y7W-A6-7ct" firstAttribute="centerX" secondItem="Wf1-Wo-6X7" secondAttribute="centerX" id="l0p-mM-f9x"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="300" id="qZU-0R-r69"/>
+                                            <constraint firstAttribute="trailing" secondItem="zla-jP-Bna" secondAttribute="trailing" constant="30" id="svO-4h-joH"/>
+                                            <constraint firstItem="IoH-IP-fTg" firstAttribute="leading" secondItem="Wf1-Wo-6X7" secondAttribute="leading" constant="20" id="za4-Az-6vH"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="tertiaryLabelColor"/>
+                                <constraints>
+                                    <constraint firstItem="Wf1-Wo-6X7" firstAttribute="centerY" secondItem="DxJ-Hj-C2v" secondAttribute="centerY" id="FpJ-1h-lrf"/>
+                                    <constraint firstItem="Wf1-Wo-6X7" firstAttribute="centerX" secondItem="DxJ-Hj-C2v" secondAttribute="centerX" id="Vt4-Xy-p0r"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PJa-Ia-eLE"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="DxJ-Hj-C2v" secondAttribute="bottom" id="0CA-t3-4mm"/>
+                            <constraint firstItem="DxJ-Hj-C2v" firstAttribute="leading" secondItem="PJa-Ia-eLE" secondAttribute="leading" id="CUB-09-BRG"/>
+                            <constraint firstItem="PJa-Ia-eLE" firstAttribute="trailing" secondItem="DxJ-Hj-C2v" secondAttribute="trailing" id="PSA-Ky-4yg"/>
+                            <constraint firstItem="DxJ-Hj-C2v" firstAttribute="top" secondItem="md8-Vu-gG1" secondAttribute="top" id="ogX-vd-yad"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="alertView" destination="Wf1-Wo-6X7" id="ztv-DZ-wrU"/>
+                        <outlet property="reviewTextField" destination="Zts-jO-Hh6" id="6We-F2-ZpF"/>
+                        <outlet property="starView" destination="c7T-cQ-gg6" id="LVE-eG-Yti"/>
+                        <outlet property="submitButton" destination="kdp-rD-Uxc" id="aTy-ih-PWC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lzG-Mg-hUm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="861" y="88"/>
+        </scene>
     </scenes>
+    <designables>
+        <designable name="c7T-cQ-gg6">
+            <size key="intrinsicContentSize" width="145" height="25"/>
+        </designable>
+    </designables>
     <resources>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="tertiaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

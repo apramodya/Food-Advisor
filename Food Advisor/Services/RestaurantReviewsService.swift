@@ -42,3 +42,18 @@ extension RestaurantReviewsService {
         }
     }
 }
+
+// MARK: Add a review to a rastaurant
+extension RestaurantReviewsService {
+    func addReview(restaurantId id: String, review: Review, completion: @escaping (_ status: Bool, _ message: String) -> ()) {
+        let collection = Firestore.firestore().collection("restaurants").document(id).collection("reviews")
+        
+        do {
+            let _ = try collection.addDocument(from: review)
+            completion(true, "Success")
+        } catch {
+            debugPrint(error)
+            completion(false, error.localizedDescription)
+        }
+    }
+}

@@ -14,4 +14,5 @@ struct Review: Codable {
     var comment: String?
     var author: String?
     var avatar: String?
+    var userUID: String?
 }

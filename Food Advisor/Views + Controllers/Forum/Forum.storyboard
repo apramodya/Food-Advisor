@@ -203,20 +203,25 @@
                                     <constraint firstAttribute="height" constant="1" id="iFX-C6-eST"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DVm-tn-x5Q">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="yAi-sw-zwp">
                                 <rect key="frame" x="20" y="389" width="374" height="40"/>
-                                <color key="backgroundColor" systemColor="linkColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="7LW-gs-HkE"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
-                                <state key="normal" title="Add your review and rating">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="didTapOnAddReviewButton:" destination="nl7-LJ-yZp" eventType="touchUpInside" id="L7A-bG-ZVF"/>
-                                </connections>
-                            </button>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DVm-tn-x5Q">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
+                                        <color key="backgroundColor" systemColor="linkColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="7LW-gs-HkE"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
+                                        <state key="normal" title="Add your review and rating">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTapOnAddReviewButton:" destination="nl7-LJ-yZp" eventType="touchUpInside" id="L7A-bG-ZVF"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nqK-7g-Bn9">
                                 <rect key="frame" x="20" y="449" width="374" height="447"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -229,16 +234,16 @@
                             <constraint firstItem="F0G-3D-r00" firstAttribute="top" secondItem="yys-mc-ILk" secondAttribute="bottom" constant="10" id="4xi-IC-grl"/>
                             <constraint firstItem="EcL-am-vcb" firstAttribute="trailing" secondItem="nqK-7g-Bn9" secondAttribute="trailing" constant="20" id="6pW-Wf-4Y5"/>
                             <constraint firstAttribute="bottom" secondItem="nqK-7g-Bn9" secondAttribute="bottom" id="AVt-l3-0Jc"/>
-                            <constraint firstItem="DVm-tn-x5Q" firstAttribute="leading" secondItem="EcL-am-vcb" secondAttribute="leading" constant="20" id="Fdu-FO-4dX"/>
                             <constraint firstItem="F0G-3D-r00" firstAttribute="leading" secondItem="EcL-am-vcb" secondAttribute="leading" constant="20" id="Ion-qt-qGt"/>
                             <constraint firstItem="rxJ-wW-VID" firstAttribute="leading" secondItem="EcL-am-vcb" secondAttribute="leading" id="Jee-Vy-OrH"/>
                             <constraint firstItem="nqK-7g-Bn9" firstAttribute="leading" secondItem="EcL-am-vcb" secondAttribute="leading" constant="20" id="KvF-0F-2dM"/>
                             <constraint firstItem="EcL-am-vcb" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="yys-mc-ILk" secondAttribute="trailing" constant="20" id="QTB-aZ-j0y"/>
+                            <constraint firstItem="nqK-7g-Bn9" firstAttribute="top" secondItem="yAi-sw-zwp" secondAttribute="bottom" constant="20" id="Rd1-Be-FaG"/>
                             <constraint firstItem="yys-mc-ILk" firstAttribute="leading" secondItem="EcL-am-vcb" secondAttribute="leading" constant="20" id="Rw4-MN-cOW"/>
+                            <constraint firstItem="yAi-sw-zwp" firstAttribute="leading" secondItem="EcL-am-vcb" secondAttribute="leading" constant="20" id="STZ-t5-ai3"/>
                             <constraint firstItem="rxJ-wW-VID" firstAttribute="trailing" secondItem="EcL-am-vcb" secondAttribute="trailing" id="Wq5-qT-p4U"/>
-                            <constraint firstItem="EcL-am-vcb" firstAttribute="trailing" secondItem="DVm-tn-x5Q" secondAttribute="trailing" constant="20" id="cCo-Ug-BL4"/>
-                            <constraint firstItem="DVm-tn-x5Q" firstAttribute="top" secondItem="F0G-3D-r00" secondAttribute="bottom" constant="20" id="ft9-cH-g8h"/>
-                            <constraint firstItem="nqK-7g-Bn9" firstAttribute="top" secondItem="DVm-tn-x5Q" secondAttribute="bottom" constant="20" id="iJX-V3-eac"/>
+                            <constraint firstItem="yAi-sw-zwp" firstAttribute="top" secondItem="F0G-3D-r00" secondAttribute="bottom" constant="20" id="ghN-Vq-d6r"/>
+                            <constraint firstItem="EcL-am-vcb" firstAttribute="trailing" secondItem="yAi-sw-zwp" secondAttribute="trailing" constant="20" id="hEb-MP-HDm"/>
                             <constraint firstItem="yys-mc-ILk" firstAttribute="top" secondItem="rxJ-wW-VID" secondAttribute="bottom" constant="20" id="nYB-ri-Eha"/>
                             <constraint firstItem="EcL-am-vcb" firstAttribute="trailing" secondItem="F0G-3D-r00" secondAttribute="trailing" constant="20" id="xgV-em-t0M"/>
                         </constraints>

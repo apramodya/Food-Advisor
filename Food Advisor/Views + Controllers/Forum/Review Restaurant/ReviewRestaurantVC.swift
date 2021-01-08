@@ -39,6 +39,11 @@ class ReviewRestaurantVC: UIViewController {
     
     // MARK: IBActions
     @IBAction func didTapOnAddReviewButton(_ sender: Any) {
+        RatingVC.presentReviewPopup(for: self) { rating, comment in
+            self.dismiss(animated: true) {
+                self.addReview(rating: rating, comment: comment)
+            }
+        }
     }
 }
 
@@ -111,9 +116,39 @@ extension ReviewRestaurantVC {
         RestaurantReviewsService.shared.fetchReviews(restaurantId: id) { (success, message, reviews) in
             if success, let reviews = reviews {
                 self.reviews = reviews
+                
+                if let userId = LocalUser.shared.getUserID(),
+                   reviews.contains(where: {$0.userUID == userId}) {
+                    self.addReviewButton.isHidden = true
+                }
+                
                 self.tableView.reloadData()
             } else {
                 print(message)
+            }
+        }
+    }
+    
+    private func addReview(rating: Int, comment: String) {
+        guard let id = restaurantId,
+              let name = LocalUser.shared.getFirstName(),
+              let avatar = LocalUser.shared.getUserAvatarURL(),
+              let userId = LocalUser.shared.getUserID()
+        else { return }
+        
+        let review = Review(rating: rating, comment: comment, author: name, avatar: avatar, userUID: userId)
+        
+        SwiftSpinner.show("Hang tight!\n We are submitting your review.")
+        
+        RestaurantReviewsService.shared.addReview(restaurantId: id, review: review) { (success, message) in
+            SwiftSpinner.hide()
+            
+            if success {
+                self.fetchReviews()
+            } else {
+                AlertVC.presentAlert(for: self, title: "Error", message: message, left: "OK") {
+                    self.dismiss(animated: true, completion: nil)
+                }
             }
         }
     }
