@@ -82,12 +82,7 @@ extension ReviewRestaurantVC {
     }
     
     private func setupUI(for restaurant: Restaurant) {
-        titleLabel.text = restaurant.name
         
-        if let image = restaurant.thumbnail {
-            thumbnailImage.sd_imageIndicator = SDWebImageActivityIndicator.gray
-            thumbnailImage.sd_setImage(with: URL(string: image))
-        }
     }
 }
 
@@ -96,37 +91,13 @@ extension ReviewRestaurantVC {
     private func fetchRestaurant() {
         guard let id = restaurantId else { return }
         
-        SwiftSpinner.show("Hang tight!\n We are fetching restaurant details")
-        RestaurantService.shared.fetchRestaurant(for: id) { (success, message, restaurant) in
-            SwiftSpinner.hide()
-            
-            if success {
-                if let restaurant = restaurant {
-                    self.setupUI(for: restaurant)
-                }
-            } else {
-                print(message)
-            }
-        }
+        
     }
     
     private func fetchReviews() {
         guard let id = restaurantId else { return }
         
-        RestaurantReviewsService.shared.fetchReviews(restaurantId: id) { (success, message, reviews) in
-            if success, let reviews = reviews {
-                self.reviews = reviews
-                
-                if let userId = LocalUser.shared.getUserID(),
-                   reviews.contains(where: {$0.userUID == userId}) {
-                    self.addReviewButton.isHidden = true
-                }
-                
-                self.tableView.reloadData()
-            } else {
-                print(message)
-            }
-        }
+        
     }
     
     private func addReview(rating: Int, comment: String) {
@@ -138,33 +109,13 @@ extension ReviewRestaurantVC {
         
         let review = Review(rating: rating, comment: comment, author: name, avatar: avatar, userUID: userId)
         
-        SwiftSpinner.show("Hang tight!\n We are submitting your review.")
         
-        RestaurantReviewsService.shared.addReview(restaurantId: id, review: review) { (success, message) in
-            SwiftSpinner.hide()
-            
-            if success {
-                self.calculateAndUpdateRatings()
-                self.fetchReviews()
-            } else {
-                AlertVC.presentAlert(for: self, title: "Error", message: message, left: "OK") {
-                    self.dismiss(animated: true, completion: nil)
-                }
-            }
-        }
     }
     
     private func calculateAndUpdateRatings() {
         guard let id = restaurantId else { return }
         
-        RestaurantReviewsService.shared.fetchReviews(restaurantId: id) { (success, _, reviews) in
-            if success, let reviews = reviews {
-                let totalRatings = Double(reviews.reduce(0, {$0 + $1.rating}))
-                let avgRating = totalRatings / Double(reviews.count)
-                
-                self.updateRating(rating: avgRating)
-            }
-        }
+        
     }
     
     private func updateRating(rating: Double) {

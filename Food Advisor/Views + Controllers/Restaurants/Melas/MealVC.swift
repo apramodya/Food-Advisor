@@ -38,28 +38,5 @@ extension MealVC {
         titleLabel.text = meal.name
         descriptionLabel.text = meal.description
         
-        if let price = meal.price {
-            priceLabel.text = "Rs. \(price)"
-        } else {
-            priceLabel.text = "N/A"
-        }
-        
-        if let image = meal.thumbnail {
-            thumbnailImage.sd_imageIndicator = SDWebImageActivityIndicator.gray
-            thumbnailImage.sd_setImage(with: URL(string: image))
-        }
-        
-        var lineBrokenText: String = ""
-        
-        if let items = meal.items {
-            items.enumerated().forEach { item in
-                lineBrokenText += "\(item.offset + 1). \(item.element)\n"
-            }
-            
-            itemsListLabel.text = lineBrokenText
-        }
-        
-        priceView.layer.borderWidth = 0.7
-        priceView.layer.borderColor = UIColor.gray.cgColor
     }
 }

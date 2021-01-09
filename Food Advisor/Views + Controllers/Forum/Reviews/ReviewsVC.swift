@@ -48,9 +48,7 @@ extension ReviewsVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = storyboard?.instantiateViewController(identifier: ReviewRestaurantVC.id) as! ReviewRestaurantVC
-        vc.restaurantId = restaurants[indexPath.row].id
-        navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -77,20 +75,6 @@ extension ReviewsVC {
 // MARK: Network requests
 extension ReviewsVC {
     private func fetchRestaurants() {
-        SwiftSpinner.show("Hang tight!\n We are fetching restaurants")
-        RestaurantService.shared.fetchRestaurants { (success, message, restaurants) in
-            SwiftSpinner.hide()
-            
-            if success {
-                if let restaurants = restaurants {
-                    DispatchQueue.main.async {
-                        self.restaurants = restaurants
-                        self.collectionView.reloadData()
-                    }
-                }
-            } else {
-                print(message)
-            }
-        }
+        
     }
 }
