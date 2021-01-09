@@ -9,7 +9,7 @@ import UIKit
 import SDWebImage
 
 class MealCell: UICollectionViewCell {
-
+    
     // MARK: Variables
     static let id = "MealCell"
     static let nib = UINib(nibName: id, bundle: nil)
@@ -29,6 +29,14 @@ class MealCell: UICollectionViewCell {
 // MARK: Methods
 extension MealCell {
     func setupCell(with meal: Meal) {
+        titleLabel.text = meal.name
         
+        if let image = meal.thumbnail {
+            thumbnailImage.sd_imageIndicator = SDWebImageActivityIndicator.gray
+            thumbnailImage.sd_setImage(with: URL(string: image))
+        }
+        
+        thumbnailImage.layer.cornerRadius = 5
+        containerView.layer.cornerRadius = 8
     }
 }

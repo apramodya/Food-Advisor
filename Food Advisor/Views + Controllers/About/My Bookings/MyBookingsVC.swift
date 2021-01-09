@@ -51,7 +51,23 @@ extension MyBookingsVC {
     private func fetchBookings() {
         guard let userID = LocalUser.shared.getUserID() else { return }
         
-        
+        SwiftSpinner.show("Hang tight!\n We are fetching your bookings")
+        RestaurantBookingService.shared
+            .fetchBookings(userID: userID) { (success, message, bookings) in
+                SwiftSpinner.hide()
+                
+                if success, let bookings = bookings {
+                    let _upcomingBookings = bookings.filter({$0.dateTime >= Date()})
+                    let _pastBookings = bookings.filter({$0.dateTime < Date()})
+                    
+                    self.pastBookings = _pastBookings
+                    self.upcomingBookings = _upcomingBookings
+                    
+                    self.tableView.reloadData()
+                } else {
+                    print(message)
+                }
+            }
     }
 }
 
@@ -83,11 +99,25 @@ extension MyBookingsVC: UITableViewDelegate, UITableViewDataSource {
                 cell.setupCell(with: booking)
                 
                 cell.didTapOnEdit = { [weak self] in
-                    
+                    let storyboard = UIStoryboard(name: Storyboard.Main.rawValue, bundle: nil)
+                    let vc = storyboard.instantiateViewController(withIdentifier: BookingVC.id) as! BookingVC
+                    vc.booking = booking
+                    self?.navigationController?.pushViewController(vc, animated: true)
                 }
                 
                 cell.didTapOnView = { [weak self] in
+                    let storyboard = UIStoryboard(name: Storyboard.About.rawValue, bundle: nil)
+                    let vc = storyboard.instantiateViewController(withIdentifier: ViewBookingVC.id) as! ViewBookingVC
+                    vc.booking = booking
                     
+                    vc.didTapOnViewRestaurant = { [weak self] restaurantId in
+                        let storyboard = UIStoryboard(name: Storyboard.Main.rawValue, bundle: nil)
+                        let vc = storyboard.instantiateViewController(identifier: RestaurantVC.id) as! RestaurantVC
+                        vc.restaurantId = restaurantId
+                        self?.navigationController?.pushViewController(vc, animated: true)
+                    }
+                    
+                    self?.present(vc, animated: true, completion: nil)
                 }
                 
                 return cell

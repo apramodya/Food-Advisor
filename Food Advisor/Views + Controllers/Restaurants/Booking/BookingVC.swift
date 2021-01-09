@@ -64,7 +64,21 @@ extension BookingVC {
         let duration = Int(durationTextField.text ?? "1") ?? 1
         let headCount = Int(headCountTextField.text ?? "1") ?? 1
         
-        
+        RestaurantBookingService.shared.createBooking(bookingDateTime: bookingDateTime, corkage: corkage, duration: duration, headCount: headCount, restautantID: restaurantId, userID: userID) { (success, message) in
+            SwiftSpinner.hide()
+            
+            if success {
+                AlertVC.presentAlert(for: self, title: "Success", message: message, left: "OK") {
+                    self.dismiss(animated: true) {
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                }
+            } else {
+                AlertVC.presentAlert(for: self, title: "Error", message: message, left: "OK") {
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }
+        }
     }
     
     private func updateBooking() {
@@ -85,13 +99,35 @@ extension BookingVC {
         let duration = Int(durationTextField.text ?? "1") ?? 1
         let headCount = Int(headCountTextField.text ?? "1") ?? 1
         
-        
+        RestaurantBookingService.shared.updateBooking(docID: documentID, bookingDateTime: bookingDateTime, corkage: corkage, duration: duration, headCount: headCount, restautantID: restaurantId, userID: userID) { (success, message) in
+            SwiftSpinner.hide()
+            
+            if success {
+                AlertVC.presentAlert(for: self, title: "Success", message: message, left: "OK") {
+                    self.dismiss(animated: true) {
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                }
+            } else {
+                AlertVC.presentAlert(for: self, title: "Error", message: message, left: "OK") {
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }
+        }
     }
     
     private func fetchRestaurant() {
         guard let id = restaurantId else { return }
         
-        
+        RestaurantService.shared.fetchRestaurant(for: id) { (success, message, restaurant) in
+            if success {
+                if let restaurant = restaurant {
+                    self.placeLabel.text = "Booking details of your booking at \(restaurant.name)"
+                }
+            } else {
+                print(message)
+            }
+        }
     }
 }
 
@@ -157,7 +193,19 @@ extension BookingVC {
     private func submitBooking() {
         let isFormValid = validateFields().0
         
-        
+        if !isFormValid {
+            if let message = validateFields().1 {
+                AlertVC.presentAlert(for: self, title: "Error", message: message, left: "OK") {
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }
+        } else {
+            if let _ = booking {
+                updateBooking()
+            } else {
+                createBooking()
+            }
+        }
     }
     
     private func combine(date: Date, time: Date) -> Date? {
