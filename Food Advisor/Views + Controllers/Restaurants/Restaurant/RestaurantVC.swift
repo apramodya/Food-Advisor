@@ -70,11 +70,38 @@ class RestaurantVC: UIViewController {
 // MARK: Network requests
 extension RestaurantVC {
     private func fetchRestaurant() {
+        guard let id = restaurantId else { return }
         
+        SwiftSpinner.show("Hang tight!\n We are fetching restaurant details")
+        RestaurantService.shared.fetchRestaurant(for: id) { (success, message, restaurant) in
+            SwiftSpinner.hide()
+            
+            if success {
+                self.restaurant = restaurant
+                
+                if let restaurant = restaurant {
+                    self.setupUI(for: restaurant)
+                }
+            } else {
+                print(message)
+            }
+        }
     }
     
     private func fetchMeals() {
+        guard let id = restaurantId else { return }
         
+        SwiftSpinner.show("Hang tight!\n We are fetching meals details")
+        RestaurantService.shared.fetchMealsForRestaurant(for: id) { (success, message, meals) in
+            SwiftSpinner.hide()
+            
+            if success, let meals = meals {
+                self.meals = meals
+                self.collectionView.reloadData()
+            } else {
+                print(message)
+            }
+        }
     }
 }
 
