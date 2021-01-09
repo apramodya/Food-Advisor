@@ -135,7 +135,20 @@ extension ReviewRestaurantVC {
         
         let review = Review(rating: rating, comment: comment, author: name, avatar: avatar, userUID: userId)
         
+        SwiftSpinner.show("Hang tight!\n We are submitting your review.")
         
+        RestaurantReviewsService.shared.addReview(restaurantId: id, review: review) { (success, message) in
+            SwiftSpinner.hide()
+            
+            if success {
+                self.calculateAndUpdateRatings()
+                self.fetchReviews()
+            } else {
+                AlertVC.presentAlert(for: self, title: "Error", message: message, left: "OK") {
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }
+        }
     }
     
     private func calculateAndUpdateRatings() {
