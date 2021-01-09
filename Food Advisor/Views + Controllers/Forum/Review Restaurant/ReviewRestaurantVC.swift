@@ -82,7 +82,9 @@ extension ReviewRestaurantVC {
     }
     
     private func setupUI(for restaurant: Restaurant) {
-        
+        navigationController?.navigationBar.isHidden = false
+        tabBarController?.tabBar.isHidden = true
+        addReviewButton.layer.cornerRadius = 8
     }
 }
 
@@ -91,7 +93,18 @@ extension ReviewRestaurantVC {
     private func fetchRestaurant() {
         guard let id = restaurantId else { return }
         
-        
+        SwiftSpinner.show("Hang tight!\n We are fetching restaurant details")
+        RestaurantService.shared.fetchRestaurant(for: id) { (success, message, restaurant) in
+            SwiftSpinner.hide()
+            
+            if success {
+                if let restaurant = restaurant {
+                    self.setupUI(for: restaurant)
+                }
+            } else {
+                print(message)
+            }
+        }
     }
     
     private func fetchReviews() {
