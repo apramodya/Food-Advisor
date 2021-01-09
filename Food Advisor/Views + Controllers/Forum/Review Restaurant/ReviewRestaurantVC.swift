@@ -154,7 +154,14 @@ extension ReviewRestaurantVC {
     private func calculateAndUpdateRatings() {
         guard let id = restaurantId else { return }
         
-        
+        RestaurantReviewsService.shared.fetchReviews(restaurantId: id) { (success, _, reviews) in
+            if success, let reviews = reviews {
+                let totalRatings = Double(reviews.reduce(0, {$0 + $1.rating}))
+                let avgRating = totalRatings / Double(reviews.count)
+                
+                self.updateRating(rating: avgRating)
+            }
+        }
     }
     
     private func updateRating(rating: Double) {
