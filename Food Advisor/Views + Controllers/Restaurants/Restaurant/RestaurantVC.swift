@@ -122,7 +122,12 @@ extension RestaurantVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let meal = meals[indexPath.row]
         
+        let vc = storyboard?.instantiateViewController(identifier: MealVC.id) as! MealVC
+        vc.meal = meal
+        
+        present(vc, animated: true, completion: nil)
     }
     
     private func setupCollectionView() {
@@ -145,7 +150,15 @@ extension RestaurantVC {
         locationLabel.text = restaurant.location
         descriptionLabel.text = restaurant.description
         
+        if let rating = restaurant.rating {
+            starView.settings.fillMode = .half
+            starView.rating = rating
+        }
         
+        if let image = restaurant.thumbnail {
+            thumbnailImage.sd_imageIndicator = SDWebImageActivityIndicator.gray
+            thumbnailImage.sd_setImage(with: URL(string: image))
+        }
     }
     
     private func makeCall() {
@@ -206,6 +219,8 @@ extension RestaurantVC {
     }
     
     private func gotoMakeABooking() {
-        
+        let vc = storyboard?.instantiateViewController(identifier: BookingVC.id) as! BookingVC
+        vc.restaurantId = restaurantId
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
