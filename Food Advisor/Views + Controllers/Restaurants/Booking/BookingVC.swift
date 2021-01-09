@@ -64,7 +64,21 @@ extension BookingVC {
         let duration = Int(durationTextField.text ?? "1") ?? 1
         let headCount = Int(headCountTextField.text ?? "1") ?? 1
         
-        
+        RestaurantBookingService.shared.createBooking(bookingDateTime: bookingDateTime, corkage: corkage, duration: duration, headCount: headCount, restautantID: restaurantId, userID: userID) { (success, message) in
+            SwiftSpinner.hide()
+            
+            if success {
+                AlertVC.presentAlert(for: self, title: "Success", message: message, left: "OK") {
+                    self.dismiss(animated: true) {
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                }
+            } else {
+                AlertVC.presentAlert(for: self, title: "Error", message: message, left: "OK") {
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }
+        }
     }
     
     private func updateBooking() {
@@ -85,7 +99,21 @@ extension BookingVC {
         let duration = Int(durationTextField.text ?? "1") ?? 1
         let headCount = Int(headCountTextField.text ?? "1") ?? 1
         
-        
+        RestaurantBookingService.shared.updateBooking(docID: documentID, bookingDateTime: bookingDateTime, corkage: corkage, duration: duration, headCount: headCount, restautantID: restaurantId, userID: userID) { (success, message) in
+            SwiftSpinner.hide()
+            
+            if success {
+                AlertVC.presentAlert(for: self, title: "Success", message: message, left: "OK") {
+                    self.dismiss(animated: true) {
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                }
+            } else {
+                AlertVC.presentAlert(for: self, title: "Error", message: message, left: "OK") {
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }
+        }
     }
     
     private func fetchRestaurant() {
