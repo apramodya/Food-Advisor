@@ -110,7 +110,20 @@ extension ReviewRestaurantVC {
     private func fetchReviews() {
         guard let id = restaurantId else { return }
         
-        
+        RestaurantReviewsService.shared.fetchReviews(restaurantId: id) { (success, message, reviews) in
+            if success, let reviews = reviews {
+                self.reviews = reviews
+                
+                if let userId = LocalUser.shared.getUserID(),
+                   reviews.contains(where: {$0.userUID == userId}) {
+                    self.addReviewButton.isHidden = true
+                }
+                
+                self.tableView.reloadData()
+            } else {
+                print(message)
+            }
+        }
     }
     
     private func addReview(rating: Int, comment: String) {
