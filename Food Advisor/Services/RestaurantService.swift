@@ -28,7 +28,17 @@ extension RestaurantService {
                     return
                 }
                 
+                let restaurants = documents.compactMap({ (document) -> Restaurant? in
+                    do {
+                        return try document.data(as: Restaurant.self)
+                    } catch {
+                        debugPrint(error)
+                        completion(false, error.localizedDescription, nil)
+                        return nil
+                    }
+                })
                 
+                completion(true, "Success", restaurants)
             }
         }
     }
@@ -63,7 +73,17 @@ extension RestaurantService {
                     return
                 }
                 
+                let meals = documents.compactMap({ (document) -> Meal? in
+                    do {
+                        return try document.data(as: Meal.self)
+                    } catch {
+                        debugPrint(error)
+                        completion(false, error.localizedDescription, nil)
+                        return nil
+                    }
+                })
                 
+                completion(true, "Success", meals)
             }
         }
     }
