@@ -24,7 +24,22 @@ extension RestaurantBookingService {
                        completion: @escaping (_ status: Bool, _ message: String) -> ()) {
         let collection = Firestore.firestore().collection("bookings")
         
-       
+        collection.addDocument(
+            data: [
+                "bookingDateTime": bookingDateTime,
+                "corkage": corkage,
+                "duration": duration,
+                "headCount": headCount,
+                "restautantID": restautantID,
+                "userID": userID,
+            ]) { (error) in
+            if let error = error {
+                debugPrint(error)
+                completion(false, error.localizedDescription)
+            }
+        }
+        
+        completion(true, "Booking placed successfully.")
     }
 }
 
@@ -74,7 +89,17 @@ extension RestaurantBookingService {
                     return
                 }
                 
+                let bookings = documents.compactMap({ (document) -> Booking? in
+                    do {
+                        return try document.data(as: Booking.self)
+                    } catch {
+                        debugPrint(error)
+                        completion(false, error.localizedDescription, nil)
+                        return nil
+                    }
+                })
                 
+                completion(true, "Success", bookings)
             }
         }
     }
