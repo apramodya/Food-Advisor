@@ -33,6 +33,11 @@ class AllForumsVC: UIViewController {
     
     // MARK: IBActions
     @IBAction func didTapOnAddButton(_ sender: Any) {
+        AskQuestionVC.presentAskQuestionPopup(for: self) { (question, isAnon) in
+            self.dismiss(animated: true) {
+                self.postQuestion(question: question, isAnon: isAnon)
+            }
+        }
     }
 }
 
@@ -81,6 +86,36 @@ extension AllForumsVC {
             if success, let questions = questions {
                 self.questions = questions
                 self.tableView.reloadData()
+            } else {
+                print(message)
+            }
+        }
+    }
+    
+    private func postQuestion(question: String, isAnon: Bool) {
+        guard let userId = LocalUser.shared.getUserID()
+        else { return }
+        
+        var author: Author?
+        
+        if isAnon {
+            author = Author(avatar: "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png", name: "Anonymous", userID: userId)
+        } else {
+            guard let name = LocalUser.shared.getFirstName(),
+                  let avatar = LocalUser.shared.getUserAvatarURL()
+            else { return }
+            
+            author = Author(avatar: avatar, name: name, userID: userId)
+        }
+        
+        let question = ForumQuestion(id: nil, author: author, question: question, votes: nil)
+        
+        SwiftSpinner.show("Hang tight!\n We are submitting your question")
+        ForumService.shared.postQuestion(question: question) { (success, message) in
+            SwiftSpinner.hide()
+            
+            if success {
+                self.fetchQuestions()
             } else {
                 print(message)
             }

@@ -72,3 +72,18 @@ extension ForumService {
         }
     }
 }
+
+// MARK: Post a forum question
+extension ForumService {
+    func postQuestion(question: ForumQuestion, completion: @escaping (_ status: Bool, _ message: String) -> ()) {
+        let collection = Firestore.firestore().collection("forum")
+        
+        do {
+            let _ = try collection.addDocument(from: question)
+            completion(true, "Success")
+        } catch {
+            debugPrint(error)
+            completion(false, error.localizedDescription)
+        }
+    }
+}
