@@ -53,7 +53,13 @@ extension RestaurantService {
             if let error = error {
                 completion(false, error.localizedDescription, nil)
             } else {
-                
+                do {
+                    let restaurant = try documentSnapshot?.data(as: Restaurant.self)
+                    completion(true, "Success", restaurant)
+                } catch {
+                    debugPrint(error)
+                    completion(false, error.localizedDescription, nil)
+                }
             }
         }
     }

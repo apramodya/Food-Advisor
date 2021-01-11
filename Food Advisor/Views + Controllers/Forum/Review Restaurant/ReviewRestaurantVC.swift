@@ -82,9 +82,12 @@ extension ReviewRestaurantVC {
     }
     
     private func setupUI(for restaurant: Restaurant) {
-        navigationController?.navigationBar.isHidden = false
-        tabBarController?.tabBar.isHidden = true
-        addReviewButton.layer.cornerRadius = 8
+        titleLabel.text = restaurant.name
+        
+        if let image = restaurant.thumbnail {
+            thumbnailImage.sd_imageIndicator = SDWebImageActivityIndicator.gray
+            thumbnailImage.sd_setImage(with: URL(string: image))
+        }
     }
 }
 

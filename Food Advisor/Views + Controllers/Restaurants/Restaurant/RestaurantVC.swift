@@ -113,6 +113,8 @@ extension RestaurantVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MealCell.id, for: indexPath) as! MealCell
+        let meal = meals[indexPath.row]
+        cell.setupCell(with: meal)
         
         return cell
     }
