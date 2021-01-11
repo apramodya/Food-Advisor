@@ -26,6 +26,10 @@ class SponsoredRestaurantCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+    
+    override func prepareForReuse() {
+        starView.rating = 0 
+    }
 }
 
 // MARK: Methods

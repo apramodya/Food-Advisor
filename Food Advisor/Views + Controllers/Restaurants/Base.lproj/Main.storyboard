@@ -353,6 +353,7 @@
                     <connections>
                         <outlet property="bookButton" destination="g9P-BY-tXo" id="nbH-LC-PNU"/>
                         <outlet property="collectionView" destination="u2D-Np-L7c" id="B3L-2L-BiJ"/>
+                        <outlet property="collectionViewHC" destination="ji2-sa-jrS" id="3PL-Z0-cCd"/>
                         <outlet property="descriptionLabel" destination="dWE-l4-QDR" id="3Si-fs-L2b"/>
                         <outlet property="locationLabel" destination="zfP-KM-vgZ" id="fsS-8X-hwJ"/>
                         <outlet property="starView" destination="9DA-ro-rWQ" id="qz2-U3-Klk"/>

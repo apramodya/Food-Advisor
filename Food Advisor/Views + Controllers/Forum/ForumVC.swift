@@ -23,12 +23,12 @@ class ForumVC: UIViewController {
         super.viewWillAppear(animated)
         
         navigationController?.navigationBar.isHidden = true
+        animate()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        animate()
         setupUI()
     }
     

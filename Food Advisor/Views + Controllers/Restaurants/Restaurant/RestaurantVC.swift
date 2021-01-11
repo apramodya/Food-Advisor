@@ -23,6 +23,7 @@ class RestaurantVC: UIViewController {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var starView: CosmosView!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var collectionViewHC: NSLayoutConstraint!
     @IBOutlet weak var bookButton: UIButton!
     
     // MARK: Variables
@@ -95,10 +96,11 @@ extension RestaurantVC {
         RestaurantService.shared.fetchMealsForRestaurant(for: id) { (success, message, meals) in
             SwiftSpinner.hide()
             
-            if success, let meals = meals {
+            if success, let meals = meals, meals.count > 0 {
                 self.meals = meals
                 self.collectionView.reloadData()
             } else {
+                self.collectionViewHC.constant = 0
                 print(message)
             }
         }
