@@ -65,6 +65,10 @@
 		32F997D125ACC0610012F9E2 /* ForumService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F997D025ACC0610012F9E2 /* ForumService.swift */; };
 		32F997D425ACC2340012F9E2 /* ForumQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F997D325ACC2340012F9E2 /* ForumQuestion.swift */; };
 		32F997D825ACC57F0012F9E2 /* ForumAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F997D725ACC57F0012F9E2 /* ForumAnswer.swift */; };
+		32F997DB25ACC6560012F9E2 /* AllForumsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F997DA25ACC6560012F9E2 /* AllForumsVC.swift */; };
+		32F997E125ACC7D40012F9E2 /* ForumQuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F997DF25ACC7D40012F9E2 /* ForumQuestionCell.swift */; };
+		32F997E225ACC7D40012F9E2 /* ForumQuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32F997E025ACC7D40012F9E2 /* ForumQuestionCell.xib */; };
+		32F997E825ACD1340012F9E2 /* AskQuestionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F997E725ACD1340012F9E2 /* AskQuestionVC.swift */; };
 		B0D0AF158E1B3DA9B4B77CEF /* Pods_Food_Advisor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA3D97A41CADE64B6EB73E4 /* Pods_Food_Advisor.framework */; };
 /* End PBXBuildFile section */
 
@@ -129,6 +133,10 @@
 		32F997D025ACC0610012F9E2 /* ForumService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumService.swift; sourceTree = "<group>"; };
 		32F997D325ACC2340012F9E2 /* ForumQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumQuestion.swift; sourceTree = "<group>"; };
 		32F997D725ACC57F0012F9E2 /* ForumAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumAnswer.swift; sourceTree = "<group>"; };
+		32F997DA25ACC6560012F9E2 /* AllForumsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllForumsVC.swift; sourceTree = "<group>"; };
+		32F997DF25ACC7D40012F9E2 /* ForumQuestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumQuestionCell.swift; sourceTree = "<group>"; };
+		32F997E025ACC7D40012F9E2 /* ForumQuestionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForumQuestionCell.xib; sourceTree = "<group>"; };
+		32F997E725ACD1340012F9E2 /* AskQuestionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskQuestionVC.swift; sourceTree = "<group>"; };
 		468C1FBC10DE051C04E3519D /* Pods-Food Advisor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Food Advisor.release.xcconfig"; path = "Target Support Files/Pods-Food Advisor/Pods-Food Advisor.release.xcconfig"; sourceTree = "<group>"; };
 		5D21CBFE3741A1C4CBE6FBE1 /* Pods-Food Advisor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Food Advisor.debug.xcconfig"; path = "Target Support Files/Pods-Food Advisor/Pods-Food Advisor.debug.xcconfig"; sourceTree = "<group>"; };
 		6FA3D97A41CADE64B6EB73E4 /* Pods_Food_Advisor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Food_Advisor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -228,6 +236,7 @@
 				3248196B2591025A00A66263 /* ForumVC.swift */,
 				327646E125A769F000114851 /* Reviews */,
 				3292F19525A8680E00A5C89A /* Review Restaurant */,
+				32F997DD25ACC65A0012F9E2 /* Forums */,
 			);
 			path = Forum;
 			sourceTree = "<group>";
@@ -442,8 +451,27 @@
 				32F4FC3E2598F1E000F938EA /* Alert.storyboard */,
 				32F4FC432598F33A00F938EA /* AlertViewController.swift */,
 				32A7243D25A8F03E001238F5 /* RatingVC.swift */,
+				32F997E725ACD1340012F9E2 /* AskQuestionVC.swift */,
 			);
 			path = Alert;
+			sourceTree = "<group>";
+		};
+		32F997DD25ACC65A0012F9E2 /* Forums */ = {
+			isa = PBXGroup;
+			children = (
+				32F997DA25ACC6560012F9E2 /* AllForumsVC.swift */,
+				32F997E425ACC7DA0012F9E2 /* Question Cell */,
+			);
+			path = Forums;
+			sourceTree = "<group>";
+		};
+		32F997E425ACC7DA0012F9E2 /* Question Cell */ = {
+			isa = PBXGroup;
+			children = (
+				32F997DF25ACC7D40012F9E2 /* ForumQuestionCell.swift */,
+				32F997E025ACC7D40012F9E2 /* ForumQuestionCell.xib */,
+			);
+			path = "Question Cell";
 			sourceTree = "<group>";
 		};
 		868FD5A7EF763276D20D31BD /* Frameworks */ = {
@@ -542,6 +570,7 @@
 				324C71D12594F57700F7AC87 /* GoogleService-Info.plist in Resources */,
 				324C72452595282700F7AC87 /* SponsoredRestaurantCollectionViewCell.xib in Resources */,
 				32BB002325A7673500685B73 /* forum_lottie.json in Resources */,
+				32F997E225ACC7D40012F9E2 /* ForumQuestionCell.xib in Resources */,
 				326501BA25A5D2D700C083CA /* logo_lottie.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -612,8 +641,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32F997DB25ACC6560012F9E2 /* AllForumsVC.swift in Sources */,
 				326501BE25A5DAE200C083CA /* MyBookingsVC.swift in Sources */,
 				32BDCAE025A4A72E00BE15A4 /* BookingVC.swift in Sources */,
+				32F997E125ACC7D40012F9E2 /* ForumQuestionCell.swift in Sources */,
 				324C722225951E4C00F7AC87 /* Restaurant.swift in Sources */,
 				32F997D125ACC0610012F9E2 /* ForumService.swift in Sources */,
 				327BA2B125A6324F00D3FD87 /* ViewBookingVC.swift in Sources */,
@@ -632,6 +663,7 @@
 				324819722591042600A66263 /* RegistrationVC.swift in Sources */,
 				32A9FF0525A4A29A00DD8CEB /* HeaderCollectionReusableView.swift in Sources */,
 				324C72402595252B00F7AC87 /* RestaurantService.swift in Sources */,
+				32F997E825ACD1340012F9E2 /* AskQuestionVC.swift in Sources */,
 				324819752591042F00A66263 /* LoginVC.swift in Sources */,
 				327977BF25A86EA7002647DC /* Review.swift in Sources */,
 				3248196F2591038A00A66263 /* AboutVC.swift in Sources */,

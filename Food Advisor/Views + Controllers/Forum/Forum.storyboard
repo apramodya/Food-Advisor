@@ -278,6 +278,62 @@
             </objects>
             <point key="canvasLocation" x="-842.02898550724649" y="-111.16071428571428"/>
         </scene>
+        <!--Forum - Questions-->
+        <scene sceneID="sGx-nH-Cfo">
+            <objects>
+                <viewController storyboardIdentifier="AllForumsVC" title="Forum - Questions" id="wTs-4L-RtM" customClass="AllForumsVC" customModule="Food_Advisor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="T3A-Fq-vNB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LMI-gY-KIs">
+                                <rect key="frame" x="20" y="98" width="374" height="798"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mOD-aF-ezB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LMI-gY-KIs" firstAttribute="leading" secondItem="mOD-aF-ezB" secondAttribute="leading" constant="20" id="1kf-2e-DPU"/>
+                            <constraint firstItem="LMI-gY-KIs" firstAttribute="top" secondItem="mOD-aF-ezB" secondAttribute="top" constant="10" id="8yN-8n-wTr"/>
+                            <constraint firstItem="mOD-aF-ezB" firstAttribute="trailing" secondItem="LMI-gY-KIs" secondAttribute="trailing" constant="20" id="fQa-3a-uo0"/>
+                            <constraint firstAttribute="bottom" secondItem="LMI-gY-KIs" secondAttribute="bottom" id="hDr-V0-Dg4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="8Ol-tp-plP">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="dB1-D7-Wra">
+                            <connections>
+                                <action selector="didTapOnAddButton:" destination="wTs-4L-RtM" id="gma-Xe-S4V"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="LMI-gY-KIs" id="2Al-XO-5CG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xuF-5h-N8f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2420" y="-111"/>
+        </scene>
+        <!--Forum - Questions-->
+        <scene sceneID="U72-oZ-x7X">
+            <objects>
+                <navigationController title="Forum - Questions" automaticallyAdjustsScrollViewInsets="NO" id="vBT-LX-eMt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iGo-0L-y6n">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wTs-4L-RtM" kind="relationship" relationship="rootViewController" id="cVZ-Ui-ZHs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Xi-yN-Ys3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2419" y="-826"/>
+        </scene>
     </scenes>
     <designables>
         <designable name="coO-UP-bc8"/>

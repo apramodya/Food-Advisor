@@ -38,6 +38,7 @@ class ForumVC: UIViewController {
     }
     
     @IBAction func didTapOnForum(_ sender: Any) {
+        AppNavigator.shared.pushToViewController(in: .Forum, for: AllForumsVC.id, from: self)
     }
 }
 
