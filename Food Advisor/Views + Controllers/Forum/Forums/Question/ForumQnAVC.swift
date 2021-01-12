@@ -72,6 +72,12 @@ extension ForumQnAVC: UITableViewDelegate, UITableViewDataSource {
                 cell.setupCell(with: question)
             }
             
+            cell.didUpVote = { [weak self] vote in
+                guard let id = self?.question?.id else { return }
+                
+                self?.voteQuestion(questionId: id, isUpVote: vote)
+            }
+            
             return cell
         case .Answers:
             let cell = tableView.dequeueReusableCell(withIdentifier: AnswerCell.id, for: indexPath) as! AnswerCell
@@ -130,6 +136,20 @@ extension ForumQnAVC {
         }
     }
     
+    private func fetchQuestion(for id: String) {
+        SwiftSpinner.show("Hang tight!\n We are fetching question")
+        ForumService.shared.fetchForumQuestion(for: id) { (success, message, question) in
+            SwiftSpinner.hide()
+            
+            if success, let question = question {
+                self.question = question
+                self.tableView.reloadData()
+            } else {
+                print(message)
+            }
+        }
+    }
+    
     private func postAnswer(questionId: String, answer: String, isAnon: Bool) {
         guard let userId = LocalUser.shared.getUserID()
         else { return }
@@ -154,6 +174,24 @@ extension ForumQnAVC {
             
             if success {
                 self.fetchAnswers()
+            } else {
+                print(message)
+            }
+        }
+    }
+    
+    private func voteQuestion(questionId: String, isUpVote: Bool) {
+        guard let userId = LocalUser.shared.getUserID()
+        else { return }
+        
+        let vote = Vote(isUpVote: isUpVote, userID: userId)
+        
+        SwiftSpinner.show("Hang tight!\n We are updating your vote")
+        ForumService.shared.voteQuestion(questionId: questionId, vote: vote) { (success, message) in
+            SwiftSpinner.hide()
+            
+            if success {
+                self.fetchQuestion(for: questionId)
             } else {
                 print(message)
             }

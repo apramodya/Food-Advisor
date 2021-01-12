@@ -43,6 +43,27 @@ extension ForumService {
     }
 }
 
+// MARK: Get forum question
+extension ForumService {
+    func fetchForumQuestion(for questionId: String, completion: @escaping (_ status: Bool, _ message: String, _ question: ForumQuestion?) -> ()) {
+        let document = Firestore.firestore().collection("forum").document(questionId)
+        
+        document.getDocument { (documentSnapshot, error) in
+            if let error = error {
+                completion(false, error.localizedDescription, nil)
+            } else {
+                do {
+                    let question = try documentSnapshot?.data(as: ForumQuestion.self)
+                    completion(true, "Success", question)
+                } catch {
+                    debugPrint(error)
+                    completion(false, error.localizedDescription, nil)
+                }
+            }
+        }
+    }
+}
+
 // MARK: Get answers for a forum question
 extension ForumService {
     func fetchAnswers(for questionId: String, completion: @escaping (_ status: Bool, _ message: String, _ questions: [ForumAnswer]?) -> ()) {
@@ -102,5 +123,27 @@ extension ForumService {
             debugPrint(error)
             completion(false, error.localizedDescription)
         }
+    }
+}
+
+// MARK: Vote a forum question
+extension ForumService {
+    func voteQuestion(questionId: String, vote: Vote, completion: @escaping (_ status: Bool, _ message: String) -> ()) {
+        let document = Firestore.firestore().collection("forum").document(questionId)
+        
+        
+        document.updateData([
+            "votes": FieldValue.arrayUnion(
+                [["isUpVote": vote.isUpVote,
+                  "userID": vote.userID ?? ""]]
+            )
+        ]) { (error) in
+            if let error = error {
+                debugPrint(error)
+                completion(false, error.localizedDescription)
+            }
+        }
+        
+        completion(true, "Vote updated")
     }
 }

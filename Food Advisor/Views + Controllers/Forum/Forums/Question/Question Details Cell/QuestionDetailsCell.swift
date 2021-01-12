@@ -13,6 +13,7 @@ class QuestionDetailsCell: UITableViewCell {
     // MARK: Variables
     static let id = "QuestionDetailsCell"
     static let nib = UINib(nibName: id, bundle: nil)
+    var didUpVote: ((Bool) -> ())?
     
     // MARK: IBOutlets
     @IBOutlet weak var containerView: UIView!
@@ -29,10 +30,12 @@ class QuestionDetailsCell: UITableViewCell {
     }
     
     // MARK: IBActions
-    @IBAction func didTapOnUpVoteButton(_ sender: Any) {
+    @IBAction private func didTapOnUpVoteButton(_ sender: Any) {
+        didUpVote?(true)
     }
     
-    @IBAction func didTapOnDownVoteButton(_ sender: Any) {
+    @IBAction private func didTapOnDownVoteButton(_ sender: Any) {
+        didUpVote?(false)
     }
 }
 
