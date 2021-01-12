@@ -45,6 +45,10 @@
 		327BA2A925A5F97400D3FD87 /* LottieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 327BA2A725A5F97400D3FD87 /* LottieCell.xib */; };
 		327BA2AE25A5FA1900D3FD87 /* calendar.json in Resources */ = {isa = PBXBuildFile; fileRef = 327BA2AD25A5FA1900D3FD87 /* calendar.json */; };
 		327BA2B125A6324F00D3FD87 /* ViewBookingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327BA2B025A6324F00D3FD87 /* ViewBookingVC.swift */; };
+		3281BA1425ADFC76005ABABC /* QuestionDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3281BA1225ADFC76005ABABC /* QuestionDetailsCell.swift */; };
+		3281BA1525ADFC76005ABABC /* QuestionDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3281BA1325ADFC76005ABABC /* QuestionDetailsCell.xib */; };
+		3281BA1C25AE00FD005ABABC /* AnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3281BA1A25AE00FD005ABABC /* AnswerCell.swift */; };
+		3281BA1D25AE00FD005ABABC /* AnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3281BA1B25AE00FD005ABABC /* AnswerCell.xib */; };
 		32845D7A258EF88300894338 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32845D79258EF88300894338 /* AppDelegate.swift */; };
 		32845D7C258EF88300894338 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32845D7B258EF88300894338 /* SceneDelegate.swift */; };
 		32845D7E258EF88300894338 /* RestaurantsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32845D7D258EF88300894338 /* RestaurantsVC.swift */; };
@@ -69,6 +73,7 @@
 		32F997E125ACC7D40012F9E2 /* ForumQuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F997DF25ACC7D40012F9E2 /* ForumQuestionCell.swift */; };
 		32F997E225ACC7D40012F9E2 /* ForumQuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32F997E025ACC7D40012F9E2 /* ForumQuestionCell.xib */; };
 		32F997E825ACD1340012F9E2 /* AskQuestionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F997E725ACD1340012F9E2 /* AskQuestionVC.swift */; };
+		32F997EB25ACD9A90012F9E2 /* ForumQnAVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F997EA25ACD9A90012F9E2 /* ForumQnAVC.swift */; };
 		B0D0AF158E1B3DA9B4B77CEF /* Pods_Food_Advisor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA3D97A41CADE64B6EB73E4 /* Pods_Food_Advisor.framework */; };
 /* End PBXBuildFile section */
 
@@ -111,6 +116,10 @@
 		327BA2A725A5F97400D3FD87 /* LottieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LottieCell.xib; sourceTree = "<group>"; };
 		327BA2AD25A5FA1900D3FD87 /* calendar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = calendar.json; sourceTree = "<group>"; };
 		327BA2B025A6324F00D3FD87 /* ViewBookingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBookingVC.swift; sourceTree = "<group>"; };
+		3281BA1225ADFC76005ABABC /* QuestionDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDetailsCell.swift; sourceTree = "<group>"; };
+		3281BA1325ADFC76005ABABC /* QuestionDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionDetailsCell.xib; sourceTree = "<group>"; };
+		3281BA1A25AE00FD005ABABC /* AnswerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerCell.swift; sourceTree = "<group>"; };
+		3281BA1B25AE00FD005ABABC /* AnswerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswerCell.xib; sourceTree = "<group>"; };
 		32845D76258EF88300894338 /* Food Advisor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Food Advisor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32845D79258EF88300894338 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32845D7B258EF88300894338 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +146,7 @@
 		32F997DF25ACC7D40012F9E2 /* ForumQuestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumQuestionCell.swift; sourceTree = "<group>"; };
 		32F997E025ACC7D40012F9E2 /* ForumQuestionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForumQuestionCell.xib; sourceTree = "<group>"; };
 		32F997E725ACD1340012F9E2 /* AskQuestionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskQuestionVC.swift; sourceTree = "<group>"; };
+		32F997EA25ACD9A90012F9E2 /* ForumQnAVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumQnAVC.swift; sourceTree = "<group>"; };
 		468C1FBC10DE051C04E3519D /* Pods-Food Advisor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Food Advisor.release.xcconfig"; path = "Target Support Files/Pods-Food Advisor/Pods-Food Advisor.release.xcconfig"; sourceTree = "<group>"; };
 		5D21CBFE3741A1C4CBE6FBE1 /* Pods-Food Advisor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Food Advisor.debug.xcconfig"; path = "Target Support Files/Pods-Food Advisor/Pods-Food Advisor.debug.xcconfig"; sourceTree = "<group>"; };
 		6FA3D97A41CADE64B6EB73E4 /* Pods_Food_Advisor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Food_Advisor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -388,6 +398,43 @@
 			path = "View Booking";
 			sourceTree = "<group>";
 		};
+		3281BA0E25ADFC40005ABABC /* Questions */ = {
+			isa = PBXGroup;
+			children = (
+				32F997DA25ACC6560012F9E2 /* AllForumsVC.swift */,
+				32F997E425ACC7DA0012F9E2 /* Question Cell */,
+			);
+			path = Questions;
+			sourceTree = "<group>";
+		};
+		3281BA1025ADFC4C005ABABC /* Question */ = {
+			isa = PBXGroup;
+			children = (
+				32F997EA25ACD9A90012F9E2 /* ForumQnAVC.swift */,
+				3281BA1825ADFC85005ABABC /* Question Details Cell */,
+				3281BA1F25AE0101005ABABC /* Answer Cell */,
+			);
+			path = Question;
+			sourceTree = "<group>";
+		};
+		3281BA1825ADFC85005ABABC /* Question Details Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3281BA1225ADFC76005ABABC /* QuestionDetailsCell.swift */,
+				3281BA1325ADFC76005ABABC /* QuestionDetailsCell.xib */,
+			);
+			path = "Question Details Cell";
+			sourceTree = "<group>";
+		};
+		3281BA1F25AE0101005ABABC /* Answer Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3281BA1A25AE00FD005ABABC /* AnswerCell.swift */,
+				3281BA1B25AE00FD005ABABC /* AnswerCell.xib */,
+			);
+			path = "Answer Cell";
+			sourceTree = "<group>";
+		};
 		32845D6D258EF88200894338 = {
 			isa = PBXGroup;
 			children = (
@@ -459,8 +506,8 @@
 		32F997DD25ACC65A0012F9E2 /* Forums */ = {
 			isa = PBXGroup;
 			children = (
-				32F997DA25ACC6560012F9E2 /* AllForumsVC.swift */,
-				32F997E425ACC7DA0012F9E2 /* Question Cell */,
+				3281BA0E25ADFC40005ABABC /* Questions */,
+				3281BA1025ADFC4C005ABABC /* Question */,
 			);
 			path = Forums;
 			sourceTree = "<group>";
@@ -551,6 +598,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3281BA1D25AE00FD005ABABC /* AnswerCell.xib in Resources */,
 				327BA2A925A5F97400D3FD87 /* LottieCell.xib in Resources */,
 				327977B925A86CDE002647DC /* ReviewCell.xib in Resources */,
 				324819572590FA9C00A66263 /* Auth.storyboard in Resources */,
@@ -561,6 +609,7 @@
 				324819672590FF0900A66263 /* About.storyboard in Resources */,
 				324C724D25952B7500F7AC87 /* RestaurantCollectionViewCell.xib in Resources */,
 				327BA2A125A5F81700D3FD87 /* NothinToShowCell.xib in Resources */,
+				3281BA1525ADFC76005ABABC /* QuestionDetailsCell.xib in Resources */,
 				32845D86258EF88400894338 /* LaunchScreen.storyboard in Resources */,
 				32845D83258EF88400894338 /* Assets.xcassets in Resources */,
 				327646E725A76D0100114851 /* RestaurantSquareCell.xib in Resources */,
@@ -644,6 +693,7 @@
 				32F997DB25ACC6560012F9E2 /* AllForumsVC.swift in Sources */,
 				326501BE25A5DAE200C083CA /* MyBookingsVC.swift in Sources */,
 				32BDCAE025A4A72E00BE15A4 /* BookingVC.swift in Sources */,
+				3281BA1C25AE00FD005ABABC /* AnswerCell.swift in Sources */,
 				32F997E125ACC7D40012F9E2 /* ForumQuestionCell.swift in Sources */,
 				324C722225951E4C00F7AC87 /* Restaurant.swift in Sources */,
 				32F997D125ACC0610012F9E2 /* ForumService.swift in Sources */,
@@ -674,6 +724,8 @@
 				32F4FC442598F33A00F938EA /* AlertViewController.swift in Sources */,
 				3248196C2591025A00A66263 /* ForumVC.swift in Sources */,
 				32502C3525988957005B47DA /* RestaurantVC.swift in Sources */,
+				3281BA1425ADFC76005ABABC /* QuestionDetailsCell.swift in Sources */,
+				32F997EB25ACD9A90012F9E2 /* ForumQnAVC.swift in Sources */,
 				327646E625A76D0100114851 /* RestaurantSquareCell.swift in Sources */,
 				327BA2A825A5F97400D3FD87 /* LottieCell.swift in Sources */,
 				32845D7C258EF88300894338 /* SceneDelegate.swift in Sources */,

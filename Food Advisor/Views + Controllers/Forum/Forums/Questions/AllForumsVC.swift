@@ -56,6 +56,14 @@ extension AllForumsVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let question = questions[indexPath.row]
+        
+        let vc = storyboard?.instantiateViewController(identifier: ForumQnAVC.id) as! ForumQnAVC
+        vc.question = question
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         70
     }
