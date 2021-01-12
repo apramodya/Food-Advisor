@@ -14,6 +14,7 @@ struct ForumQuestion: Identifiable, Codable {
     var author: Author?
     var question: String?
     var votes: [Vote]?
+    var dateTime: Timestamp?
 }
 
 extension ForumQuestion {
@@ -31,6 +32,16 @@ extension ForumQuestion {
         let downVotes = votes.filter({!$0.isUpVote}).count
         
         return downVotes
+    }
+    
+    var readableDataTime: String {
+        guard let _dateTime = dateTime?.dateValue() else { return "N/A" }
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy MMM d h:mm a"
+        let time = formatter.string(from: _dateTime)
+        
+        return time
     }
 }
 

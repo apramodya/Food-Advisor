@@ -46,7 +46,9 @@ extension ForumService {
 // MARK: Get answers for a forum question
 extension ForumService {
     func fetchAnswers(for questionId: String, completion: @escaping (_ status: Bool, _ message: String, _ questions: [ForumAnswer]?) -> ()) {
-        let collection = Firestore.firestore().collection("forum").document(questionId).collection("answers")
+        let collection = Firestore.firestore().collection("forum")
+            .document(questionId).collection("answers")
+            .order(by: "dateTime", descending: false)
         
         collection.getDocuments { (querySnapshot, error) in
             if let error = error {
@@ -80,6 +82,21 @@ extension ForumService {
         
         do {
             let _ = try collection.addDocument(from: question)
+            completion(true, "Success")
+        } catch {
+            debugPrint(error)
+            completion(false, error.localizedDescription)
+        }
+    }
+}
+
+// MARK: Post a forum answer
+extension ForumService {
+    func postAnswer(for questionId: String, answer: ForumAnswer, completion: @escaping (_ status: Bool, _ message: String) -> ()) {
+        let collection = Firestore.firestore().collection("forum").document(questionId).collection("answers")
+        
+        do {
+            let _ = try collection.addDocument(from: answer)
             completion(true, "Success")
         } catch {
             debugPrint(error)

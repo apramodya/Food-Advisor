@@ -21,6 +21,7 @@ class QuestionDetailsCell: UITableViewCell {
     @IBOutlet weak var upVotesCountLabel: UILabel!
     @IBOutlet weak var downVotesCountLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var dateTimeLabel: UILabel!
     
     // MARK: Life cycle
     override func awakeFromNib() {
@@ -46,7 +47,8 @@ extension QuestionDetailsCell {
         downVotesCountLabel.text = "\(question.downVotes)"
         
         questionLabel.text = question.question
-        authorLabel.text = question.author?.name ?? "N/A"
+        authorLabel.text = "By: \(question.author?.name ?? "N/A")"
+        dateTimeLabel.text = question.readableDataTime
         avatarImage.layer.cornerRadius = avatarImage.bounds.height / 2
         containerView.layer.cornerRadius = 8
     }

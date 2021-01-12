@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftSpinner
+import FirebaseFirestore
 
 class ForumQnAVC: UIViewController {
 
@@ -35,6 +36,13 @@ class ForumQnAVC: UIViewController {
     
     // MARK: IBActions
     @IBAction func didTapOnAddButton(_ sender: Any) {
+        AskQuestionVC.presentAskQuestionPopup(for: self, for: .A) { (answer, isAnon) in
+            self.dismiss(animated: true) {
+                guard let id = self.question?.id else { return }
+                
+                self.postAnswer(questionId: id, answer: answer, isAnon: isAnon)
+            }
+        }
     }
 }
 
@@ -116,6 +124,36 @@ extension ForumQnAVC {
             if success, let answers = answers {
                 self.answers = answers
                 self.tableView.reloadData()
+            } else {
+                print(message)
+            }
+        }
+    }
+    
+    private func postAnswer(questionId: String, answer: String, isAnon: Bool) {
+        guard let userId = LocalUser.shared.getUserID()
+        else { return }
+        
+        var author: Author?
+        
+        if isAnon {
+            author = Author(avatar: "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png", name: "Anonymous", userID: userId)
+        } else {
+            guard let name = LocalUser.shared.getFirstName(),
+                  let avatar = LocalUser.shared.getUserAvatarURL()
+            else { return }
+            
+            author = Author(avatar: avatar, name: name, userID: userId)
+        }
+        
+        let answer = ForumAnswer(id: nil, author: author, answer: answer, dateTime: Timestamp.init(date: Date()))
+        
+        SwiftSpinner.show("Hang tight!\n We are submitting your answer")
+        ForumService.shared.postAnswer(for: questionId, answer: answer) { (success, message) in
+            SwiftSpinner.hide()
+            
+            if success {
+                self.fetchAnswers()
             } else {
                 print(message)
             }

@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftSpinner
+import FirebaseFirestore
 
 class AllForumsVC: UIViewController {
 
@@ -33,7 +34,7 @@ class AllForumsVC: UIViewController {
     
     // MARK: IBActions
     @IBAction func didTapOnAddButton(_ sender: Any) {
-        AskQuestionVC.presentAskQuestionPopup(for: self) { (question, isAnon) in
+        AskQuestionVC.presentAskQuestionPopup(for: self, for: .Q) { (question, isAnon) in
             self.dismiss(animated: true) {
                 self.postQuestion(question: question, isAnon: isAnon)
             }
@@ -116,7 +117,7 @@ extension AllForumsVC {
             author = Author(avatar: avatar, name: name, userID: userId)
         }
         
-        let question = ForumQuestion(id: nil, author: author, question: question, votes: nil)
+        let question = ForumQuestion(id: nil, author: author, question: question, votes: nil, dateTime: Timestamp(date: Date()))
         
         SwiftSpinner.show("Hang tight!\n We are submitting your question")
         ForumService.shared.postQuestion(question: question) { (success, message) in

@@ -19,6 +19,7 @@ class AnswerCell: UITableViewCell {
     @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var answerLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var dateTimeLabel: UILabel!
     
     // MARK: Life cycle
     override func awakeFromNib() {
@@ -34,7 +35,8 @@ extension AnswerCell {
         }
         
         answerLabel.text = answer.answer
-        authorLabel.text = answer.author?.name ?? "N/A"
+        authorLabel.text = "By: \(answer.author?.name ?? "N/A")"
+        dateTimeLabel.text = answer.readableDataTime
         avatarImage.layer.cornerRadius = avatarImage.bounds.height / 2
         containerView.layer.cornerRadius = 8
     }
