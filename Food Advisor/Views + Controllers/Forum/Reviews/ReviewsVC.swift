@@ -17,6 +17,7 @@ class ReviewsVC: UIViewController {
     // MARK: Variables
     static let id = "ReviewsVC"
     var restaurants = [Restaurant]()
+    var filteredRestaurants = [Restaurant]()
     
     // MARK: Life cycle
     override func viewWillAppear(_ animated: Bool) {
@@ -36,11 +37,11 @@ class ReviewsVC: UIViewController {
 // MARK: UICollectionView
 extension ReviewsVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        restaurants.count
+        filteredRestaurants.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let restaurant = restaurants[indexPath.row]
+        let restaurant = filteredRestaurants[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RestaurantSquareCell.id, for: indexPath) as! RestaurantSquareCell
         cell.setupCell(with: restaurant)
         
@@ -49,7 +50,7 @@ extension ReviewsVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(identifier: ReviewRestaurantVC.id) as! ReviewRestaurantVC
-        vc.restaurantId = restaurants[indexPath.row].id
+        vc.restaurantId = filteredRestaurants[indexPath.row].id
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -66,11 +67,33 @@ extension ReviewsVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
     }
 }
 
+// MARK: UISearchBar
+extension ReviewsVC: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let key = searchBar.text, key.count > 0 else {
+            filteredRestaurants = restaurants
+            collectionView.reloadData()
+            return
+        }
+        
+        filteredRestaurants = restaurants.filter({$0.name.contains(key)})
+        collectionView.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        filteredRestaurants = restaurants
+        collectionView.reloadData()
+    }
+}
+
 // MARK: Private methods
 extension ReviewsVC {
     private func setupUI() {
         navigationController?.navigationBar.isHidden = false
         tabBarController?.tabBar.isHidden = true
+        searchBar.delegate = self
+        searchBar.text = ""
     }
 }
 
@@ -85,6 +108,7 @@ extension ReviewsVC {
                 if let restaurants = restaurants {
                     DispatchQueue.main.async {
                         self.restaurants = restaurants
+                        self.filteredRestaurants = restaurants
                         self.collectionView.reloadData()
                     }
                 }
