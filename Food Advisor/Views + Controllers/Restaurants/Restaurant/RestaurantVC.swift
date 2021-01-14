@@ -11,7 +11,7 @@ import SDWebImage
 import SwiftSpinner
 
 enum WebsiteType {
-    case Web, Facebook, Instagram, Maps
+    case Web, Facebook, Instagram, Maps, Messenger
 }
 
 class RestaurantVC: UIViewController {
@@ -25,6 +25,7 @@ class RestaurantVC: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionViewHC: NSLayoutConstraint!
     @IBOutlet weak var bookButton: UIButton!
+    @IBOutlet weak var chatButton: UIButton!
     
     // MARK: Variables
     static let id = "RestaurantVC"
@@ -65,6 +66,10 @@ class RestaurantVC: UIViewController {
     
     @IBAction func didTapOnBookButton(_ sender: Any) {
         gotoMakeABooking()
+    }
+    
+    @IBAction func didTapOnChatButton(_ sender: Any) {
+        openWebsite(for: .Messenger)
     }
 }
 
@@ -144,6 +149,7 @@ extension RestaurantVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
         navigationController?.navigationBar.isHidden = false
         tabBarController?.tabBar.isHidden = true
         bookButton.layer.cornerRadius = 8
+        chatButton.layer.cornerRadius = 8
     }
 }
 
@@ -163,6 +169,12 @@ extension RestaurantVC {
             thumbnailImage.sd_imageIndicator = SDWebImageActivityIndicator.gray
             thumbnailImage.sd_setImage(with: URL(string: image))
         }
+        
+        if let _ = restaurant.messengerUrl {
+            chatButton.isHidden = false
+        } else {
+            chatButton.isHidden = true
+        }
     }
     
     private func makeCall() {
@@ -180,8 +192,7 @@ extension RestaurantVC {
     private func openWebsite(for type: WebsiteType) {
         switch type {
         case .Facebook:
-            if let website = restaurant?.facebook,
-               let url = URL(string: website),
+            if let url = restaurant?.facebookUrl,
                UIApplication.shared.canOpenURL(url) {
                 UIApplication.shared.open(url, options: [:])
             } else {
@@ -216,6 +227,15 @@ extension RestaurantVC {
                 UIApplication.shared.open(url, options: [:])
             } else {
                 AlertVC.presentAlert(for: self, title: "Sorry", message: "We can't open map directions this time.", left: "OK") {
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }
+        case .Messenger:
+            if let url = restaurant?.messengerUrl,
+               UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url, options: [:])
+            } else {
+                AlertVC.presentAlert(for: self, title: "Sorry", message: "We can't open Messenger this time.", left: "OK") {
                     self.dismiss(animated: true, completion: nil)
                 }
             }

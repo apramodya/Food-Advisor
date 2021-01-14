@@ -134,7 +134,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWE-l4-QDR">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWE-l4-QDR">
                                                 <rect key="frame" x="10" y="270" width="394" height="18"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                                 <nil key="textColor"/>
@@ -287,31 +287,53 @@
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9P-BY-tXo">
-                                                <rect key="frame" x="117" y="538" width="180" height="35"/>
-                                                <color key="backgroundColor" systemColor="linkColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="180" id="Yje-ZM-cWd"/>
-                                                    <constraint firstAttribute="height" constant="35" id="ie3-Ms-0cn"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
-                                                <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
-                                                <state key="normal" title="Make a booking">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="didTapOnBookButton:" destination="LhF-5z-dNJ" eventType="touchUpInside" id="Tvl-8o-YoR"/>
-                                                </connections>
-                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jUL-xf-C61">
+                                                <rect key="frame" x="30" y="538" width="354" height="78"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9P-BY-tXo">
+                                                        <rect key="frame" x="0.0" y="0.0" width="354" height="35"/>
+                                                        <color key="backgroundColor" systemColor="linkColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="35" id="ie3-Ms-0cn"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                        <color key="tintColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="30" maxY="0.0"/>
+                                                        <state key="normal" title="Make a booking" image="highlighter" catalog="system">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="didTapOnBookButton:" destination="LhF-5z-dNJ" eventType="touchUpInside" id="Tvl-8o-YoR"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pry-9o-HL7">
+                                                        <rect key="frame" x="0.0" y="43" width="354" height="35"/>
+                                                        <color key="backgroundColor" systemColor="linkColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="35" id="GWS-oA-Kfv"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                        <color key="tintColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="30" maxY="0.0"/>
+                                                        <state key="normal" title="Chat using Messenger" image="message.fill" catalog="system">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="didTapOnChatButton:" destination="LhF-5z-dNJ" eventType="touchUpInside" id="aqW-iC-HG9"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="g9P-BY-tXo" firstAttribute="top" secondItem="u2D-Np-L7c" secondAttribute="bottom" constant="20" id="6N9-qV-NO5"/>
+                                            <constraint firstItem="jUL-xf-C61" firstAttribute="centerX" secondItem="Yx6-Ut-VXF" secondAttribute="centerX" id="5R9-A3-RVG"/>
                                             <constraint firstItem="u2D-Np-L7c" firstAttribute="leading" secondItem="Yx6-Ut-VXF" secondAttribute="leading" constant="10" id="6sG-0K-40q"/>
                                             <constraint firstAttribute="trailing" secondItem="dWE-l4-QDR" secondAttribute="trailing" constant="10" id="DCv-eI-XXQ"/>
                                             <constraint firstItem="u2D-Np-L7c" firstAttribute="top" secondItem="RgN-ag-O2o" secondAttribute="bottom" constant="10" id="Dp2-Qb-bPC"/>
                                             <constraint firstAttribute="trailing" secondItem="1si-8r-zEX" secondAttribute="trailing" id="EXb-5i-45K"/>
-                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="g9P-BY-tXo" secondAttribute="bottom" constant="20" id="GkO-Yc-WY9"/>
                                             <constraint firstItem="WTg-oe-quM" firstAttribute="top" secondItem="1si-8r-zEX" secondAttribute="bottom" constant="10" id="HhI-Ra-oSw"/>
                                             <constraint firstItem="QDS-EN-Rsk" firstAttribute="top" secondItem="dWE-l4-QDR" secondAttribute="bottom" constant="10" id="I91-UA-eFh"/>
                                             <constraint firstAttribute="trailing" secondItem="u2D-Np-L7c" secondAttribute="trailing" constant="10" id="K2V-z2-ECJ"/>
@@ -320,8 +342,11 @@
                                             <constraint firstItem="dWE-l4-QDR" firstAttribute="leading" secondItem="Yx6-Ut-VXF" secondAttribute="leading" constant="10" id="Qe8-65-vAe"/>
                                             <constraint firstItem="QDS-EN-Rsk" firstAttribute="leading" secondItem="Yx6-Ut-VXF" secondAttribute="leading" constant="10" id="Qtd-JO-vCB"/>
                                             <constraint firstItem="RgN-ag-O2o" firstAttribute="leading" secondItem="Yx6-Ut-VXF" secondAttribute="leading" constant="10" id="U96-Ia-7Zd"/>
+                                            <constraint firstItem="jUL-xf-C61" firstAttribute="leading" secondItem="Yx6-Ut-VXF" secondAttribute="leading" constant="30" id="WdM-LT-oaR"/>
+                                            <constraint firstItem="jUL-xf-C61" firstAttribute="top" secondItem="u2D-Np-L7c" secondAttribute="bottom" constant="20" id="aRN-fy-eqW"/>
                                             <constraint firstItem="1si-8r-zEX" firstAttribute="top" secondItem="Yx6-Ut-VXF" secondAttribute="top" id="crB-Hs-Acl"/>
-                                            <constraint firstItem="g9P-BY-tXo" firstAttribute="centerX" secondItem="Yx6-Ut-VXF" secondAttribute="centerX" id="l2V-dx-NMz"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="jUL-xf-C61" secondAttribute="bottom" constant="20" id="eGe-pd-O9Q"/>
+                                            <constraint firstAttribute="trailing" secondItem="jUL-xf-C61" secondAttribute="trailing" constant="30" id="l2G-dd-dFu"/>
                                             <constraint firstItem="WTg-oe-quM" firstAttribute="leading" secondItem="Yx6-Ut-VXF" secondAttribute="leading" constant="10" id="pWN-HG-cvk"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="WTg-oe-quM" secondAttribute="trailing" constant="10" id="prz-TT-dE8"/>
                                             <constraint firstItem="RgN-ag-O2o" firstAttribute="top" secondItem="QDS-EN-Rsk" secondAttribute="bottom" constant="10" id="uJV-8s-20o"/>
@@ -352,6 +377,7 @@
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
                         <outlet property="bookButton" destination="g9P-BY-tXo" id="nbH-LC-PNU"/>
+                        <outlet property="chatButton" destination="Pry-9o-HL7" id="YSI-Xa-AWu"/>
                         <outlet property="collectionView" destination="u2D-Np-L7c" id="B3L-2L-BiJ"/>
                         <outlet property="collectionViewHC" destination="ji2-sa-jrS" id="3PL-Z0-cCd"/>
                         <outlet property="descriptionLabel" destination="dWE-l4-QDR" id="3Si-fs-L2b"/>
@@ -655,8 +681,10 @@
         <image name="call" width="18" height="18"/>
         <image name="explore" width="18" height="18"/>
         <image name="facebook" width="18" height="18"/>
+        <image name="highlighter" catalog="system" width="128" height="119"/>
         <image name="instagram" width="226" height="226"/>
         <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
+        <image name="message.fill" catalog="system" width="128" height="113"/>
         <image name="restaurant" width="24" height="24"/>
         <image name="website" width="18" height="18"/>
         <namedColor name="AccentColor">
