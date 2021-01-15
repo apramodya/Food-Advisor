@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		321CE92125B1CE51001743D2 /* Food_AdvisorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321CE92025B1CE51001743D2 /* Food_AdvisorUITests.swift */; };
 		324819572590FA9C00A66263 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 324819562590FA9C00A66263 /* Auth.storyboard */; };
 		324819632590FEF100A66263 /* Forum.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 324819622590FEF100A66263 /* Forum.storyboard */; };
 		324819672590FF0900A66263 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 324819662590FF0900A66263 /* About.storyboard */; };
@@ -78,7 +79,20 @@
 		B0D0AF158E1B3DA9B4B77CEF /* Pods_Food_Advisor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA3D97A41CADE64B6EB73E4 /* Pods_Food_Advisor.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		321CE92325B1CE51001743D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 32845D6E258EF88200894338 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 32845D75258EF88300894338;
+			remoteInfo = "Food Advisor";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		321CE91E25B1CE51001743D2 /* Food AdvisorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Food AdvisorUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		321CE92025B1CE51001743D2 /* Food_AdvisorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food_AdvisorUITests.swift; sourceTree = "<group>"; };
+		321CE92225B1CE51001743D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		324819562590FA9C00A66263 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		324819622590FEF100A66263 /* Forum.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Forum.storyboard; sourceTree = "<group>"; };
 		324819662590FF0900A66263 /* About.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
@@ -155,6 +169,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		321CE91B25B1CE51001743D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		32845D73258EF88300894338 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -166,6 +187,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		321CE91F25B1CE51001743D2 /* Food AdvisorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				321CE92025B1CE51001743D2 /* Food_AdvisorUITests.swift */,
+				321CE92225B1CE51001743D2 /* Info.plist */,
+			);
+			path = "Food AdvisorUITests";
+			sourceTree = "<group>";
+		};
 		3248194D2590FA2B00A66263 /* Views + Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -442,6 +472,7 @@
 			isa = PBXGroup;
 			children = (
 				32845D78258EF88300894338 /* Food Advisor */,
+				321CE91F25B1CE51001743D2 /* Food AdvisorUITests */,
 				32845D77258EF88300894338 /* Products */,
 				A8F527BA29F5338FDD6CD5FB /* Pods */,
 				868FD5A7EF763276D20D31BD /* Frameworks */,
@@ -452,6 +483,7 @@
 			isa = PBXGroup;
 			children = (
 				32845D76258EF88300894338 /* Food Advisor.app */,
+				321CE91E25B1CE51001743D2 /* Food AdvisorUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -552,6 +584,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		321CE91D25B1CE51001743D2 /* Food AdvisorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 321CE92725B1CE51001743D2 /* Build configuration list for PBXNativeTarget "Food AdvisorUITests" */;
+			buildPhases = (
+				321CE91A25B1CE51001743D2 /* Sources */,
+				321CE91B25B1CE51001743D2 /* Frameworks */,
+				321CE91C25B1CE51001743D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				321CE92425B1CE51001743D2 /* PBXTargetDependency */,
+			);
+			name = "Food AdvisorUITests";
+			productName = "Food AdvisorUITests";
+			productReference = 321CE91E25B1CE51001743D2 /* Food AdvisorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		32845D75258EF88300894338 /* Food Advisor */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 32845D8A258EF88400894338 /* Build configuration list for PBXNativeTarget "Food Advisor" */;
@@ -581,6 +631,10 @@
 				LastSwiftUpdateCheck = 1230;
 				LastUpgradeCheck = 1230;
 				TargetAttributes = {
+					321CE91D25B1CE51001743D2 = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 32845D75258EF88300894338;
+					};
 					32845D75258EF88300894338 = {
 						CreatedOnToolsVersion = 12.3;
 					};
@@ -600,11 +654,19 @@
 			projectRoot = "";
 			targets = (
 				32845D75258EF88300894338 /* Food Advisor */,
+				321CE91D25B1CE51001743D2 /* Food AdvisorUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		321CE91C25B1CE51001743D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		32845D74258EF88300894338 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -697,6 +759,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		321CE91A25B1CE51001743D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				321CE92125B1CE51001743D2 /* Food_AdvisorUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		32845D72258EF88300894338 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -751,6 +821,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		321CE92425B1CE51001743D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 32845D75258EF88300894338 /* Food Advisor */;
+			targetProxy = 321CE92325B1CE51001743D2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		32845D7F258EF88300894338 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -771,6 +849,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		321CE92525B1CE51001743D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YQVQ6JM6BC;
+				INFOPLIST_FILE = "Food AdvisorUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "lk.iit.Food-AdvisorUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Food Advisor";
+			};
+			name = Debug;
+		};
+		321CE92625B1CE51001743D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YQVQ6JM6BC;
+				INFOPLIST_FILE = "Food AdvisorUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "lk.iit.Food-AdvisorUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Food Advisor";
+			};
+			name = Release;
+		};
 		32845D88258EF88400894338 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -938,6 +1054,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		321CE92725B1CE51001743D2 /* Build configuration list for PBXNativeTarget "Food AdvisorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				321CE92525B1CE51001743D2 /* Debug */,
+				321CE92625B1CE51001743D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		32845D71258EF88200894338 /* Build configuration list for PBXProject "Food Advisor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

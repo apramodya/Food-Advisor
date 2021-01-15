@@ -191,6 +191,7 @@ extension BookingVC {
     }
     
     private func submitBooking() {
+        view.endEditing(true)
         let isFormValid = validateFields().0
         
         if !isFormValid {

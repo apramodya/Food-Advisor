@@ -21,6 +21,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MUS-JB-pb8">
                                 <rect key="frame" x="20" y="69" width="68" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="greetingLabel"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -130,6 +131,7 @@
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTg-oe-quM">
                                                 <rect key="frame" x="10" y="230" width="45" height="30"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="titleLabel"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -293,6 +295,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9P-BY-tXo">
                                                         <rect key="frame" x="0.0" y="0.0" width="354" height="35"/>
                                                         <color key="backgroundColor" systemColor="linkColor"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="makeABookingButton"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="35" id="ie3-Ms-0cn"/>
                                                         </constraints>
@@ -511,6 +514,7 @@
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a date to book" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="My9-31-f7S">
                                                         <rect key="frame" x="0.0" y="36" width="374" height="34"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="dateTextField"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                                     </textField>
@@ -531,6 +535,7 @@
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a time to book" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vFW-aW-8fS">
                                                         <rect key="frame" x="0.0" y="36" width="374" height="34"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="timeTextField"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                                     </textField>
@@ -551,6 +556,7 @@
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a duration of your stay" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="srI-yB-JU7">
                                                         <rect key="frame" x="0.0" y="36" width="374" height="34"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="durationTextField"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
                                                     </textField>
@@ -571,6 +577,7 @@
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter number of people" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EcZ-eY-qPR">
                                                         <rect key="frame" x="0.0" y="36" width="374" height="34"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="headCountTextField"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                                                     </textField>
@@ -597,6 +604,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wma-YM-OLP">
                                                 <rect key="frame" x="152" y="501" width="110" height="35"/>
                                                 <color key="backgroundColor" systemColor="linkColor"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="submitButton"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="I8t-k3-VmQ"/>
                                                     <constraint firstAttribute="width" constant="110" id="uq1-LR-d1P"/>
