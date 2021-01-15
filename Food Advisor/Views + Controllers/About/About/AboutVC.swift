@@ -42,9 +42,17 @@ class AboutVC: UIViewController {
     
     // MARK: IBActions
     @IBAction func didTapOnLogoutButton(_ sender: Any) {
-        GIDSignIn.sharedInstance().signOut()
-        LocalUser.shared.removeAllData()
-        AppNavigator.shared.manageUserDirection()
+        AlertVC.presentAlert(for: self,
+                             title: "Logout",
+                             message: "Are you sure to logout?",
+                             left: "Yes",
+                             right: "No") {
+            GIDSignIn.sharedInstance().signOut()
+            LocalUser.shared.removeAllData()
+            AppNavigator.shared.manageUserDirection(window: UIApplication.shared.windows.first)
+        } onRight: {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 }
 
