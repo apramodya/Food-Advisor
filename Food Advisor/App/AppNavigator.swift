@@ -17,7 +17,7 @@ enum Storyboard: String {
 class AppNavigator {
     static let shared = AppNavigator()
     
-    public func manageUserDirection(window: UIWindow? = nil) {
+    public func manageUserDirection(window: UIWindow?) {
         guard LocalUser.shared.getToken() != nil else {
             gotoLogin(window)
             return

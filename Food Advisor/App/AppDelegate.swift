@@ -89,7 +89,7 @@ extension AppDelegate: GIDSignInDelegate {
                 LocalUser.shared.setUserAvatarURL(url: imageURL.absoluteString)
             }
             
-            AppNavigator.shared.manageUserDirection()
+            AppNavigator.shared.manageUserDirection(window: UIApplication.shared.windows.first)
         }
     }
 }
