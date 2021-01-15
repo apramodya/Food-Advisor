@@ -6,22 +6,40 @@
 //
 
 import UIKit
+import GoogleSignIn
+import Lottie
 
 class LoginVC: UIViewController {
 
+    static let id = "LoginVC"
+    
+    @IBOutlet weak var logoView: AnimationView!
+    @IBOutlet weak var signInView: GIDSignInButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setupUI()
+        animate()
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        GIDSignIn.sharedInstance()?.restorePreviousSignIn()
     }
     
-    @IBAction func didTapOnLoginButton(_ sender: Any) {
-        let token = "123-123"
-        
-        LocalUser.shared.setToken(token: token)
-        
-        print(LocalUser.shared.getToken())
-        AppNavigator.shared.manageUserDirection()
+    @IBAction func didTapOnSignInWithGoogleButton(_ sender: Any) {
+        GIDSignIn.sharedInstance()?.signIn()
+    }
+}
+
+extension LoginVC {
+    private func animate() {
+        logoView.contentMode = .scaleAspectFit
+        logoView.loopMode = .loop
+        logoView.play()
     }
     
+    private func setupUI() {
+        signInView.layer.cornerRadius = 16
+        signInView.colorScheme = .dark
+        signInView.style = .wide
+    }
 }

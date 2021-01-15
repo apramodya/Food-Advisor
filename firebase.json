@@ -1,0 +1,24 @@
+{
+    "hosting": {
+        "public": "public",
+        "ignore": [
+            "firebase.json",
+            "**/.*",
+            "**/node_modules/**"
+        ],
+        "rewrites": [
+            {
+                "source": "tnc",
+                "destination": "/tnc.html"
+            },
+            {
+                "source": "pp",
+                "destination": "/pp.html"
+            },
+            {
+                "source": "**",
+                "destination": "/404.html"
+            }
+        ]
+    }
+}

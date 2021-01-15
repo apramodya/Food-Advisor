@@ -6,6 +6,15 @@ target 'Food Advisor' do
   use_frameworks!
 
   # Pods for Food Advisor
+  pod 'Cosmos', '~> 23.0'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
+  pod 'FirebaseFirestoreSwift'
+  pod 'GoogleSignIn'
+  pod 'lottie-ios'
+  pod 'SDWebImage', '~> 5.0'
+  pod "SwiftSpinner"
   pod 'TPKeyboardAvoiding', '~> 1.3'
   pod 'NVActivityIndicatorView'
 end

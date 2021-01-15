@@ -16,7 +16,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: windowScene)
         
-        print("scene : \(LocalUser.shared.getToken())")
         AppNavigator.shared.manageUserDirection(window: window)
     }
 

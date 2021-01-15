@@ -19,7 +19,7 @@ class AppNavigator {
     
     public func manageUserDirection(window: UIWindow? = nil) {
         guard LocalUser.shared.getToken() != nil else {
-            directToPath(window, in: .Auth, for: .Auth)
+            gotoLogin(window)
             return
         }
         
@@ -29,8 +29,18 @@ class AppNavigator {
     private func directToPath(_ window: UIWindow?, in sb: Storyboard, for id: Storyboard) {
         let storyboard = UIStoryboard(name: sb.rawValue, bundle: nil)
         let topController = storyboard.instantiateViewController(withIdentifier: id.rawValue)
-
+        topController.navigationController?.navigationBar.isHidden = true
+        window?.rootViewController = UINavigationController(rootViewController: topController)
+        window?.rootViewController?.navigationController?.navigationBar.isHidden = true
+        window?.makeKeyAndVisible()
+    }
+    
+    private func gotoLogin(_ window: UIWindow?) {
+        let storyboard = UIStoryboard(name: Storyboard.Auth.rawValue, bundle: nil)
+        let topController = storyboard.instantiateViewController(withIdentifier: LoginVC.id) as! LoginVC
+        
         window?.rootViewController = topController
+        window?.rootViewController?.navigationController?.navigationBar.isHidden = true
         window?.makeKeyAndVisible()
     }
     
