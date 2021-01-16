@@ -14,6 +14,7 @@ class ReviewRestaurantVC: UIViewController {
     // MARK: IBOutlets
     @IBOutlet weak var thumbnailImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var viewRestaurantButton: UIButton!
     @IBOutlet weak var addReviewButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
@@ -38,6 +39,14 @@ class ReviewRestaurantVC: UIViewController {
     }
     
     // MARK: IBActions
+    @IBAction func didTapOnViewRestaurantButton(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: RestaurantVC.id) as! RestaurantVC
+        vc.restaurantId = restaurantId
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
     @IBAction func didTapOnAddReviewButton(_ sender: Any) {
         RatingVC.presentReviewPopup(for: self) { rating, comment in
             self.dismiss(animated: true) {
@@ -79,6 +88,7 @@ extension ReviewRestaurantVC {
         navigationController?.navigationBar.isHidden = false
         tabBarController?.tabBar.isHidden = true
         addReviewButton.layer.cornerRadius = 8
+        viewRestaurantButton.layer.cornerRadius = 8
     }
     
     private func setupUI(for restaurant: Restaurant) {
