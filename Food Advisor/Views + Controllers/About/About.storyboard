@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="5De-N2-XFw">
-                                <rect key="frame" x="20" y="64" width="374" height="370"/>
+                                <rect key="frame" x="20" y="64" width="374" height="479"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rir-wz-1tW">
                                         <rect key="frame" x="0.0" y="0.0" width="56" height="24"/>
@@ -43,21 +43,42 @@
                                             <action selector="didTapOnTermsAndConditionsButton:" destination="xqa-23-gzr" eventType="touchUpInside" id="ie0-Kg-uOi"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gxE-gi-Sob">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d2S-60-cWo">
                                         <rect key="frame" x="0.0" y="148" width="374" height="1"/>
+                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="wrI-Lo-Yn1"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0K5-QQ-0Hu">
+                                        <rect key="frame" x="0.0" y="169" width="38" height="24"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="aboutLabel"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version: N/A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1vl-mv-dhv">
+                                        <rect key="frame" x="0.0" y="213" width="107.5" height="24"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="aboutLabel"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                        <color key="textColor" systemColor="linkColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gxE-gi-Sob">
+                                        <rect key="frame" x="0.0" y="257" width="374" height="1"/>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="8je-wu-6sp"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2n-9v-JM1">
-                                        <rect key="frame" x="0.0" y="169" width="59" height="24"/>
+                                        <rect key="frame" x="0.0" y="278" width="59" height="24"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="blU-hX-QCA">
-                                        <rect key="frame" x="0.0" y="213" width="96" height="32"/>
+                                        <rect key="frame" x="0.0" y="322" width="96" height="32"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
                                         <state key="normal" title="My bookings"/>
                                         <connections>
@@ -65,7 +86,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdD-ol-Dpl">
-                                        <rect key="frame" x="0.0" y="265" width="93" height="32"/>
+                                        <rect key="frame" x="0.0" y="374" width="93" height="32"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
                                         <state key="normal" title="Chat with us"/>
                                         <connections>
@@ -73,14 +94,14 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Px-Zv-Qk5">
-                                        <rect key="frame" x="0.0" y="317" width="374" height="1"/>
+                                        <rect key="frame" x="0.0" y="426" width="374" height="1"/>
                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="T27-zx-zzc"/>
                                         </constraints>
                                     </view>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jHw-m8-Zoc">
-                                        <rect key="frame" x="0.0" y="328" width="114" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="437" width="114" height="0.0"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
                                         <state key="normal" title="Delete Account">
                                             <color key="titleColor" systemColor="systemRedColor"/>
@@ -90,10 +111,12 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sqh-Vf-NZL">
-                                        <rect key="frame" x="0.0" y="338" width="53" height="32"/>
+                                        <rect key="frame" x="0.0" y="447" width="53" height="32"/>
                                         <accessibility key="accessibilityConfiguration" identifier="logoutButton"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
-                                        <state key="normal" title="Logout"/>
+                                        <state key="normal" title="Logout">
+                                            <color key="titleColor" systemColor="systemRedColor"/>
+                                        </state>
                                         <connections>
                                             <action selector="didTapOnLogoutButton:" destination="xqa-23-gzr" eventType="touchUpInside" id="2M0-es-3oq"/>
                                         </connections>
@@ -117,6 +140,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="About" image="info" id="Wkh-4N-FtM"/>
+                    <connections>
+                        <outlet property="versionLabel" destination="1vl-mv-dhv" id="cyF-8O-kcq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MT3-nb-fvj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

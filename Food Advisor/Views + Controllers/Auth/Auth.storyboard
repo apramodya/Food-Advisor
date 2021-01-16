@@ -129,6 +129,9 @@
             <point key="canvasLocation" x="440.57971014492756" y="-10.044642857142856"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="BGC-07-xyl"/>
+    </designables>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

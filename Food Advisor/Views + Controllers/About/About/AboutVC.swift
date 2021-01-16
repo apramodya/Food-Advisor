@@ -10,6 +10,9 @@ import GoogleSignIn
 
 class AboutVC: UIViewController {
 
+    // MARK: IBOutlets
+    @IBOutlet weak var versionLabel: UILabel!
+    
     // MARK: Life cycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -60,6 +63,12 @@ extension AboutVC {
     private func configureView() {
         navigationController?.navigationBar.isHidden = true
         tabBarController?.tabBar.isHidden = false
+        
+        if let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+            versionLabel.text = "Version: \(appVersion)"
+        } else {
+            versionLabel.text = "Version: N/A"
+        }
     }
     
     private func gotoWebView(_ type: WebViewType) {
