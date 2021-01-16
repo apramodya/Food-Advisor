@@ -16,5 +16,4 @@ target 'Food Advisor' do
   pod 'SDWebImage', '~> 5.0'
   pod "SwiftSpinner"
   pod 'TPKeyboardAvoiding', '~> 1.3'
-  pod 'NVActivityIndicatorView'
 end
